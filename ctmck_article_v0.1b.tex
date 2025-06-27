@@ -12,8 +12,6 @@
 \usepackage{physics}
 \usepackage{siunitx}    % unidades corretas
 \usepackage{mathtools}
-\usepackage{tikz}
-\usetikzlibrary{3d,arrows.meta,calc,decorations.pathmorphing}
 \usepackage{hyperref}
 
 %------------------------------------------------
@@ -42,12 +40,13 @@
 
 \date{\today}
 \keywords{multidimensional time, bounce cosmology, Einstein-Cartan, JWST anomalies, neutrino mass}
+\pacs{04.20.Cv, 98.80.Qc, 04.50.Kd, 14.60.Pq}
 
 %------------------------------------------------
 %              ABSTRACT
 %------------------------------------------------
 \begin{abstract}
-We present the CTMCK (Camargo-Kletetschka Multidimensional Temporal Cosmogenesis) theory, extending Kletetschka's three-dimensional time framework to black hole bounce cosmology. The theory unifies quantum mechanics, general relativity, and cosmological evolution through a temporal manifold $(t_1,t_2,t_3)$ where quantum entanglement emerges from correlations across temporal dimensions. We derive testable predictions: neutrino masses totaling \SI{0.29}{\electronvolt}, LISA-detectable gravitational wave signatures from bounce events, and Kaluza-Klein resonances at \SI{e16}{\giga\electronvolt}. The framework naturally explains JWST observations of early massive galaxies through information inheritance from pre-bounce universe phases, resolving the apparent conflict with $\Lambda$CDM predictions.
+We present the CTMCK (Camargo-Kletetschka Multidimensional Temporal Cosmogenesis) theory, extending Kletetschka's three-dimensional time framework to black hole bounce cosmology. The theory unifies quantum mechanics, general relativity, and cosmological evolution through a temporal manifold $(t_1,t_2,t_3)$ where quantum entanglement emerges from correlations across temporal dimensions. We derive testable predictions: neutrino masses totaling \SI{0.29}{\electronvolt}, LISA-detectable gravitational wave signatures from bounce events, and Kaluza-Klein resonances at \SI{1e16}{\giga\electronvolt}. The framework naturally explains JWST observations of early massive galaxies through information inheritance from pre-bounce universe phases, resolving the apparent conflict with $\Lambda$CDM predictions.
 \end{abstract}
 
 \maketitle
@@ -58,7 +57,7 @@ We present the CTMCK (Camargo-Kletetschka Multidimensional Temporal Cosmogenesis
 
 The James Webb Space Telescope (JWST) has revealed massive galaxies at redshifts $z > 10$, challenging standard $\Lambda$CDM cosmology which predicts insufficient time for their formation \cite{Naidu2022,Boylan-Kolchin2023}. Simultaneously, quantum mechanics and general relativity remain fundamentally incompatible, with quantum entanglement appearing to violate locality principles that underpin spacetime structure.
 
-We propose the CTMCK theory, building upon Kletetschka's three-dimensional time concept \cite{Kletetschka2021} and extending it to black hole bounce cosmology. This framework addresses both observational anomalies and theoretical inconsistencies through a unified temporal manifold where $\kappa \equiv 8\pi G/c^4$ governs gravitational coupling.
+We propose the CTMCK theory, building upon Kletetschka's three-dimensional time concept \cite{Kletetschka2021} and extending it to black hole bounce cosmology. This framework addresses both observational anomalies and theoretical inconsistencies through a unified temporal manifold.
 
 %-------------------------------------------------------
 \section{Three-Dimensional Time Framework}\label{sec:framework}
@@ -71,6 +70,8 @@ The CTMCK framework postulates a six-dimensional spacetime with three temporal d
 \tau_1:\tau_2:\tau_3 = 1:4.835\times10^{-3}:2.875\times10^{-4}
 \label{eq:temporal_scales}
 \end{equation}
+
+(see detailed derivation in Sect.~\ref{sec:predictions})
 
 Each temporal dimension governs different physical processes:
 \begin{itemize}
@@ -88,7 +89,7 @@ The temporal manifold modifies Einstein's field equations. For a homogeneous, is
 \label{eq:modified_friedmann}
 \end{equation}
 
-where the temporal scale evolution $\dot{\tau_i}/\tau_i$ introduces additional degrees of freedom that can accelerate expansion without dark energy.
+where $k=0,\pm1$ is the spatial curvature index and the temporal scale evolution $\dot{\tau_i}/\tau_i$ introduces additional degrees of freedom that can accelerate expansion without dark energy.
 
 %-------------------------------------------------------
 \section{Black Hole Bounce Mechanism}\label{sec:bounce}
@@ -157,7 +158,7 @@ h_+(f) \propto f^{-2/3} \exp\left(-\frac{f}{f_{\text{bounce}}}\right)
 \label{eq:gw_signature}
 \end{equation}
 
-where $f_{\text{bounce}} \sim \SI{e-4}{\hertz}$ corresponds to the temporal bounce frequency.
+where $f_{\text{bounce}} \sim \SI{1e-4}{\hertz}$ corresponds to the temporal bounce frequency.
 
 \subsection{Kaluza-Klein Resonances}
 
@@ -168,7 +169,7 @@ E_{n_1,n_2,n_3} = \sqrt{m^2c^4 + \sum_{i=1}^{3}\left(\frac{n_i\hbar c}{\tau_i}\r
 \label{eq:kk_resonances}
 \end{equation}
 
-First resonances appear at $\sim\SI{e16}{\giga\electronvolt}$, accessible to future ultra-high-energy cosmic ray observatories.
+First resonances appear at $\sim\SI{1e16}{\giga\electronvolt}$, accessible to future ultra-high-energy cosmic ray observatories.
 
 %-------------------------------------------------------
 \section{Cosmological Implications}\label{sec:cosmology}
@@ -233,6 +234,11 @@ Future work will develop the mathematical formalism further, compute additional 
 \section*{Acknowledgments}
 
 The author thanks Günther Kletetschka for foundational work on three-dimensional time and the JWST collaboration for transformative observations that motivated this theoretical framework.
+
+%-------------------------------------------------------
+\section*{Data Availability}
+
+\noindent All data, analysis code, and computational notebooks supporting this work are publicly available in the GitHub repository: \url{https://github.com/Infolake/guilherme-ctmck}. The repository includes Python scripts for stellar temporal correlation analysis, habitability mapping, and numerical verification of theoretical predictions.
 
 %-------------------------------------------------------
 \begin{thebibliography}{99}

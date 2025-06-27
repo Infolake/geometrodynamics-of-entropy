@@ -20,7 +20,7 @@ echo "✅ pdflatex found"
 
 # Compile the manuscript
 echo "📝 Compiling ctmck_article_v0.1b.tex..."
-pdflatex -interaction=nonstopmode ctmck_article_v0.1b.tex
+latexmk -pdf -interaction=nonstopmode ctmck_article_v0.1b.tex
 
 # Check for compilation errors
 if [ $? -eq 0 ]; then
@@ -28,11 +28,13 @@ if [ $? -eq 0 ]; then
     
     # Check for warnings in log file
     echo "🔍 Checking for warnings..."
-    if grep -E "Overfull|Underfull|Undefined reference|Citation.*undefined" ctmck_article_v0.1b.log > /dev/null; then
+    if grep -E "Overfull|Undefined" ctmck_article_v0.1b.log > /dev/null; then
         echo "⚠️  Warnings found in log file:"
-        grep -E "Overfull|Underfull|Undefined reference|Citation.*undefined" ctmck_article_v0.1b.log
+        grep -E "Overfull|Undefined" ctmck_article_v0.1b.log
+        echo ""
+        echo "💡 If Overfull \\hbox > 5pt, consider adding line breaks with \\\\ or \\!"
     else
-        echo "✅ No significant warnings found"
+        echo "✅ No overfull boxes or undefined references found"
     fi
     
     # Check PDF size
