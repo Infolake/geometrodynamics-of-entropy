@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+title: "Teoria da Cosmogênese Temporal Multidimensional Camargo-Kletetschka (CTMCK): Uma Abordagem Unificada para Origem Cósmica, Emaranhamento Quântico e Formação Galáctica Precoce"
+message: "If you use this work, please cite it using the metadata from this file."
+type: software
+authors:
+  - given-names: Guilherme
+    family-names: de Camargo
+    email: guilherme@medsuite.com.br
+    affiliation: "Independent Researcher"
+    orcid: "https://orcid.org/0009-0004-8913-9419"
+    city: Londrina
+    region: PR
+    country: BR
+contributors:
+  - given-names: Gunther
+    family-names: Kletetschka
+    affiliation: "University of Alaska Fairbanks"
+    role: "theoretical collaborator"
+repository-code: "https://github.com/Infolake/guilherme-ctmck"
+url: "https://github.com/Infolake/guilherme-ctmck"
+abstract: "A Teoria CTMCK integra a teoria do tempo tridimensional de Gunther Kletetschka com a hipótese de origem cosmológica via buraco negro, criando um framework unificado que explica fenômenos desde emaranhamento quântico até formação precoce de galáxias observadas pelo JWST. Esta teoria resolve paradoxos fundamentais da física moderna através de uma métrica 6D com três dimensões temporais (t, θ, τ) e prediz observações testáveis específicas incluindo massa de neutrinos (0.29 eV), ondas gravitacionais torsionais (~10⁻² Hz), e ressonâncias KK em colisores (2.3, 4.1 TeV)."
+keywords:
+  - cosmology
+  - theoretical physics
+  - quantum entanglement
+  - galaxy formation
+  - JWST observations
+  - three-dimensional time
+  - bounce universe
+  - black hole cosmology
+  - multidimensional spacetime
+  - neutrino masses
+  - gravitational waves
+version: "0.1.0"
+date-released: "2025-01-26"
+license: CC-BY-4.0
+doi: 10.5281/zenodo.⟨TBD⟩
+preferred-citation:
+  type: article
+  title: "Observable Signatures of a Three-Temporal Bounce-Universe Inside a Black Hole"
+  authors:
+    - given-names: Guilherme
+      family-names: de Camargo
+      email: guilherme@medsuite.com.br
+      affiliation: "Independent Researcher"
+      orcid: "https://orcid.org/0009-0004-8913-9419"
+  year: 2025
+  journal: "Preprint"
+  doi: 10.5281/zenodo.⟨TBD⟩
+  url: "https://github.com/Infolake/guilherme-ctmck"

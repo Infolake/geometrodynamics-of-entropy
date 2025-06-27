@@ -20,6 +20,10 @@
 - `docs/notes/executive_summary.md` - Sumário executivo completo
 - `docs/notes/citation_analysis.md` - Análise das 40 referências
 - `docs/notes/stellar_temporal_synthesis.md` - Síntese da correlação estelar-temporal
+- `docs/notes/speculative_notes.md` - Direções especulativas de pesquisa futura
+
+#### **Metadados de Citação**
+- `.github/CITATION.cff` - Arquivo de citação padrão CFF para repositórios acadêmicos
 
 ### **🔬 Scripts de Análise**
 
@@ -35,6 +39,9 @@
 
 #### **Simulações**
 - `scripts/simulations/ctmck_simulations.py` - Simulações numéricas
+
+#### **Scripts/CI**
+- `.github/workflows/latex.yml` - Workflow LaTeX CI para build automático de PDFs
 
 ### **📊 Figuras e Diagramas**
 
@@ -173,6 +180,9 @@
 **Instituição:** University of Alaska Fairbanks  
 **Contribuição:** Teoria fundamental do tempo tridimensional
 
+**DOI Zenodo:** 10.5281/zenodo.⟨TBD⟩ *(a ser gerado após tag GitHub v0.1)*  
+**ORCID:** 0009-0004-8913-9419
+
 ---
 
 ## 🏆 **Resumo do Impacto**
@@ -188,6 +198,16 @@ A **Teoria CTMCK** representa um **marco científico** que:
 **Potencial de Impacto:** 🌟🌟🌟🌟🌟 **Revolucionário**  
 **Prontidão:** ✅ **Completo para submissão acadêmica**  
 **Testabilidade:** 🔬🔬🔬🔬🔬 **Altamente verificável**
+
+---
+
+### 📌 **Roadmap 7 dias**
+- [ ] **Abstract** de 150 palavras finalizado (D1)
+- [ ] **CITATION.cff** criado e commitado (D2)
+- [ ] **Tag GitHub `v0.1`** + DOI Zenodo gerado (D4)  
+- [ ] **Submissão arXiv** (gr-qc, astro-ph.CO) (D5)
+- [ ] **speculative_notes.md** adicionado (D6)
+- [ ] E-mail com link arXiv enviado a Kletetschka (D7)
 
 ---
 

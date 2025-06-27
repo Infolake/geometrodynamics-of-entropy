@@ -1,0 +1,57 @@
+name: LaTeX Build
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'drafts/*.tex'
+      - 'papers/*.tex'
+      - '.github/workflows/latex.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'drafts/*.tex'
+      - 'papers/*.tex'
+      - '.github/workflows/latex.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup LaTeX
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: drafts/ctmck_letter.tex
+        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+        
+    - name: Build unified theory paper
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: drafts/ctmck_unified_theory_paper.tex
+        args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+        
+    - name: Create docs directory
+      run: mkdir -p docs/pdfs
+      
+    - name: Copy PDFs to docs
+      run: |
+        cp drafts/ctmck_letter.pdf docs/pdfs/ 2>/dev/null || echo "ctmck_letter.pdf not found"
+        cp drafts/ctmck_unified_theory_paper.pdf docs/pdfs/ 2>/dev/null || echo "ctmck_unified_theory_paper.pdf not found"
+        
+    - name: Upload PDF artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: latex-pdfs
+        path: |
+          drafts/*.pdf
+          docs/pdfs/*.pdf
+        retention-days: 30
+        
+    - name: List generated files
+      run: |
+        echo "Generated PDF files:"
+        find . -name "*.pdf" -type f | sort
