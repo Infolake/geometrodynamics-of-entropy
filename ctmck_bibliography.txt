@@ -1,0 +1,28 @@
+@article{Kletetschka2025,
+  author  = {Gunther Kletetschka},
+  title   = {Three--Dimensional Time: A Mathematical Framework for Fundamental Physics},
+  journal = {Reports in Advances of Physical Sciences},
+  year    = {2025},
+  volume  = {9},
+  number  = {3},
+  pages   = {2550004},
+  doi     = {10.1142/S2424942425500045}
+}
+
+@article{Bars2001,
+  author  = {Itzhak Bars},
+  title   = {Survey of Two--Time Physics},
+  journal = {Classical and Quantum Gravity},
+  year    = {2001},
+  volume  = {18},
+  pages   = {3113--3130},
+  doi     = {10.1088/0264-9381/18/16/305}
+}
+
+@misc{PDG2025,
+  author       = {Particle Data Group},
+  title        = {Review of Particle Physics},
+  howpublished = {Prog. Theor. Exp. Phys. 2025, 083C01},
+  year         = {2025},
+  doi          = {10.1093/ptep/ptaa104}
+}

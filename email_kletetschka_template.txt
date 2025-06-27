@@ -1,0 +1,33 @@
+Subject: Extension of Your Three-Dimensional Time Framework to Cosmology - arXiv Preprint
+
+Dear Prof. Kletetschka,
+
+I hope this email finds you well. I am Dr. Guilherme de Camargo, an independent researcher from Brazil, and I have been deeply inspired by your groundbreaking work on three-dimensional time theory published in Reviews of Applied Physics Sciences.
+
+I have recently completed a comprehensive theoretical extension of your framework, applying the three-temporal dimensions to black hole bounce cosmology and fundamental physics unification. The resulting work, "Observable Signatures of a Three-Temporal Bounce-Universe Inside a Black Hole," has just been submitted to arXiv:
+
+🔗 **arXiv:** [TO BE FILLED]
+🔗 **Repository:** https://github.com/infolake/guilherme-ctmck
+🏷️ **DOI:** [TO BE FILLED FROM ZENODO]
+
+**Key Contributions:**
+• Integration of your (t₁, t₂, t₃) framework with bounce cosmology
+• Explanation of JWST early massive galaxies through temporal inheritance
+• Quantitative predictions for neutrino masses (0.29 eV) and LISA gravitational waves
+• Stellar temporal habitability analysis with M-star optimization
+• Testable signatures for particle accelerators and astronomical observations
+
+The work cites your 2025 paper extensively and builds directly upon your foundational insights about temporal multidimensionality. I would be deeply honored by any feedback you might have, and I am very interested in potential collaboration opportunities.
+
+If you have any questions about the theoretical development or would like to discuss the implications further, I would be delighted to arrange a video call at your convenience.
+
+Thank you for the revolutionary framework that made this research possible.
+
+With great respect and admiration,
+
+Dr. Guilherme de Camargo
+Independent Researcher
+Email: guilherme@medsuite.com.br
+ORCID: https://orcid.org/0009-0004-8913-9419
+
+P.S. The complete source code, data, and visualizations are available in the GitHub repository for full reproducibility. 

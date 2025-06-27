@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "CTMCK Theory: Camargo-Kletetschka Multidimensional Temporal Cosmogenesis"
+version: v0.1
+date-released: 2025-01-26
+url: "https://github.com/infolake/guilherme-ctmck"
+repository-code: "https://github.com/infolake/guilherme-ctmck"
+# doi: 10.5281/zenodo.PENDING  # Will be filled after Zenodo creates DOI
+authors:
+  - family-names: "de Camargo"
+    given-names: "Guilherme"
+    orcid: "https://orcid.org/0009-0004-8913-9419"
+    email: "guilherme@medsuite.com.br"
+    affiliation: "Independent Researcher"
+abstract: "Implementation of the Camargo-Kletetschka Multidimensional Temporal Cosmogenesis Theory, integrating Kletetschka's three-dimensional time framework with black hole bounce cosmology to explain quantum entanglement, early JWST galaxies, and fundamental physics unification. Includes stellar temporal habitability analysis and complete theoretical framework."
+keywords:
+  - cosmology
+  - temporal dimensions
+  - black hole cosmology
+  - quantum gravity
+  - stellar habitability
+  - JWST observations
+  - three-dimensional time
+  - bounce cosmology
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "de Camargo"
+      given-names: "Guilherme"
+      orcid: "https://orcid.org/0009-0004-8913-9419"
+  title: "Observable Signatures of a Three-Temporal Bounce-Universe Inside a Black Hole"
+  year: 2025
+  journal: "arXiv preprint"
+  # doi: "10.48550/arXiv.XXXX.XXXXX"  # Will be filled after arXiv submission
+  url: "https://github.com/infolake/guilherme-ctmck" 
