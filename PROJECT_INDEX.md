@@ -25,8 +25,7 @@
 
 #### **Análise Principal**
 - `scripts/analysis/ctmck_analysis.py` - Análise fundamental CTMCK
-- `scripts/analysis/stellar_temporal_correlation.py` - Correlação estelar inicial
-- `scripts/analysis/stellar_temporal_correlation_refined.py` - Análise refinada
+- `scripts/analysis/stellar_temporal_correlation.py` - Análise estelar-temporal
 
 #### **Visualizações**
 - `scripts/plotting/ctmck_plots.py` - Gráficos principais da teoria
@@ -43,8 +42,7 @@
 - `figures/diagrams/habitability_map_3d.png` (747 KB) - Visualização 3D completa
 
 #### **Correlações Estelares**
-- `figures/diagrams/stellar_temporal_correlations.png` (775 KB) - Análise inicial
-- `figures/diagrams/stellar_temporal_correlations_refined.png` (775 KB) - Análise refinada
+- `figures/diagrams/stellar_temporal_correlations.png` (775 KB) - Análise estelar-temporal
 
 ### **📈 Dados Processados**
 - `data/processed/stellar_temporal_correlations.csv` - Dados da correlação estelar
@@ -77,7 +75,7 @@
 ## 📊 **Análises Realizadas**
 
 ### **1. Correlação Estelar-Temporal**
-**Arquivo:** `stellar_temporal_correlation_refined.py`
+**Arquivo:** `stellar_temporal_correlation.py`
 **Descoberta Principal:** Ranking de habitabilidade temporal
 1. **Tipo M** (1.0000) - Estabilidade extrema
 2. **Tipo K** (0.2230) - Alta estabilidade  

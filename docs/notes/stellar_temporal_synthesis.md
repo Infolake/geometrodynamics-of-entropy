@@ -98,7 +98,7 @@ A teoria CTMCK sugere que a complexidade pode emergir através de diferentes **s
 1. **habitability_map_2d.png**: Mapa 2D de habitabilidade temporal (t₁ vs t₂)
 2. **habitability_map_3d.png**: Visualização 3D do espaço temporal completo
 3. **stellar_temporal_correlations.png**: Análise inicial das correlações
-4. **stellar_temporal_correlations_refined.png**: Análise refinada com 6 gráficos abrangentes
+4. **stellar_temporal_correlations.png**: Análise completa com 6 gráficos abrangentes
 
 ## Conclusões
 

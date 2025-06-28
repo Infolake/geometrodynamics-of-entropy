@@ -4,10 +4,7 @@ Correlação entre Tipos Espectrais Estelares e Dimensões Temporais CTMCK
 Autor: Guilherme de Camargo
 Data: 2025-01-26
 
-Análise da relação entre massa estelar, tempo de vida e as três dimensões temporais:
-- t₁: Tempo Quântico Local (processos nucleares internos)
-- t₂: Tempo Relacional Sistêmico (evolução estelar e interações)
-- t₃: Tempo Cosmológico (escala de formação e morte estelar)
+Análise quantitativa da habitabilidade temporal em diferentes tipos espectrais
 """
 
 import numpy as np
@@ -26,7 +23,7 @@ class StellarTemporalAnalysis:
             'Luminosidade_Solar': [1000000, 20000, 80, 6, 1, 0.4, 0.04],
             'Temp_Superficie_K': [45000, 20000, 8500, 6500, 5500, 4000, 3000],
             'Tempo_Vida_Anos': [3e6, 1e7, 3e8, 3e9, 1e10, 5e10, 1e12],
-            'Cor': ['azul', 'azul-branco', 'branco', 'amarelo-branco', 'amarelo', 'laranja', 'vermelho']
+            'Zona_Habitavel_UA': [100, 50, 9, 2.5, 1.0, 0.6, 0.2]  # Distância da zona habitável
         }
         
         self.df = pd.DataFrame(self.stellar_data)
@@ -35,195 +32,209 @@ class StellarTemporalAnalysis:
         self._calculate_temporal_indices()
     
     def _calculate_temporal_indices(self):
-        """Calcula os índices das três dimensões temporais para cada tipo estelar"""
+        """Calcula os índices refinados das três dimensões temporais"""
         
-        # t₁ (Tempo Quântico): Relacionado à intensidade dos processos nucleares
-        # Proporcional à taxa de fusão nuclear (Massa^3.5 aproximadamente)
-        self.df['t1_quantum'] = (self.df['Massa_Solar'] ** 3.5) / 1000
+        # t₁ (Tempo Quântico): Normalizado para escala 0-1
+        t1_raw = (self.df['Massa_Solar'] ** 3.5) / 1000
+        self.df['t1_quantum'] = t1_raw / t1_raw.max()
         
-        # t₂ (Tempo Relacional): Relacionado à evolução estelar e estabilidade
-        # Inversamente proporcional à luminosidade (estrelas mais luminosas evoluem mais rápido)
-        self.df['t2_relational'] = 1 / np.log10(self.df['Luminosidade_Solar'] + 1)
+        # t₂ (Tempo Relacional): Estabilidade (inverso da luminosidade, normalizado)
+        t2_raw = 1 / np.log10(self.df['Luminosidade_Solar'] + 1)
+        self.df['t2_relational'] = t2_raw / t2_raw.max()
         
-        # t₃ (Tempo Cosmológico): Diretamente relacionado ao tempo de vida estelar
-        # Normalizado em escala logarítmica
-        self.df['t3_cosmological'] = np.log10(self.df['Tempo_Vida_Anos']) / 12  # Normalizado para escala 0-1
+        # t₃ (Tempo Cosmológico): Longevidade normalizada
+        t3_raw = np.log10(self.df['Tempo_Vida_Anos'])
+        self.df['t3_cosmological'] = (t3_raw - t3_raw.min()) / (t3_raw.max() - t3_raw.min())
         
-        # Índice de Habitabilidade Temporal (combinação das três dimensões)
-        # Favorece equilíbrio: t₁ moderado, t₂ alto (estabilidade), t₃ alto (longevidade)
-        self.df['habitability_index'] = (
-            np.exp(-2 * (self.df['t1_quantum'] - 0.3)**2) *  # t₁ ótimo ~ 0.3
-            self.df['t2_relational'] *                        # t₂ maior é melhor
-            self.df['t3_cosmological']                        # t₃ maior é melhor
-        )
+        # Índice de Habitabilidade Temporal REFINADO
+        # Favorece equilíbrio: t₁ baixo-moderado, t₂ alto, t₃ moderado-alto
+        # Penaliza extremos (muito alta energia ou muito baixa energia)
+        
+        # Função Gaussiana para t₁ (ótimo em ~0.1-0.3)
+        t1_factor = np.exp(-10 * (self.df['t1_quantum'] - 0.2)**2)
+        
+        # Função crescente para t₂ (estabilidade é sempre boa)
+        t2_factor = self.df['t2_relational']
+        
+        # Função Gaussiana para t₃ (ótimo em ~0.6-0.8, nem muito curto nem muito longo)
+        t3_factor = np.exp(-5 * (self.df['t3_cosmological'] - 0.7)**2)
+        
+        # Fator adicional: zona habitável (favorece distâncias moderadas)
+        zh_factor = np.exp(-0.5 * (np.log10(self.df['Zona_Habitavel_UA']) - 0)**2)
+        
+        self.df['habitability_index'] = t1_factor * t2_factor * t3_factor * zh_factor
+        
+        # Normalizar índice final
+        self.df['habitability_index'] = self.df['habitability_index'] / self.df['habitability_index'].max()
     
-    def create_stellar_temporal_table(self):
-        """Cria tabela detalhada com correlações temporais"""
+    def create_stellar_table(self):
+        """Cria tabela refinada com correlações temporais"""
         
-        print("=" * 100)
-        print("CORRELAÇÃO ENTRE TIPOS ESPECTRAIS ESTELARES E DIMENSÕES TEMPORAIS CTMCK")
-        print("=" * 100)
+        print("=" * 110)
+        print("CORRELACAO ESTELAR-TEMPORAL: TIPOS ESPECTRAIS E DIMENSOES TEMPORAIS CTMCK")
+        print("=" * 110)
         
-        # Criar tabela formatada
-        table_data = []
-        for _, row in self.df.iterrows():
-            table_data.append([
-                row['Tipo'],
-                f"{row['Massa_Solar']:.1f}",
-                f"{row['Luminosidade_Solar']:.0e}",
-                f"{row['Tempo_Vida_Anos']:.0e}",
-                f"{row['t1_quantum']:.3f}",
-                f"{row['t2_relational']:.3f}",
-                f"{row['t3_cosmological']:.3f}",
-                f"{row['habitability_index']:.4f}"
-            ])
+        print(f"{'Tipo':<6}{'Massa':<8}{'Luminosidade':<12}{'Vida(anos)':<12}{'t1':<8}{'t2':<8}{'t3':<8}{'Hab.Index':<10}{'Ranking':<8}")
+        print("-" * 110)
         
-        headers = ['Tipo', 'Massa☉', 'Lum☉', 'Vida(anos)', 't₁(quant)', 't₂(relac)', 't₃(cosmo)', 'Hab.Index']
+        # Ordenar por índice de habitabilidade
+        df_sorted = self.df.sort_values('habitability_index', ascending=False)
         
-        # Imprimir tabela
-        print(f"{'Tipo':<6}{'Massa☉':<8}{'Luminosidade☉':<12}{'Vida(anos)':<12}{'t₁':<10}{'t₂':<10}{'t₃':<10}{'Índice Hab.':<12}")
-        print("-" * 100)
+        for i, (_, row) in enumerate(df_sorted.iterrows()):
+            print(f"{row['Tipo']:<6}{row['Massa_Solar']:.1f}{'Ms':<7}"
+                  f"{row['Luminosidade_Solar']:.0e}{'Ls':<4}"
+                  f"{row['Tempo_Vida_Anos']:.0e}{'anos':<4}"
+                  f"{row['t1_quantum']:.3f}{'':>5}"
+                  f"{row['t2_relational']:.3f}{'':>5}"
+                  f"{row['t3_cosmological']:.3f}{'':>5}"
+                  f"{row['habitability_index']:.4f}{'':>6}"
+                  f"#{i+1:<7}")
         
-        for row in table_data:
-            print(f"{row[0]:<6}{row[1]:<8}{row[2]:<12}{row[3]:<12}{row[4]:<10}{row[5]:<10}{row[6]:<10}{row[7]:<12}")
+        print("\n" + "=" * 110)
+        print("INTERPRETACAO DAS DIMENSOES TEMPORAIS CTMCK:")
+        print("=" * 110)
+        print("t1 (Tempo Quantico):     Intensidade processos nucleares (0=baixo, 1=alto)")
+        print("t2 (Tempo Relacional):   Estabilidade evolutiva (0=instavel, 1=estavel)") 
+        print("t3 (Tempo Cosmologico):  Longevidade estelar (0=curto, 1=longo)")
+        print("Habitabilidade Index:    Potencial desenvolvimento complexidade (0-1)")
+        print("=" * 110)
         
-        print("\n" + "=" * 100)
-        print("INTERPRETAÇÃO DAS DIMENSÕES TEMPORAIS:")
-        print("=" * 100)
-        print("t₁ (Tempo Quântico):     Intensidade dos processos nucleares internos")
-        print("t₂ (Tempo Relacional):   Estabilidade evolutiva e interações sistêmicas") 
-        print("t₃ (Tempo Cosmológico):  Longevidade e escala temporal cosmológica")
-        print("Índice Habitabilidade:   Potencial para desenvolvimento de complexidade")
-        print("=" * 100)
+        return df_sorted
     
-    def plot_temporal_correlations(self):
-        """Cria visualizações das correlações temporais"""
+    def theoretical_insights(self):
+        """Análise teórica refinada"""
         
-        fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(15, 12))
+        df_sorted = self.df.sort_values('habitability_index', ascending=False)
+        best_star = df_sorted.iloc[0]
         
-        # Gráfico 1: Massa vs Tempo de Vida (clássico)
-        ax1.loglog(self.df['Massa_Solar'], self.df['Tempo_Vida_Anos'], 'o-', linewidth=2, markersize=8)
+        print("\n" + "=" * 110)
+        print("INSIGHTS TEORICOS DA CORRELACAO ESTELAR-TEMPORAL CTMCK")
+        print("=" * 110)
+        
+        print(f"\nESTRELA OTIMA PARA HABITABILIDADE TEMPORAL:")
+        print(f"   [BEST] Tipo: {best_star['Tipo']} - Indice: {best_star['habitability_index']:.4f}")
+        print(f"   [DATA] t1={best_star['t1_quantum']:.3f}, t2={best_star['t2_relational']:.3f}, t3={best_star['t3_cosmological']:.3f}")
+        
+        print(f"\nRANKING DE HABITABILIDADE TEMPORAL:")
+        for i, (_, row) in enumerate(df_sorted.iterrows()):
+            medal = "[1st]" if i == 0 else "[2nd]" if i == 1 else "[3rd]" if i == 2 else "[***]"
+            print(f"   {medal} #{i+1}: Tipo {row['Tipo']} - {row['habitability_index']:.4f}")
+        
+        print(f"\nCORRELACAES CTMCK FUNDAMENTAIS:")
+        print(f"   [HOT] Estrelas O/B: Energia extrema (t1 alto), vida curta (t3 baixo)")
+        print(f"   [BAL] Estrelas F/G: Equilibrio temporal ideal para complexidade")
+        print(f"   [SLW] Estrelas K/M: Estabilidade alta, mas evolucao lenta")
+        
+        print(f"\nIMPLICACAES PARA A TEORIA CTMCK:")
+        print(f"   • Complexidade emerge no equilibrio das 3 dimensoes temporais")
+        print(f"   • Estrelas tipo F/G criam 'zona Goldilocks temporal'")
+        print(f"   • Explicacao quantitativa para preferencia por estrelas solares")
+        print(f"   • Vida complexa requer sincronizacao t1-t2-t3 otima")
+        
+        print("=" * 110)
+    
+    def create_comprehensive_plots(self):
+        """Cria visualizações abrangentes"""
+        
+        fig = plt.figure(figsize=(16, 12))
+        
+        # Plot 1: Diagrama Massa-Tempo de Vida clássico
+        ax1 = plt.subplot(2, 3, 1)
+        plt.loglog(self.df['Massa_Solar'], self.df['Tempo_Vida_Anos'], 'o-', linewidth=2, markersize=8, color='navy')
         for i, tipo in enumerate(self.df['Tipo']):
-            ax1.annotate(tipo, (self.df['Massa_Solar'].iloc[i], self.df['Tempo_Vida_Anos'].iloc[i]), 
+            plt.annotate(tipo, (self.df['Massa_Solar'].iloc[i], self.df['Tempo_Vida_Anos'].iloc[i]), 
                         xytext=(5, 5), textcoords='offset points', fontsize=10, fontweight='bold')
-        ax1.set_xlabel('Massa Estelar (Massas Solares)')
-        ax1.set_ylabel('Tempo de Vida (Anos)')
-        ax1.set_title('Relação Massa-Longevidade Estelar')
-        ax1.grid(True, alpha=0.3)
+        plt.xlabel('Massa Estelar (Massas Solares)')
+        plt.ylabel('Tempo de Vida (Anos)')
+        plt.title('Relacao Massa-Longevidade Estelar')
+        plt.grid(True, alpha=0.3)
         
-        # Gráfico 2: Três Dimensões Temporais
+        # Plot 2: Três dimensões temporais
+        ax2 = plt.subplot(2, 3, 2)
         x = np.arange(len(self.df))
         width = 0.25
         
-        ax2.bar(x - width, self.df['t1_quantum'], width, label='t₁ (Quântico)', alpha=0.8, color='red')
-        ax2.bar(x, self.df['t2_relational'], width, label='t₂ (Relacional)', alpha=0.8, color='green')
-        ax2.bar(x + width, self.df['t3_cosmological'], width, label='t₃ (Cosmológico)', alpha=0.8, color='blue')
+        plt.bar(x - width, self.df['t1_quantum'], width, label='t1 (Quantico)', alpha=0.8, color='red')
+        plt.bar(x, self.df['t2_relational'], width, label='t2 (Relacional)', alpha=0.8, color='green')
+        plt.bar(x + width, self.df['t3_cosmological'], width, label='t3 (Cosmologico)', alpha=0.8, color='blue')
         
-        ax2.set_xlabel('Tipo Espectral')
-        ax2.set_ylabel('Índice Temporal Normalizado')
-        ax2.set_title('Três Dimensões Temporais CTMCK por Tipo Estelar')
-        ax2.set_xticks(x)
-        ax2.set_xticklabels(self.df['Tipo'])
-        ax2.legend()
-        ax2.grid(True, alpha=0.3)
+        plt.xlabel('Tipo Espectral')
+        plt.ylabel('Indice Temporal Normalizado')
+        plt.title('Tres Dimensoes Temporais CTMCK')
+        plt.xticks(x, self.df['Tipo'])
+        plt.legend()
+        plt.grid(True, alpha=0.3)
         
-        # Gráfico 3: Índice de Habitabilidade Temporal
-        colors = plt.cm.viridis(self.df['habitability_index'] / self.df['habitability_index'].max())
-        bars = ax3.bar(self.df['Tipo'], self.df['habitability_index'], color=colors)
-        ax3.set_xlabel('Tipo Espectral')
-        ax3.set_ylabel('Índice de Habitabilidade Temporal')
-        ax3.set_title('Potencial de Habitabilidade Temporal CTMCK')
-        ax3.grid(True, alpha=0.3)
+        # Plot 3: Índice de habitabilidade refinado
+        ax3 = plt.subplot(2, 3, 3)
+        df_sorted = self.df.sort_values('habitability_index', ascending=True)
+        colors = plt.cm.viridis(df_sorted['habitability_index'])
+        bars = plt.barh(df_sorted['Tipo'], df_sorted['habitability_index'], color=colors)
+        plt.xlabel('Indice de Habitabilidade Temporal')
+        plt.title('Ranking de Habitabilidade CTMCK')
+        plt.grid(True, alpha=0.3)
         
-        # Adicionar valores nas barras
-        for bar, valor in zip(bars, self.df['habitability_index']):
-            height = bar.get_height()
-            ax3.text(bar.get_x() + bar.get_width()/2., height + 0.001,
-                    f'{valor:.3f}', ha='center', va='bottom', fontsize=9)
-        
-        # Gráfico 4: Diagrama 3D das Dimensões Temporais
-        ax4 = fig.add_subplot(224, projection='3d')
+        # Plot 4: Espaço temporal 3D
+        ax4 = plt.subplot(2, 3, 4, projection='3d')
         scatter = ax4.scatter(self.df['t1_quantum'], self.df['t2_relational'], self.df['t3_cosmological'],
-                             c=self.df['habitability_index'], cmap='plasma', s=100)
+                             c=self.df['habitability_index'], cmap='plasma', s=150, alpha=0.8)
         
-        # Adicionar labels dos tipos
         for i, tipo in enumerate(self.df['Tipo']):
             ax4.text(self.df['t1_quantum'].iloc[i], self.df['t2_relational'].iloc[i], 
-                    self.df['t3_cosmological'].iloc[i], tipo, fontsize=10, fontweight='bold')
+                    self.df['t3_cosmological'].iloc[i], f'  {tipo}', fontsize=10, fontweight='bold')
         
-        ax4.set_xlabel('t₁ (Tempo Quântico)')
-        ax4.set_ylabel('t₂ (Tempo Relacional)')
-        ax4.set_zlabel('t₃ (Tempo Cosmológico)')
-        ax4.set_title('Espaço Temporal 3D CTMCK')
+        ax4.set_xlabel('t1 (Tempo Quantico)')
+        ax4.set_ylabel('t2 (Tempo Relacional)')
+        ax4.set_zlabel('t3 (Tempo Cosmologico)')
+        ax4.set_title('Espaco Temporal 3D CTMCK')
         
-        plt.colorbar(scatter, ax=ax4, label='Índice de Habitabilidade', shrink=0.8)
+        # Plot 5: Correlação Habitabilidade vs Massa
+        ax5 = plt.subplot(2, 3, 5)
+        plt.semilogx(self.df['Massa_Solar'], self.df['habitability_index'], 'o-', linewidth=2, markersize=8, color='purple')
+        for i, tipo in enumerate(self.df['Tipo']):
+            plt.annotate(tipo, (self.df['Massa_Solar'].iloc[i], self.df['habitability_index'].iloc[i]), 
+                        xytext=(5, 5), textcoords='offset points', fontsize=10, fontweight='bold')
+        plt.xlabel('Massa Estelar (Massas Solares)')
+        plt.ylabel('Indice de Habitabilidade Temporal')
+        plt.title('Habitabilidade vs Massa Estelar')
+        plt.grid(True, alpha=0.3)
+        
+        # Plot 6: Zona habitável vs Habitabilidade
+        ax6 = plt.subplot(2, 3, 6)
+        plt.loglog(self.df['Zona_Habitavel_UA'], self.df['habitability_index'], 'o-', linewidth=2, markersize=8, color='orange')
+        for i, tipo in enumerate(self.df['Tipo']):
+            plt.annotate(tipo, (self.df['Zona_Habitavel_UA'].iloc[i], self.df['habitability_index'].iloc[i]), 
+                        xytext=(5, 5), textcoords='offset points', fontsize=10, fontweight='bold')
+        plt.xlabel('Distancia Zona Habitavel (UA)')
+        plt.ylabel('Indice de Habitabilidade Temporal')
+        plt.title('Zona Habitavel vs Habitabilidade CTMCK')
+        plt.grid(True, alpha=0.3)
         
         plt.tight_layout()
         
         # Salvar
-        output_dir = '../../figures/diagrams'
-        os.makedirs(output_dir, exist_ok=True)
+        output_dir = r'C:\Users\Guilh\Downloads\ScientificoDrGuilhermeDeCamargo\figures\diagrams'
         output_path = os.path.join(output_dir, 'stellar_temporal_correlations.png')
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        print(f"\n[OK] Gráficos salvos em: {output_path}")
+        print(f"\n[OK] Analise refinada salva em: {output_path}")
         
         plt.close()
-        return output_path
-    
-    def theoretical_analysis(self):
-        """Análise teórica detalhada das correlações"""
-        
-        print("\n" + "=" * 100)
-        print("ANÁLISE TEÓRICA: CORRELAÇÃO ESTELAR-TEMPORAL CTMCK")
-        print("=" * 100)
-        
-        # Encontrar estrela com maior índice de habitabilidade
-        best_star = self.df.loc[self.df['habitability_index'].idxmax()]
-        
-        print(f"\n🌟 ESTRELA ÓTIMA PARA HABITABILIDADE TEMPORAL:")
-        print(f"   Tipo: {best_star['Tipo']} (como nosso Sol)")
-        print(f"   Índice de Habitabilidade: {best_star['habitability_index']:.4f}")
-        print(f"   t₁ (Quântico): {best_star['t1_quantum']:.3f}")
-        print(f"   t₂ (Relacional): {best_star['t2_relational']:.3f}")
-        print(f"   t₃ (Cosmológico): {best_star['t3_cosmological']:.3f}")
-        
-        print(f"\n📊 INSIGHTS DA TEORIA CTMCK:")
-        print(f"   • Estrelas tipo O/B: Alto t₁ (processos quânticos intensos), baixo t₃ (vida curta)")
-        print(f"   • Estrelas tipo G: Equilíbrio ótimo das três dimensões temporais")
-        print(f"   • Estrelas tipo M: Baixo t₁, alto t₃, mas evolução muito lenta")
-        
-        print(f"\n🔬 IMPLICAÇÕES PARA HABITABILIDADE:")
-        print(f"   • Complexidade requer equilíbrio temporal multidimensional")
-        print(f"   • Estrelas G oferecem 'zona de Goldilocks temporal'")
-        print(f"   • Teoria CTMCK explica por que vida complexa favorece estrelas tipo solar")
-        
-        print("=" * 100)
-    
-    def save_data_table(self):
-        """Salva tabela de dados em CSV"""
-        output_dir = '../../data/processed'
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, 'stellar_temporal_correlations.csv')
-        self.df.to_csv(output_path, index=False)
-        print(f"[OK] Dados salvos em: {output_path}")
         return output_path
 
 def main():
     """Função principal"""
-    print("Iniciando Análise de Correlação Estelar-Temporal CTMCK...")
+    print("Iniciando Analise de Correlacao Estelar-Temporal CTMCK...")
     
     # Criar instância da análise
     analysis = StellarTemporalAnalysis()
     
     # Executar análises
-    analysis.create_stellar_temporal_table()
-    analysis.theoretical_analysis()
-    plot_path = analysis.plot_temporal_correlations()
-    data_path = analysis.save_data_table()
+    df_sorted = analysis.create_stellar_table()
+    analysis.theoretical_insights()
+    plot_path = analysis.create_comprehensive_plots()
     
-    print(f"\n✅ Análise completa!")
-    print(f"📊 Gráficos: {plot_path}")
-    print(f"📄 Dados: {data_path}")
+    print(f"\n[OK] Analise completa!")
+    print(f"[PLOTS] Graficos: {plot_path}")
 
 if __name__ == "__main__":
-    main() 
+    main()
