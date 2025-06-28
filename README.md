@@ -55,14 +55,14 @@ Nossa análise revela que **estrelas tipo M** fornecem condições temporais ót
 ## 🔬 **Observable Predictions** | **Previsões Observáveis**
 
 ### **English**
-- **Neutrino masses**: 0.29 eV (Sum of three species)
+- **Neutrino masses**: 0.29 eV (total) – within Planck 2024 limit and KATRIN-II reach
 - **Gravitational waves**: LISA detection at ~10⁻² Hz (torsional modes)
 - **Particle physics**: Kaluza-Klein resonances at 2.3 TeV and 4.1 TeV
 - **Cosmology**: Specific rotational bias in JWST high-redshift galaxies
 - **Quantum**: Enhanced entanglement correlations in temporal gradient fields
 
 ### **Português**
-- **Massas de neutrinos**: 0.29 eV (Soma das três espécies)
+- **Massas de neutrinos**: 0.29 eV (total) – dentro do limite Planck 2024 e alcance KATRIN-II
 - **Ondas gravitacionais**: Detecção LISA em ~10⁻² Hz (modos torsionais)
 - **Física de partículas**: Ressonâncias Kaluza-Klein em 2.3 TeV e 4.1 TeV
 - **Cosmologia**: Bias rotacional específico em galáxias JWST de alto redshift

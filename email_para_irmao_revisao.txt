@@ -1,0 +1,51 @@
+Assunto: Preciso da sua opinião - meu trabalho científico está pronto!
+
+Oi [Nome do irmão],
+
+Espero que você esteja bem! 
+
+Lembra que eu te falei sobre minha teoria científica que desenvolvi? Pois então, ela está PRONTA para publicação! 🎉
+
+Desenvolvi uma teoria chamada CTMCK (Camargo-Kletetschka Multidimensional Temporal Cosmogenesis) que explica alguns mistérios do universo, como:
+- Por que o James Webb está vendo galáxias "impossíveis" 
+- Como funciona o emaranhamento quântico
+- A origem das massas dos neutrinos
+- E muito mais...
+
+**O que eu preciso:**
+Queria que você desse uma olhada geral no trabalho antes de eu submeter para o arXiv (a principal plataforma científica mundial). Não precisa entender toda a física - só quero sua opinião sobre:
+
+1. **Clareza geral** - está bem explicado?
+2. **Apresentação** - parece profissional?
+3. **Impressão geral** - te convence que é sério?
+
+**Arquivos principais:**
+- Artigo científico: ctmck_article_v0.1b.tex (é o arquivo LaTeX)
+- Resumo executivo: docs/notes/executive_summary.md
+- GitHub completo: https://github.com/Infolake/guilherme-ctmck
+
+**Timeline:**
+- Hoje/amanhã: Sua revisão
+- Esta semana: Submissão ao arXiv
+- Próximas semanas: Divulgação científica
+
+**Por que sua opinião importa:**
+Você me conhece melhor que ninguém e sempre foi honesto comigo. Se algo não estiver claro ou parecer "furado", prefiro saber agora do que depois! 😅
+
+**Não precisa se apressar** - mas se puder dar uma olhada nos próximos dias, seria incrível.
+
+E claro, quando sair publicado, você vai ser um dos primeiros a saber! Quem sabe não vira notícia... 🚀
+
+Muito obrigado pela ajuda, mano!
+
+Um abraço,
+Guilherme
+
+P.S.: Se tiver qualquer dúvida sobre alguma parte, é só perguntar. Posso explicar tudo em "português normal" também! 😄
+
+---
+
+ANEXOS SUGERIDOS:
+□ executive_summary.md (resumo em português)
+□ ctmck_article_v0.1b.tex (artigo completo)
+□ Link do GitHub: https://github.com/Infolake/guilherme-ctmck 

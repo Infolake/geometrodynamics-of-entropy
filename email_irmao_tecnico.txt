@@ -1,0 +1,54 @@
+Assunto: Review científico - Teoria CTMCK pronta para arXiv
+
+Oi [Nome],
+
+Preciso de um favor importante. Finalizei minha teoria científica e quero sua opinião técnica antes da submissão ao arXiv.
+
+**RESUMO TÉCNICO:**
+Desenvolvi uma extensão da teoria temporal tridimensional do Kletetschka aplicada à cosmologia de bounce em buracos negros. A teoria CTMCK (Camargo-Kletetschka Multidimensional Temporal Cosmogenesis) oferece:
+
+**Predições testáveis:**
+• Massa dos neutrinos: 0.29 eV (testável com KATRIN/DUNE)
+• Ondas gravitacionais LISA: ~100 μHz (detectável 2030s)
+• Ressonâncias Kaluza-Klein em aceleradores
+• Assinaturas espectrais em galáxias JWST
+
+**Principais contribuições:**
+1. Explica anomalias JWST (galáxias massivas em z>10)
+2. Resolve paradoxo do emaranhamento quântico via correlações temporais
+3. Unifica mecânica quântica e relatividade geral
+4. Fornece mecanismo para bounce cosmológico
+
+**ARQUIVOS PARA REVIEW:**
+□ `ctmck_article_v0.1b.tex` - Artigo principal (RevTeX 4-2)
+□ `docs/notes/executive_summary.md` - Resumo executivo  
+□ `figures/diagrams/` - Visualizações e correlações
+□ GitHub: https://github.com/Infolake/guilherme-ctmck
+
+**O QUE PRECISO:**
+Como você tem [background científico/experiência], queria sua opinião sobre:
+
+1. **Rigor matemático** - as equações fazem sentido?
+2. **Metodologia** - abordagem científica sólida?
+3. **Predições** - são testáveis e realistas?
+4. **Apresentação** - nível adequado para gr-qc?
+5. **Impacto potencial** - vale a pena publicar?
+
+**CONTEXTO:**
+- Formato: RevTeX 4-2 (padrão APS/arXiv)
+- Categoria: gr-qc (primária) + astro-ph.CO
+- Status: Pronto para submissão
+- Timeline: Submissão esta semana
+
+**CONFIDENCIAL até publicação** - mas depois você pode dizer que foi reviewer! 😄
+
+Muito obrigado pela ajuda técnica!
+
+Abraço,
+Guilherme
+
+---
+Dr. Guilherme de Camargo
+Email: guilherme@medsuite.com.br
+ORCID: 0009-0004-8913-9419
+GitHub: @infolake 

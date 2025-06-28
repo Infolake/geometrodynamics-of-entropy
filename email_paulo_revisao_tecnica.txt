@@ -1,0 +1,83 @@
+Assunto: Peer Review Request - CTMCK Theory (arXiv submission ready)
+
+Caro Paulo,
+
+Espero que esteja bem!
+
+Finalizei minha teoria CTMCK (Camargo-Kletetschka Multidimensional Temporal Cosmogenesis) e ela está pronta para submissão ao arXiv. Como você é físico e meu irmão, gostaria muito da sua opinião técnica antes de tornar público.
+
+## RESUMO TÉCNICO
+
+**Framework Teórico:**
+- Extensão da teoria 3D-time de Kletetschka para cosmologia bounce
+- Geometria Einstein-Cartan com três dimensões temporais: t₁, t₂, t₃
+- Bounce universe inside black hole com predições observacionais
+
+**Principais Resultados:**
+1. **Neutrino Mass**: m_ν ≈ 0.29 eV (testável com KATRIN/Euclid)
+2. **LISA Signals**: f_bounce ~ 100 μHz (detectável 2030s)
+3. **JWST Anomalies**: Explica galáxias massivas em z > 10
+4. **Quantum Entanglement**: Mecanismo via correlações temporais
+
+**Equações Centrais:**
+- Bounce condition: ρ_bounce = (c⁷/G²ℏ) ∏(1/τᵢ)
+- Kaluza-Klein resonances: E = √(m²c⁴ + Σ(nᵢℏc/τᵢ)²)
+- Temporal metric: ds² = -c²dt₁² + dt₂² + dt₃² + spatial terms
+
+## REVISÃO SOLICITADA
+
+**Aspectos Técnicos:**
+- [ ] Consistência matemática das equações
+- [ ] Viabilidade das predições numéricas  
+- [ ] Solidez do framework teórico
+- [ ] Comparação com literatura (Einstein-Cartan, LQC)
+
+**Aspectos de Apresentação:**
+- [ ] Clareza da exposição científica
+- [ ] Adequação para arXiv gr-qc
+- [ ] Qualidade das referências
+- [ ] Estrutura do manuscript
+
+**Red Flags Potenciais:**
+- Algo que pareça especulativo demais?
+- Predições irrealistas?
+- Gaps na fundamentação teórica?
+- Problemas de dimensional analysis?
+
+## ARQUIVOS PARA REVISÃO
+
+**Principal**: `ctmck_article_v0.1b.tex` (RevTeX 4-2, pronto para arXiv)
+**GitHub**: https://github.com/Infolake/guilherme-ctmck
+**Executive Summary**: `docs/notes/executive_summary.md`
+**Data**: Análise estelar-temporal em `data/processed/`
+
+## TIMELINE
+
+- **Sua revisão**: Próximos 3-5 dias (sem pressa!)
+- **arXiv submission**: Após seus comentários
+- **Categoria**: gr-qc (primary) + astro-ph.CO (secondary)
+- **Follow-up**: Journal submission (PRD/CQG?)
+
+## POR QUE SUA OPINIÃO É CRUCIAL
+
+1. **Expertise técnica**: Você conhece os padrões da física teórica
+2. **Perspectiva externa**: Pode ver gaps que eu não vejo
+3. **Experiência acadêmica**: Sabe o que funciona em peer review
+4. **Confiança**: Vai ser honesto sobre pontos fracos
+
+**Pergunta específica**: Na sua opinião, isso tem potencial para passar no peer review de um journal sério? Ou melhor começar como preprint e iterar?
+
+Muito obrigado pela ajuda, Paulo! Sei que seu tempo é valioso, mas sua opinião vai fazer toda diferença na qualidade final.
+
+Um abraço,
+Guilherme
+
+P.S.: Se preferir, posso explicar qualquer seção específica por telefone/vídeo. E claro, quando sair publicado, você será co-credited pelos insights! 🚀
+
+---
+
+**ANEXOS:**
+□ ctmck_article_v0.1b.tex (manuscript completo)
+□ executive_summary.md (overview em português)  
+□ stellar_temporal_correlations.csv (dados da análise)
+□ GitHub repository link 
