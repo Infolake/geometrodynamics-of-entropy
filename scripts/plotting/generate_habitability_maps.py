@@ -90,30 +90,30 @@ def generate_2d_habitability_map():
     output_dir = create_output_directory()
     output_path = os.path.join(output_dir, 'habitability_map_2d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
-    print(f"✅ Mapa 2D salvo em: {output_path}")
+    print(f"✅ 2D Map saved at: {output_path}")
     
     plt.close()
 
 def main():
-    """Função principal"""
+    """Main function"""
     print("=" * 60)
-    print("Gerando Mapas de Habitabilidade Temporal CTMCK")
+    print("Generating CTMCK Temporal Habitability Maps")
     print("=" * 60)
     
     try:
-        # Gerar ambos os mapas
+        # Generate both maps
         generate_3d_habitability_map()
         generate_2d_habitability_map()
         
         print("=" * 60)
-        print("✅ Ambas as imagens foram geradas com sucesso!")
-        print("📁 Localização: figures/diagrams/")
+        print("✅ Both images generated successfully!")
+        print("📁 Location: figures/diagrams/")
         print("   - habitability_map_3d.png")
         print("   - habitability_map_2d.png")
         print("=" * 60)
         
     except Exception as e:
-        print(f"❌ Erro ao gerar imagens: {e}")
+        print(f"❌ Error generating images: {e}")
 
 if __name__ == "__main__":
     main() 

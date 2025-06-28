@@ -1,30 +1,30 @@
 # 💻 CTMCK Scripts
 
-Scripts para análise, simulação e visualização da teoria **Cosmogênese Temporal Multidimensional Camargo-Kletetschka**.
+Scripts for analysis, simulation and visualization of **Camargo-Kletetschka Multidimensional Temporal Cosmogenesis** theory.
 
-## 📁 Estrutura
+## 📁 Structure
 
 ### 📊 `analysis/`
-Scripts de análise teórica e cálculos
-- **`ctmck_analysis.py`** - Análise principal da teoria CTMCK
+Theoretical analysis and calculation scripts
+- **`ctmck_analysis.py`** - Main CTMCK theory analysis
 
 ### 📈 `plotting/`  
-Scripts de visualização e gráficos
-- **`ctmck_plots.py`** - Geração de plots e visualizações
+Visualization and plotting scripts
+- **`ctmck_plots.py`** - Plot and visualization generation
 
 ### 🔬 `simulations/`
-Simulações numéricas
-- **`ctmck_simulations.py`** - Simulações numéricas completas
+Numerical simulations
+- **`ctmck_simulations.py`** - Complete numerical simulations
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-### Análise Principal
+### Main Analysis
 ```bash
 cd scripts/analysis
 python ctmck_analysis.py
 ```
 
-### Gerar Visualizações
+### Generate Visualizations
 ```bash
 cd scripts/plotting
 python ctmck_plots.py
@@ -50,7 +50,7 @@ pip install numpy matplotlib scipy seaborn pandas
 - ✅ Predições de massas de neutrinos (Σmν = 0.29 eV)
 - ✅ Frequência de ondas torsionais LISA
 - ✅ Ressonâncias Kaluza-Klein TeV
-- ✅ Análise de formação galáctica JWST
+- ✅ JWST galaxy formation analysis
 - ✅ Bias de rotação de Shamir
 
 ### `ctmck_plots.py`
@@ -93,9 +93,9 @@ Edite os parâmetros nos scripts para:
 - Ajustar constantes físicas
 - Modificar intervalos de simulação
 - Personalizar visualizações
-- Adicionar novas análises
+- Add new analyses
 
 ---
 
-*Autor: Guilherme de Camargo*  
+*Author: Guilherme de Camargo*  
 *Data: 26/01/2025* 

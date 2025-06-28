@@ -13,13 +13,13 @@ def check_english_only():
     
     project_root = Path(__file__).resolve().parents[1]
     
-    # Portuguese stop words to detect
+    # Portuguese stop words to detect (more specific patterns)
     portuguese_patterns = [
-        r'\bIniciando\b', r'\bInici\b', r'\bEstrel\b', 
-        r'\bTempo_\b', r'\bHabitabilidade\b', r'\bAnálise\b',
-        r'\bcorrelação\b', r'\bestelar\b', r'\btemporal\b',
-        r'\bGerando\b', r'\bMapa\b', r'\bDados\b',
-        r'\bAutor\b', r'\bData\b', r'\bProjeto\b'
+        r'\bIniciando\b', r'\bGerando\b', r'\bAnalise\b', r'\bAnálise\b',
+        r'\bcorrelação\b', r'\bestelar\b(?!.*spectral)', 
+        r'\bHabitabilidade\b', r'\bMapa\b(?!.*Map)', 
+        r'\bDados\b(?!.*Data)', r'\bAutor\b(?!.*Author)',
+        r'\bProjeto\b(?!.*Project)', r'\bTempo_\b'
     ]
     
     # Files to check

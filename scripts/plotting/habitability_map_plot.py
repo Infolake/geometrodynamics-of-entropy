@@ -6,7 +6,7 @@ import os
 # --- Funções de Geração de Gráficos ---
 
 def generate_3d_habitability_map():
-    """Gera e salva o Mapa de Habitabilidade Temporal em 3D."""
+    """Generate and save 3D Temporal Habitability Map."""
     # Criação dos eixos t1, t2, t3
     t1 = np.linspace(0, 1, 30)
     t2 = np.linspace(0, 1, 30)
@@ -52,12 +52,12 @@ def generate_3d_habitability_map():
     plt.show()
 
 def generate_2d_habitability_map():
-    """Gera e salva o Mapa de Habitabilidade Temporal em 2D."""
+    """Generate and save 2D Temporal Habitability Map."""
     t1 = np.linspace(0, 1, 100)
     t2 = np.linspace(0, 1, 100)
     t1_grid, t2_grid = np.meshgrid(t1, t2)
 
-    # Função de complexidade/habitabilidade em 2D
+    # 2D complexity/habitability function
     def habitability(t1, t2):
         return np.sin(t1 * np.pi) * np.exp(-((t2 - 0.5)**2) * 10)
 
@@ -98,7 +98,7 @@ def generate_2d_habitability_map():
     plt.show()
 
 if __name__ == '__main__':
-    print("Gerando Mapas de Habitabilidade Temporal...")
+    print("Generating Temporal Habitability Maps...")
     generate_3d_habitability_map()
     generate_2d_habitability_map()
     print("Geração concluída.") 

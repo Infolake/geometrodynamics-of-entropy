@@ -1,23 +1,23 @@
-# Síntese: Correlação entre Tipos Espectrais Estelares e Dimensões Temporais CTMCK
+# Synthesis: Correlation between Stellar Spectral Types and CTMCK Temporal Dimensions
 
-**Autor:** Guilherme de Camargo  
-**Data:** 26 de Janeiro de 2025  
-**Teoria:** Cosmogênese Temporal Multidimensional de Kletetschka (CTMCK)
+**Author:** Guilherme de Camargo  
+**Date:** January 26, 2025  
+**Theory:** Kletetschka Multidimensional Temporal Cosmogenesis (CTMCK)
 
-## Resumo Executivo
+## Executive Summary
 
-Esta análise estabelece uma correlação quantitativa entre os tipos espectrais estelares (O, B, A, F, G, K, M) e as três dimensões temporais propostas pela teoria CTMCK:
+This analysis establishes a quantitative correlation between stellar spectral types (O, B, A, F, G, K, M) and the three temporal dimensions proposed by CTMCK theory:
 
-- **t₁ (Tempo Quântico)**: Intensidade dos processos nucleares internos
-- **t₂ (Tempo Relacional)**: Estabilidade evolutiva e interações sistêmicas  
-- **t₃ (Tempo Cosmológico)**: Longevidade e escala temporal cosmológica
+- **t₁ (Quantum Time)**: Intensity of internal nuclear processes
+- **t₂ (Relational Time)**: Evolutionary stability and systemic interactions  
+- **t₃ (Cosmological Time)**: Longevity and cosmological time scale
 
-## Principais Descobertas
+## Key Findings
 
-### 1. Ranking de Habitabilidade Temporal CTMCK
+### 1. CTMCK Temporal Habitability Ranking
 
-| Posição | Tipo Estelar | Índice Habitabilidade | Características CTMCK |
-|---------|---------------|------------------------|----------------------|
+| Position | Stellar Type | Habitability Index | CTMCK Characteristics |
+|----------|--------------|-------------------|----------------------|
 | #1 | **M** | 1.0000 | t₁=0.000, t₂=1.000, t₃=1.000 |
 | #2 | **K** | 0.2230 | t₁=0.000, t₂=0.117, t₃=0.764 |
 | #3 | **G** | 0.1111 | t₁=0.000, t₂=0.057, t₃=0.638 |
@@ -26,7 +26,7 @@ Esta análise estabelece uma correlação quantitativa entre os tipos espectrais
 | #6 | **B** | 0.0003 | t₁=0.015, t₂=0.004, t₃=0.095 |
 | #7 | **O** | 0.0000 | t₁=1.000, t₂=0.003, t₃=0.000 |
 
-### 2. Correlações Fundamentais CTMCK
+### 2. Fundamental CTMCK Correlations
 
 #### **Estrelas Tipo O/B - Regime de Alta Energia**
 - **t₁ alto**: Processos quânticos extremamente intensos
