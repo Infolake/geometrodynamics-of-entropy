@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Geração dos Mapas de Habitabilidade Temporal CTMCK
-Autor: Guilherme de Camargo
-Data: 2025-01-26
+CTMCK Temporal Habitability Maps Generation
+Author: Guilherme de Camargo
+Date: 2025-01-26
 """
 
 import matplotlib.pyplot as plt
@@ -11,34 +11,34 @@ import numpy as np
 import os
 
 def create_output_directory():
-    """Cria o diretório de saída se não existir"""
+    """Create output directory if it doesn't exist"""
     output_dir = '../../figures/diagrams'
     os.makedirs(output_dir, exist_ok=True)
     return output_dir
 
 def generate_3d_habitability_map():
-    """Gera o Mapa de Habitabilidade Temporal em 3D"""
-    print("Gerando Mapa 3D de Habitabilidade Temporal...")
+    """Generate 3D Temporal Habitability Map"""
+    print("Generating 3D Temporal Habitability Map...")
     
-    # Criação dos eixos t1, t2, t3
+    # Create axes t1, t2, t3
     t1 = np.linspace(0, 1, 30)
     t2 = np.linspace(0, 1, 30)
     t3 = np.linspace(0, 1, 30)
     t1_grid, t2_grid, t3_grid = np.meshgrid(t1, t2, t3)
 
-    # Função que representa complexidade emergente como uma função das três dimensões temporais
+    # Function representing emergent complexity as a function of three temporal dimensions
     def complexity(t1, t2, t3):
         return np.exp(-((t1 - 0.4)**2 + (t2 - 0.5)**2 + (t3 - 0.6)**2) * 30)
 
-    # Calcula a complexidade em cada ponto
+    # Calculate complexity at each point
     complexity_vals = complexity(t1_grid, t2_grid, t3_grid)
 
-    # Seleciona pontos com complexidade acima de um limiar
+    # Select points with complexity above threshold
     threshold = 0.7
     x, y, z = t1_grid[complexity_vals > threshold], t2_grid[complexity_vals > threshold], t3_grid[complexity_vals > threshold]
     colors = complexity_vals[complexity_vals > threshold]
 
-    # Criar o gráfico 3D
+    # Create 3D plot
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection='3d')
     scatter = ax.scatter(x, y, z, c=colors, cmap='plasma', s=20)
@@ -50,29 +50,29 @@ def generate_3d_habitability_map():
 
     plt.tight_layout()
     
-    # Salvar
+    # Save
     output_dir = create_output_directory()
     output_path = os.path.join(output_dir, 'habitability_map_3d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
-    print(f"✅ Mapa 3D salvo em: {output_path}")
+    print(f"✅ 3D Map saved at: {output_path}")
     
     plt.close()
 
 def generate_2d_habitability_map():
-    """Gera o Mapa de Habitabilidade Temporal em 2D"""
-    print("Gerando Mapa 2D de Habitabilidade Temporal...")
+    """Generate 2D Temporal Habitability Map"""
+    print("Generating 2D Temporal Habitability Map...")
     
-    # Eixos de tempo representando as três dimensões temporais
+    # Time axes representing the three temporal dimensions
     t1 = np.linspace(0.01, 1, 100)
     t2 = np.linspace(0.01, 1, 100)
     t3 = np.linspace(0.01, 1, 100)
     T1, T2 = np.meshgrid(t1, t2)
 
-    # Definimos a função de "complexidade emergente" como exemplo didático
-    # (máxima quando t2 e t3 são moderados, t1 baixo)
+    # Define "emergent complexity" function as didactic example
+    # (maximum when t2 and t3 are moderate, t1 low)
     complexity = np.exp(-10 * (T1 - 0.3)**2) * np.exp(-10 * (T2 - 0.6)**2)
 
-    # Criar o gráfico de contorno
+    # Create contour plot
     plt.figure(figsize=(8, 6))
     cp = plt.contourf(T1, T2, complexity, levels=20, cmap='viridis')
     plt.colorbar(cp, label='Emergent Complexity Index')

@@ -192,7 +192,7 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-# CTMCK specific - arquivos temporários e de desenvolvimento
+# CTMCK specific - temporary and development files
 email_*.txt
 checklist_*.md
 prepare_*.sh

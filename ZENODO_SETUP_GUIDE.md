@@ -1,33 +1,33 @@
 # Zenodo Setup Guide - CTMCK Theory
 
-## 🎯 Objetivo
-Obter DOI permanente para o repositório CTMCK via Zenodo, permitindo citação acadêmica adequada.
+## 🎯 Objective
+Obtain permanent DOI for the CTMCK repository via Zenodo, enabling proper academic citation.
 
-## ✅ Pré-requisitos (já atendidos)
-- [x] Repositório público no GitHub: `https://github.com/Infolake/guilherme-ctmck`
-- [x] Release v1.0.0 criada
-- [x] Conteúdo científico organizado
+## ✅ Prerequisites (already met)
+- [x] Public GitHub repository: `https://github.com/Infolake/guilherme-ctmck`
+- [x] Release v1.0.0 created
+- [x] Scientific content organized
 
-## 📋 Passo-a-Passo
+## 📋 Step-by-Step
 
-### 1. Acesse o Zenodo
+### 1. Access Zenodo
 - URL: https://zenodo.org/
-- Clique em **"Log in"** (canto superior direito)
-- Escolha **"Log in with GitHub"**
-- Use suas credenciais do GitHub (`infolake`)
+- Click **"Log in"** (upper right corner)
+- Choose **"Log in with GitHub"**
+- Use your GitHub credentials (`infolake`)
 
-### 2. Conecte o Repositório
-- Após login, vá para: https://zenodo.org/account/settings/github/
-- Procure por `guilherme-ctmck` na lista
-- **Toggle ON** o switch ao lado do repositório
-- O repositório agora está conectado ao Zenodo
+### 2. Connect Repository
+- After login, go to: https://zenodo.org/account/settings/github/
+- Search for `guilherme-ctmck` in the list
+- **Toggle ON** the switch next to the repository
+- Repository is now connected to Zenodo
 
-### 3. Crie um Release no GitHub (já feito)
-- ✅ Tag v1.0.0 já criada e enviada
-- O Zenodo detectará automaticamente novos releases
+### 3. Create GitHub Release (already done)
+- ✅ Tag v1.0.0 already created and pushed
+- Zenodo will automatically detect new releases
 
-### 4. Configure Metadados no Zenodo
-Quando o release for detectado, configure:
+### 4. Configure Metadata in Zenodo
+When the release is detected, configure:
 
 **Basic Information:**
 - **Title**: "CTMCK Theory - Three-Temporal Bounce Cosmology"
