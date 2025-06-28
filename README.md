@@ -51,11 +51,13 @@ Our framework reveals optimal stellar conditions for complexity development:
 ├── docs/                    # Documentation and analysis notes
 ├── scripts/                 # Analysis and plotting codes
 │   ├── analysis/           # Stellar temporal correlation analysis
-│   └── plotting/           # Visualization generation
+│   ├── plotting/           # Visualization generation
+│   └── simulations/        # Numerical simulations
 ├── figures/                # Generated plots and diagrams
 ├── data/                   # Processed datasets
-├── drafts/                 # Manuscript drafts
-└── ctmck_article_v0.1b.tex # Main publication manuscript
+├── ctmck_article_v0.1b.tex # Main publication manuscript
+├── references.bib          # Bibliography
+└── CITATION.cff            # Citation metadata
 ```
 
 ## Quick Start

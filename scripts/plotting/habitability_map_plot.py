@@ -32,12 +32,12 @@ def generate_3d_habitability_map():
     ax = fig.add_subplot(111, projection='3d')
     scatter = ax.scatter(x, y, z, c=colors, cmap='plasma', s=25, alpha=0.8)
     
-    ax.set_xlabel('t₁ (Tempo Quântico Local)', fontsize=12)
-    ax.set_ylabel('t₂ (Tempo Relacional Sistêmico)', fontsize=12)
-    ax.set_zlabel('t₃ (Tempo Cosmológico)', fontsize=12)
-    ax.set_title('Mapa de Habitabilidade Temporal Tridimensional', fontsize=16, pad=20)
+    ax.set_xlabel('t₁ (Local Quantum Time)', fontsize=12)
+    ax.set_ylabel('t₂ (Systemic Relational Time)', fontsize=12)
+    ax.set_zlabel('t₃ (Cosmological Time)', fontsize=12)
+    ax.set_title('Three-Dimensional Temporal Habitability Map', fontsize=16, pad=20)
     
-    cbar = fig.colorbar(scatter, ax=ax, label='Nível de Complexidade Emergente', pad=0.1)
+    cbar = fig.colorbar(scatter, ax=ax, label='Emergent Complexity Level', pad=0.1)
     cbar.ax.tick_params(labelsize=10)
     
     # Assegura que o diretório de destino existe
@@ -66,11 +66,11 @@ def generate_2d_habitability_map():
     # Criar o gráfico 2D
     fig, ax = plt.subplots(figsize=(12, 9))
     contour = ax.contourf(t1_grid, t2_grid, hab_vals, levels=50, cmap='viridis', alpha=0.8)
-    fig.colorbar(contour, ax=ax, label='Índice de Habitabilidade')
+    fig.colorbar(contour, ax=ax, label='Habitability Index')
     
-    ax.set_xlabel('t₁ (Tempo Quântico Local)', fontsize=12)
-    ax.set_ylabel('t₂ (Tempo Relacional Sistêmico)', fontsize=12)
-    ax.set_title('Mapa de Habitabilidade Temporal (Plano t₁-t₂)', fontsize=16)
+    ax.set_xlabel('t₁ (Local Quantum Time)', fontsize=12)
+    ax.set_ylabel('t₂ (Systemic Relational Time)', fontsize=12)
+    ax.set_title('Temporal Habitability Map (t₁-t₂ Plane)', fontsize=16)
     
     # Pontos estelares
     stars = {
@@ -83,7 +83,7 @@ def generate_2d_habitability_map():
         ax.plot(t1_pos, t2_pos, 'ro', markersize=10, label=name)
         ax.text(t1_pos + 0.02, t2_pos, name, color='white', fontsize=12, weight='bold')
 
-    ax.legend(title='Tipos Estelares')
+    ax.legend(title='Stellar Types')
     ax.grid(True, linestyle='--', alpha=0.2)
     
     # Assegura que o diretório de destino existe
