@@ -1,33 +1,40 @@
+#!/usr/bin/env python3
+"""
+CTMCK Temporal Habitability Map Plotting
+Author: Guilherme de Camargo
+Date: 2025-01-26
+"""
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import os
 
-# --- Funções de Geração de Gráficos ---
+# --- Plot Generation Functions ---
 
 def generate_3d_habitability_map():
     """Generate and save 3D Temporal Habitability Map."""
-    # Criação dos eixos t1, t2, t3
+    # Create t1, t2, t3 axes
     t1 = np.linspace(0, 1, 30)
     t2 = np.linspace(0, 1, 30)
     t3 = np.linspace(0, 1, 30)
     t1_grid, t2_grid, t3_grid = np.meshgrid(t1, t2, t3)
 
-    # Função que representa complexidade emergente
+    # Function representing emergent complexity
     def complexity(t1, t2, t3):
         return np.exp(-((t1 - 0.4)**2 + (t2 - 0.5)**2 + (t3 - 0.6)**2) * 30)
 
-    # Calcula a complexidade em cada ponto
+    # Calculate complexity at each point
     complexity_vals = complexity(t1_grid, t2_grid, t3_grid)
 
-    # Seleciona pontos com complexidade acima de um limiar
+    # Select points with complexity above threshold
     threshold = 0.7
     x = t1_grid[complexity_vals > threshold]
     y = t2_grid[complexity_vals > threshold]
     z = t3_grid[complexity_vals > threshold]
     colors = complexity_vals[complexity_vals > threshold]
 
-    # Criar o gráfico 3D
+    # Create 3D plot
     fig = plt.figure(figsize=(12, 10))
     ax = fig.add_subplot(111, projection='3d')
     scatter = ax.scatter(x, y, z, c=colors, cmap='plasma', s=25, alpha=0.8)
@@ -40,15 +47,15 @@ def generate_3d_habitability_map():
     cbar = fig.colorbar(scatter, ax=ax, label='Emergent Complexity Level', pad=0.1)
     cbar.ax.tick_params(labelsize=10)
     
-    # Assegura que o diretório de destino existe
+    # Ensure output directory exists
     output_dir = '../../figures/diagrams'
     os.makedirs(output_dir, exist_ok=True)
     
-    # Salva a figura
+    # Save figure
     output_path = os.path.join(output_dir, 'habitability_map_3d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
-    print(f"Figura 3D salva em: {output_path}")
+    print(f"3D figure saved at: {output_path}")
     plt.show()
 
 def generate_2d_habitability_map():
@@ -63,7 +70,7 @@ def generate_2d_habitability_map():
 
     hab_vals = habitability(t1_grid, t2_grid)
 
-    # Criar o gráfico 2D
+    # Create 2D plot
     fig, ax = plt.subplots(figsize=(12, 9))
     contour = ax.contourf(t1_grid, t2_grid, hab_vals, levels=50, cmap='viridis', alpha=0.8)
     fig.colorbar(contour, ax=ax, label='Habitability Index')
@@ -72,11 +79,11 @@ def generate_2d_habitability_map():
     ax.set_ylabel('t₂ (Systemic Relational Time)', fontsize=12)
     ax.set_title('Temporal Habitability Map (t₁-t₂ Plane)', fontsize=16)
     
-    # Pontos estelares
+    # Stellar points
     stars = {
         'O-B': (0.8, 0.8),
-        'G (Sol)': (0.5, 0.5),
-        'M (Anã Vermelha)': (0.2, 0.3)
+        'G (Sun)': (0.5, 0.5),
+        'M (Red Dwarf)': (0.2, 0.3)
     }
     
     for name, (t1_pos, t2_pos) in stars.items():
@@ -86,19 +93,19 @@ def generate_2d_habitability_map():
     ax.legend(title='Stellar Types')
     ax.grid(True, linestyle='--', alpha=0.2)
     
-    # Assegura que o diretório de destino existe
+    # Ensure output directory exists
     output_dir = '../../figures/diagrams'
     os.makedirs(output_dir, exist_ok=True)
     
-    # Salva a figura
+    # Save figure
     output_path = os.path.join(output_dir, 'habitability_map_2d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
-    print(f"Figura 2D salva em: {output_path}")
+    print(f"2D figure saved at: {output_path}")
     plt.show()
 
 if __name__ == '__main__':
     print("Generating Temporal Habitability Maps...")
     generate_3d_habitability_map()
     generate_2d_habitability_map()
-    print("Geração concluída.") 
+    print("Generation completed.") 

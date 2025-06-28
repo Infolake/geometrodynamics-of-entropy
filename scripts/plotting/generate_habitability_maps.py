@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
 CTMCK Temporal Habitability Maps Generation
-Author: Guilherme de Camargo
+Author: Gu    plt.text(0.3, 0.6, 'G (Sun)', color='white')
+    plt.grid(True, linestyle='--', linewidth=0.5)
+    plt.tight_layout()
+    
+    # Save
+    output_dir = create_output_directory()e de Camargo
 Date: 2025-01-26
 """
 
