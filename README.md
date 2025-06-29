@@ -43,6 +43,11 @@ guilherme-ctmck/
 
 ## Quick Start
 
+> **Note on large files**  
+> All high-resolution figures (`*.png`) and the compiled manuscript (`*.pdf`)
+> are tracked via **Git LFS**.  
+> Make sure you have LFS enabled (`git lfs install`) before cloning.
+
 ### Building the Article
 
 ```bash
@@ -132,12 +137,6 @@ Emergency physician and independent researcher developing unified theories of fu
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-**Guilherme de Camargo**  
-📧 [guilherme@medsuite.com.br](mailto:guilherme@medsuite.com.br)  
-🏛️ Independent Researcher, Londrina, PR, Brazil
 
 ---
 
