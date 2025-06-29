@@ -4,9 +4,9 @@ type: software
 title: "CTMCK Theory: Camargo-Kletetschka Multidimensional Temporal Cosmogenesis"
 version: v0.1
 date-released: 2025-01-26
-url: "https://github.com/infolake/guilherme-ctmck"
+url: "https://doi.org/10.5281/zenodo.15765710"
 repository-code: "https://github.com/infolake/guilherme-ctmck"
-# doi: 10.5281/zenodo.PENDING  # Will be filled after Zenodo creates DOI
+doi: 10.5281/zenodo.15765710
 authors:
   - family-names: "de Camargo"
     given-names: "Guilherme"
