@@ -1,40 +1,33 @@
-#!/usr/bin/env python3
-"""
-CTMCK Temporal Habitability Map Plotting
-Author: Guilherme de Camargo
-Date: 2025-01-26
-"""
-
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import os
 
-# --- Plot Generation Functions ---
+# --- Funções de Geração de Gráficos ---
 
 def generate_3d_habitability_map():
-    """Generate and save 3D Temporal Habitability Map."""
-    # Create t1, t2, t3 axes
+    """Gera e salva o Mapa de Habitabilidade Temporal em 3D."""
+    # Criação dos eixos t1, t2, t3
     t1 = np.linspace(0, 1, 30)
     t2 = np.linspace(0, 1, 30)
     t3 = np.linspace(0, 1, 30)
     t1_grid, t2_grid, t3_grid = np.meshgrid(t1, t2, t3)
 
-    # Function representing emergent complexity
+    # Função que representa complexidade emergente
     def complexity(t1, t2, t3):
         return np.exp(-((t1 - 0.4)**2 + (t2 - 0.5)**2 + (t3 - 0.6)**2) * 30)
 
-    # Calculate complexity at each point
+    # Calcula a complexidade em cada ponto
     complexity_vals = complexity(t1_grid, t2_grid, t3_grid)
 
-    # Select points with complexity above threshold
+    # Seleciona pontos com complexidade acima de um limiar
     threshold = 0.7
     x = t1_grid[complexity_vals > threshold]
     y = t2_grid[complexity_vals > threshold]
     z = t3_grid[complexity_vals > threshold]
     colors = complexity_vals[complexity_vals > threshold]
 
-    # Create 3D plot
+    # Criar o gráfico 3D
     fig = plt.figure(figsize=(12, 10))
     ax = fig.add_subplot(111, projection='3d')
     scatter = ax.scatter(x, y, z, c=colors, cmap='plasma', s=25, alpha=0.8)
@@ -47,30 +40,30 @@ def generate_3d_habitability_map():
     cbar = fig.colorbar(scatter, ax=ax, label='Emergent Complexity Level', pad=0.1)
     cbar.ax.tick_params(labelsize=10)
     
-    # Ensure output directory exists
+    # Assegura que o diretório de destino existe
     output_dir = '../../figures/diagrams'
     os.makedirs(output_dir, exist_ok=True)
     
-    # Save figure
+    # Salva a figura
     output_path = os.path.join(output_dir, 'habitability_map_3d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
-    print(f"3D figure saved at: {output_path}")
+    print(f"Figura 3D salva em: {output_path}")
     plt.show()
 
 def generate_2d_habitability_map():
-    """Generate and save 2D Temporal Habitability Map."""
+    """Gera e salva o Mapa de Habitabilidade Temporal em 2D."""
     t1 = np.linspace(0, 1, 100)
     t2 = np.linspace(0, 1, 100)
     t1_grid, t2_grid = np.meshgrid(t1, t2)
 
-    # 2D complexity/habitability function
+    # Função de complexidade/habitabilidade em 2D
     def habitability(t1, t2):
         return np.sin(t1 * np.pi) * np.exp(-((t2 - 0.5)**2) * 10)
 
     hab_vals = habitability(t1_grid, t2_grid)
 
-    # Create 2D plot
+    # Criar o gráfico 2D
     fig, ax = plt.subplots(figsize=(12, 9))
     contour = ax.contourf(t1_grid, t2_grid, hab_vals, levels=50, cmap='viridis', alpha=0.8)
     fig.colorbar(contour, ax=ax, label='Habitability Index')
@@ -79,11 +72,11 @@ def generate_2d_habitability_map():
     ax.set_ylabel('t₂ (Systemic Relational Time)', fontsize=12)
     ax.set_title('Temporal Habitability Map (t₁-t₂ Plane)', fontsize=16)
     
-    # Stellar points
+    # Pontos estelares
     stars = {
         'O-B': (0.8, 0.8),
-        'G (Sun)': (0.5, 0.5),
-        'M (Red Dwarf)': (0.2, 0.3)
+        'G (Sol)': (0.5, 0.5),
+        'M (Anã Vermelha)': (0.2, 0.3)
     }
     
     for name, (t1_pos, t2_pos) in stars.items():
@@ -93,19 +86,19 @@ def generate_2d_habitability_map():
     ax.legend(title='Stellar Types')
     ax.grid(True, linestyle='--', alpha=0.2)
     
-    # Ensure output directory exists
+    # Assegura que o diretório de destino existe
     output_dir = '../../figures/diagrams'
     os.makedirs(output_dir, exist_ok=True)
     
-    # Save figure
+    # Salva a figura
     output_path = os.path.join(output_dir, 'habitability_map_2d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     
-    print(f"2D figure saved at: {output_path}")
+    print(f"Figura 2D salva em: {output_path}")
     plt.show()
 
 if __name__ == '__main__':
-    print("Generating Temporal Habitability Maps...")
+    print("Gerando Mapas de Habitabilidade Temporal...")
     generate_3d_habitability_map()
     generate_2d_habitability_map()
-    print("Generation completed.") 
+    print("Geração concluída.") 

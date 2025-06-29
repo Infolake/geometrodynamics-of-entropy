@@ -1,12 +1,7 @@
 #!/usr/bin/env python3
 """
 CTMCK Temporal Habitability Maps Generation
-Author: Gu    plt.text(0.3, 0.6, 'G (Sun)', color='white')
-    plt.grid(True, linestyle='--', linewidth=0.5)
-    plt.tight_layout()
-    
-    # Save
-    output_dir = create_output_directory()e de Camargo
+Author: Guilherme de Camargo
 Date: 2025-01-26
 """
 
@@ -95,30 +90,30 @@ def generate_2d_habitability_map():
     output_dir = create_output_directory()
     output_path = os.path.join(output_dir, 'habitability_map_2d.png')
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
-    print(f"✅ 2D Map saved at: {output_path}")
+    print(f"✅ Mapa 2D salvo em: {output_path}")
     
     plt.close()
 
 def main():
-    """Main function"""
+    """Função principal"""
     print("=" * 60)
-    print("Generating CTMCK Temporal Habitability Maps")
+    print("Gerando Mapas de Habitabilidade Temporal CTMCK")
     print("=" * 60)
     
     try:
-        # Generate both maps
+        # Gerar ambos os mapas
         generate_3d_habitability_map()
         generate_2d_habitability_map()
         
         print("=" * 60)
-        print("✅ Both images generated successfully!")
-        print("📁 Location: figures/diagrams/")
+        print("✅ Ambas as imagens foram geradas com sucesso!")
+        print("📁 Localização: figures/diagrams/")
         print("   - habitability_map_3d.png")
         print("   - habitability_map_2d.png")
         print("=" * 60)
         
     except Exception as e:
-        print(f"❌ Error generating images: {e}")
+        print(f"❌ Erro ao gerar imagens: {e}")
 
 if __name__ == "__main__":
     main() 

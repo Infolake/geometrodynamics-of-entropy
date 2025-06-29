@@ -1,101 +1,101 @@
 # 💻 CTMCK Scripts
 
-Scripts for analysis, simulation and visualization of **Camargo-Kletetschka Multidimensional Temporal Cosmogenesis** theory.
+Scripts para análise, simulação e visualização da teoria **Cosmogênese Temporal Multidimensional Camargo-Kletetschka**.
 
-## 📁 Structure
+## 📁 Estrutura
 
 ### 📊 `analysis/`
-Theoretical analysis and calculation scripts
-- **`ctmck_analysis.py`** - Main CTMCK theory analysis
+Scripts de análise teórica e cálculos
+- **`ctmck_analysis.py`** - Análise principal da teoria CTMCK
 
 ### 📈 `plotting/`  
-Visualization and plotting scripts
-- **`ctmck_plots.py`** - Plot and visualization generation
+Scripts de visualização e gráficos
+- **`ctmck_plots.py`** - Geração de plots e visualizações
 
 ### 🔬 `simulations/`
-Numerical simulations
-- **`ctmck_simulations.py`** - Complete numerical simulations
+Simulações numéricas
+- **`ctmck_simulations.py`** - Simulações numéricas completas
 
-## 🚀 How to Use
+## 🚀 Como Usar
 
-### Main Analysis
+### Análise Principal
 ```bash
 cd scripts/analysis
 python ctmck_analysis.py
 ```
 
-### Generate Visualizations
+### Gerar Visualizações
 ```bash
 cd scripts/plotting
 python ctmck_plots.py
 ```
 
-### Run Simulations
+### Executar Simulações
 ```bash
 cd scripts/simulations
 python ctmck_simulations.py
 ```
 
-## 📋 Dependencies
+## 📋 Dependências
 
 ```bash
 pip install numpy matplotlib scipy seaborn pandas
 ```
 
-## 🎯 Script Features
+## 🎯 Recursos dos Scripts
 
 ### `ctmck_analysis.py`
-- ✅ Global Schwarzschild parameter calculation
-- ✅ 3-temporal metric
-- ✅ Neutrino mass predictions (Σmν = 0.29 eV)
-- ✅ LISA torsional wave frequency
-- ✅ Kaluza-Klein TeV resonances
-- ✅ JWST galaxy formation analysis
-- ✅ Shamir rotation bias
+- ✅ Cálculo do parâmetro de Schwarzschild global
+- ✅ Métrica 3-temporal
+- ✅ Predições de massas de neutrinos (Σmν = 0.29 eV)
+- ✅ Frequência de ondas torsionais LISA
+- ✅ Ressonâncias Kaluza-Klein TeV
+- ✅ Análise de formação galáctica JWST
+- ✅ Bias de rotação de Shamir
 
 ### `ctmck_plots.py`
-- 📊 3-temporal manifold visualization
-- 📊 Einstein-Cartan bounce dynamics  
-- 📊 JWST galaxy predictions
-- 📊 5 observational signatures
-- 📊 High-quality plots (300 DPI)
+- 📊 Visualização da variedade 3-temporal
+- 📊 Dinâmica do bounce Einstein-Cartan  
+- 📊 Predições para galáxias JWST
+- 📊 5 assinaturas observacionais
+- 📊 Gráficos de alta qualidade (300 DPI)
 
 ### `ctmck_simulations.py`
-- 🔬 Bounce universe simulation
-- 🔬 Galaxy formation with inherited seeds
-- 🔬 CTMCK neutrino oscillations
-- 🔬 LISA band torsional waves
-- 🔬 KK resonances in TeV colliders
-- 🔬 Automatic results saving
+- 🔬 Simulação do universo bounce
+- 🔬 Formação galáctica com sementes herdadas
+- 🔬 Oscilações de neutrinos CTMCK
+- 🔬 Ondas torsionais banda LISA
+- 🔬 Ressonâncias KK em colisores TeV
+- 🔬 Salvamento automático de resultados
 
-## 📈 Generated Outputs
+## 📈 Outputs Gerados
 
-### Figures (`figures/`)
+### Figuras (`figures/`)
 - `ctmck_theory_overview.png`
 - `bounce_dynamics.png`
 - `jwst_predictions.png`
 - `observable_signatures.png`
 
-### Data (`data/simulations/`)
+### Dados (`data/simulations/`)
 - `ctmck_simulation_results.npz`
 
-## 🎯 Testable Predictions
+## 🎯 Predições Testáveis
 
-1. **JWST**: Ultra-massive galaxies at z > 10
-2. **Shamir**: Preferential galactic rotation bias
+1. **JWST**: Galáxias ultra-massivas em z > 10
+2. **Shamir**: Bias de rotação galáctica preferencial
 3. **KATRIN II**: Σmν = 0.29 eV
-4. **LISA**: Torsional waves f ≈ 10⁻² Hz
-5. **Colliders**: KK resonances 2.3, 4.1 TeV
+4. **LISA**: Ondas torsionais f ≈ 10⁻² Hz
+5. **Colisores**: Ressonâncias KK 2.3, 4.1 TeV
 
-## 🔧 Customization
+## 🔧 Personalização
 
-Edit parameters in scripts to:
-- Adjust physical constants
-- Modify simulation ranges
-- Customize visualizations
-- Add new analyses
+Edite os parâmetros nos scripts para:
+- Ajustar constantes físicas
+- Modificar intervalos de simulação
+- Personalizar visualizações
+- Adicionar novas análises
 
 ---
 
-*Author: Guilherme de Camargo*  
-*Date: 26/01/2025* 
+*Autor: Guilherme de Camargo*  
+*Data: 26/01/2025* 
