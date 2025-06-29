@@ -1,8 +1,8 @@
+
 # CTMCK: Observable Signatures of a Three-Temporal Bounce-Universe
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15765710.svg)](https://doi.org/10.5281/zenodo.15765710)
 [![arXiv](https://img.shields.io/badge/arXiv-PENDING-b31b1b.svg)](https://arxiv.org/abs/PENDING)
-[![LaTeX Build](https://github.com/guilherme-ctmck/guilherme-ctmck/actions/workflows/latex-ci.yml/badge.svg)](https://github.com/guilherme-ctmck/guilherme-ctmck/actions/workflows/latex-ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
