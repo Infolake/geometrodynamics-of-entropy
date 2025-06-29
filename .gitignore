@@ -25,6 +25,11 @@
 *.bcf
 *.run.xml
 
+# Build directories
+build_temp/
+build_mono_temp/
+*.temp/
+
 # Backup files
 *~
 *.backup
