@@ -1,0 +1,73 @@
+
+%=================================================================
+%  CTMCK – Observable Signatures of a Three‑Temporal Bounce‑Universe
+%  Version 0.3 – JCAP pre‑submission (professional)
+%=================================================================
+\documentclass[reprint,amsmath,amssymb,aps,prd,nofootinbib,longbibliography]{revtex4-2}
+
+% -------------------- PACKAGES --------------------
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{{figures/}}      % Caminho das imagens
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{color}
+
+% Definir cor personalizada
+\definecolor{RoyalBlue}{RGB}{65,105,225}
+
+% hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,        % referências internas em preto
+    citecolor=RoyalBlue,    % citações em azul discreto
+    urlcolor=RoyalBlue,     % URLs e e-mails em azul discreto
+    pdftitle={Observable Signatures of a Three-Temporal Bounce‑Universe Inside a Black Hole},
+    pdfkeywords={multidimensional time, Einstein–Cartan bounce, cosmological tensions, JWST anomalies, neutrino mass}
+}
+
+\preprint{CTMCK‑v0.3}
+
+\begin{document}
+
+\title{Observable Signatures of a Three‑Temporal Bounce‑Universe Inside a Black Hole}
+
+\author{Guilherme de Camargo}
+\email{guilherme@medsuite.com.br}
+\affiliation{Independent Researcher, Londrina, PR 86010‑260, Brazil}
+\date{\today}
+
+\keywords{multidimensional time, Einstein–Cartan bounce, cosmological tensions, JWST anomalies, neutrino mass}
+\pacs{04.20.Cv, 98.80.Qc, 04.50.Kd, 14.60.Pq}
+
+% -------------------- ABSTRACT --------------------
+\begin{abstract}
+We extend Kletetschka's three‑dimensional‑time framework to a bouncing black‑hole cosmology and show that the resulting \textit{Camargo–Kletetschka Multidimensional Temporal Cosmogenesis} (CTMCK) scenario simultaneously (i) alleviates the persistent $H_0$ and $S_8$ tensions, (ii) accounts for the over‑abundance of ultra‑massive $z>10$ galaxies reported by \textit{JWST}, and (iii) predicts a neutrino‑mass sum $\Sigma m_\nu = 0.29\pm0.05\,$eV compatible with the most recent HiLLiPoP\,+\,DESI bound $\Sigma m_\nu<0.30\,$eV (95\% C.L.). \\[2pt]
+Key falsifiable signatures include a stochastic gravitational‑wave background peaking at $f_b\simeq\SI{100}{\micro\hertz}$—optimally placed for \textsc{LISA}—and a distinctive evolution of the effective dark‑energy equation‑of‑state $w(z)=-1+0.05(1+z)^3$. We present full derivations of (i) the temporal‑radius hierarchy $\tau_1\!:\!\tau_2\!:\!\tau_3 = 1\!:\!4.835\times10^{-3}\!:\!2.875\times10^{-4}$ from charged‑lepton masses, (ii) the Einstein–Cartan bounce density $\rho_{\text{bounce}}=(c^7/G^2\hbar)\,\tau_1^{-1}\tau_2^{-1}\tau_3^{-1}$ and (iii) the gravitational‑wave spectrum $\Omega_{\mathrm{GW}}(f)$. A near‑term experimental roadmap (2025‑2032) is outlined.
+\end{abstract}
+
+\maketitle
+
+% ================== MAIN TEXT =====================
+
+\input{sections/introduction.tex}
+\input{sections/framework.tex}
+\input{sections/bounce.tex}
+\input{sections/tensions.tex}
+\input{sections/predictions.tex}
+\input{sections/roadmap.tex}
+\input{sections/discussion.tex}
+\input{sections/conclusions.tex}
+
+% -------------------- ACKS ------------------------
+\begin{acknowledgments}
+I thank G.~Kletetschka for foundational discussions on three‑dimensional time theory. I am also grateful to the \textit{JWST} collaboration for providing the observational impetus for this work.
+\end{acknowledgments}
+
+% -------------------- BIBLIOGRAPHY ----------------
+\bibliographystyle{apsrev4-2}
+\bibliography{references}
+
+\end{document}
