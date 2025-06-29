@@ -202,6 +202,9 @@ prepare_*.sh
 *_refinements*.md
 ctmck_v0p1_arxiv.zip
 
+# Build directory
+build_temp/
+
 # Arquivos de desenvolvimento que devem ficar locais
 guilherme-ctmck/
 *.zip
