@@ -72,14 +72,14 @@ jupyter notebook notebooks/
 ## 📂 Repository Structure
 
 ```
-goe-v5.0-core/
+geometrodynamics-of-entropy/
 ├── README.md                    # This file
 ├── environment.yml              # Conda environment
-├── goe/                        # Core library
+├── goe/                        # Core GoE library
 │   ├── __init__.py
-│   ├── metric.py               # Camargo metric (EGE-1)
+│   ├── metric.py               # Camargo metric (6D)
 │   ├── fibres.py               # Fibre quantization
-│   └── bounce.py               # Friedmann-Cartan integrator (EGE-7)
+│   └── bounce.py               # Friedmann-Cartan integrator
 ├── notebooks/                  # Scientific notebooks
 │   ├── jwst_pbh_analysis.ipynb # Phase 1: JWST/PBH
 │   ├── sgwb_spectrum.ipynb     # Phase 2: Gravitational waves
