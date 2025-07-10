@@ -1,0 +1,43 @@
+{
+  "timestamp": "2025-07-08T18:03:24.487959Z",
+  "cosmological_params": {
+    "Omega_b": 0.0486,
+    "Omega_c": 0.2589,
+    "Omega_Lambda": 0.6911,
+    "tau": 0.0544,
+    "n_s": 0.9649,
+    "ln10As": 3.044
+  },
+  "goe_params": {
+    "kappa": 1.0,
+    "alpha_torsion": 0.03,
+    "z_bounce": 1000000.0,
+    "delta_bounce": 0.0001
+  },
+  "statistical_analysis": {
+    "goe_model": {
+      "chi_squared": 377660558.6503166,
+      "reduced_chi_squared": 2008832.7587782799,
+      "degrees_of_freedom": 188,
+      "p_value": 0.0,
+      "aic": 377660566.6503166
+    },
+    "lcdm_model": {
+      "chi_squared": 168.92857697162057,
+      "reduced_chi_squared": 0.908218155761401,
+      "degrees_of_freedom": 186,
+      "p_value": 0.8102707678075424,
+      "aic": 180.92857697162057
+    },
+    "comparison": {
+      "delta_aic": 377660385.72173965,
+      "preferred_model": "LCDM",
+      "significance": "Strong"
+    }
+  },
+  "n_datapoints": 192,
+  "l_range": [
+    2,
+    2480
+  ]
+}

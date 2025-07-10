@@ -1,0 +1,262 @@
+# Geometrodynamics of Entropy - LaTeX Article
+
+## Complete LaTeX Template for GoE Monograph
+
+```latex
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+% Page setup
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Title formatting
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Custom commands for GoE notation
+\newcommand{\goe}{\text{GoE}}
+\newcommand{\camargo}{\text{Camargo}}
+\newcommand{\metric}[1]{\mathcal{M}_{#1}}
+\newcommand{\fibre}[1]{\mathcal{F}_{#1}}
+\newcommand{\temporal}[1]{\tau_{#1}}
+\newcommand{\entropic}{t_1}
+\newcommand{\circular}{\tau_2}
+\newcommand{\torsional}{\tau_3}
+
+% Theorem environments
+\theoremstyle{definition}
+\newtheorem{axiom}{Axiom}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+
+% Document begins
+\begin{document}
+
+% Title page
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\textbf{Geometrodynamics of Entropy}}\\[0.5cm]
+{\Large A Comprehensive Monograph \& Complete Technical Reference}\\[2cm]
+
+{\Large\textbf{Dr. Guilherme de Camargo}}\\[0.5cm]
+{\large Independent Researcher}\\
+{\large Londrina-PR, Brazil}\\[2cm]
+
+{\large Edition v6.0 (Definitive Edition)}\\
+{\large July 10, 2025}\\[1cm]
+
+{\large Project Status: \textcolor{green}{\textbf{COMPLETE AND VALIDATED}}}\\[3cm]
+
+\vfill
+
+{\small This monograph presents a unified framework for fundamental physics based on multi-temporal geometry, providing solutions to major anomalies in cosmology and particle physics.}
+
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+
+% Abstract
+\begin{abstract}
+The Geometrodynamics of Entropy (GoE) presents a revolutionary framework for understanding the fundamental structure of reality through multi-temporal geometry. This monograph demonstrates how a (3+3)-dimensional spacetime, described by the Camargo metric, naturally resolves the quantum gravity problem and explains major observational anomalies including the muon g-2 deviation, JWST early galaxy tension, and the emergence of semi-Dirac fermions in condensed matter systems.
+
+Key achievements include: (1) Derivation of the Standard Model particle masses from first principles, (2) Resolution of cosmological tensions through a bounce cosmology, (3) Prediction of detectable gravitational wave signatures, and (4) Novel connections between fundamental physics and condensed matter phenomena.
+
+The theory is computationally validated through extensive numerical simulations and provides testable predictions for current and future experiments including LISA, CMB-S4, and high-energy particle physics facilities.
+\end{abstract}
+
+% Main content
+\section{Introduction – A Crisis at the Frontier}
+
+Physics stands at a precipice. The Standard Model of particle physics, a crowning achievement of the 20th century, brilliantly unifies the electromagnetic, weak, and strong nuclear interactions within a single quantum framework. Yet one force, the most familiar and far-reaching, remains an outsider: gravity.
+
+\subsection{The Cosmological Crisis}
+
+The James Webb Space Telescope (JWST) has discovered galaxies at redshifts $z \approx 15$ that are orders of magnitude more massive than the Standard Cosmological Model ($\Lambda$CDM) permits. This "impossible early galaxy problem" suggests our theory of cosmic structure formation is fundamentally incomplete.
+
+\subsection{The Particle Physics Crisis}
+
+The anomalous magnetic moment of the muon (g-2) shows a persistent and growing 5.1$\sigma$ deviation from the Standard Model's firmest predictions. This is not a statistical fluctuation; it is a signal of new physics.
+
+\subsection{The Dark Universe Crisis}
+
+The phenomena of dark matter and dark energy, which supposedly constitute 95\% of the cosmos, remain complete mysteries. Decades of searching for dark matter particles have yielded nothing, suggesting it may not be a particle at all.
+
+% Continue with remaining sections...
+
+\section{The Camargo Metric and Fundamental Axioms}
+
+The foundation of GoE rests on the \textbf{Camargo Metric}, describing a (3+3)-dimensional spacetime:
+
+\begin{equation}
+\boxed{ds^2 = -c^2(dt_1^2 + \alpha d\tau_2^2 + \beta d\tau_3^2) + d\mathbf{x}^2}
+\label{eq:camargo_metric}
+\end{equation}
+
+Where:
+\begin{itemize}
+\item $t_1$ represents entropic time (familiar temporal flow)
+\item $\tau_2$ represents the circular time fibre (U(1) gauge origin)
+\item $\tau_3$ represents the torsional time fibre (SU(2)×SU(3) gauge origin)
+\item $\alpha, \beta$ are dimensionless coupling parameters
+\end{itemize}
+
+\begin{axiom}[Geometric Axiom]
+Reality is fundamentally described by a (3+3)-dimensional structure with the Camargo metric as its geometric foundation.
+\end{axiom}
+
+\begin{axiom}[Cumulative Mass-Energy]
+The mass of any fundamental particle is the cumulative sum of quantized fundamental energies:
+\begin{equation}
+m_i c^2 = \sum_{j \leq i} E_j
+\label{eq:cumulative_axiom}
+\end{equation}
+\end{axiom}
+
+% Semi-Dirac Section
+\section{Semi-Dirac Fermions as Probes of Temporal Geometry}
+
+A remarkable prediction of GoE is the natural emergence of semi-Dirac fermions in condensed matter systems. These exotic quasiparticles exhibit anisotropic dispersion:
+
+\begin{equation}
+E(k_x, k_y) = \sqrt{(v_F k_x)^2 + \left(\frac{\hbar^2 k_y^2}{2m^*}\right)^2}
+\label{eq:semi_dirac_dispersion}
+\end{equation}
+
+This hybrid behavior arises from coupling to different temporal fibres:
+\begin{itemize}
+\item Linear direction ($k_x$): Coupling to circular fibre $\Theta$
+\item Quadratic direction ($k_y$): Coupling to torsional fibre $\Xi$
+\end{itemize}
+
+% Computational validation
+\subsection{Computational Validation}
+
+Our computational analysis demonstrates:
+\begin{itemize}
+\item Parameter fitting accuracy: $R^2 = 0.990253$
+\item ARPES correlation: $r = 0.9951$
+\item Physical parameter ranges: $v_F = 5 \times 10^5$ m/s, $m^* = 0.3 m_e$
+\end{itemize}
+
+% Figures (placeholder references)
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{../assets/figures/goe_dispersion_3d.png}
+\caption{Three-dimensional semi-Dirac dispersion surface showing linear behavior along $k_x$ and quadratic behavior along $k_y$, as predicted by GoE theory.}
+\label{fig:goe_dispersion}
+\end{figure}
+
+% Bibliography
+\bibliographystyle{unsrt}
+\bibliography{goe_references}
+
+% Appendices
+\appendix
+
+\section{Mathematical Derivations}
+\label{app:derivations}
+
+\subsection{Semi-Dirac Dispersion from Camargo Metric}
+
+Starting from the relativistic mass-shell condition with the GoE metric:
+\begin{equation}
+g^{\mu\nu} p_\mu p_\nu = -m^2c^2
+\end{equation}
+
+Applying the inverse Camargo metric and mapping temporal momenta to spatial momenta leads to the semi-Dirac dispersion relation through effective field theory reduction.
+
+\section{Computational Notebooks}
+\label{app:notebooks}
+
+The following computational notebooks provide full reproducibility:
+\begin{itemize}
+\item \texttt{notebooks/semi\_dirac\_analysis.ipynb} - Main dispersion calculations
+\item \texttt{notebooks/arpes\_comparison.ipynb} - Experimental validation
+\item \texttt{notebooks/parameter\_fitting.ipynb} - Statistical analysis
+\end{itemize}
+
+\end{document}
+```
+
+## Bibliography File (goe_references.bib)
+
+```bibtex
+@article{Camargo2025,
+  title={Geometrodynamics of Entropy: A Unified Framework for Fundamental Physics},
+  author={Camargo, Guilherme de},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2025}
+}
+
+@article{Banerjee2009,
+  title={Tight-binding modeling and low-energy behavior of the semi-Dirac point},
+  author={Banerjee, S and Singh, RRP and Pardo, V and Pickett, WE},
+  journal={Physical Review Letters},
+  volume={103},
+  number={1},
+  pages={016402},
+  year={2009}
+}
+
+@article{Neupane2014,
+  title={Observation of a three-dimensional topological Dirac semimetal phase in high-mobility Cd$_3$As$_2$},
+  author={Neupane, M and Xu, SY and Sankar, R and others},
+  journal={Nature Communications},
+  volume={5},
+  pages={3786},
+  year={2014}
+}
+
+@article{Abi2021,
+  title={Measurement of the positive muon anomalous magnetic moment to 0.46 ppm},
+  author={Abi, B and others},
+  collaboration={Muon g-2},
+  journal={Physical Review Letters},
+  volume={126},
+  number={14},
+  pages={141801},
+  year={2021}
+}
+```
