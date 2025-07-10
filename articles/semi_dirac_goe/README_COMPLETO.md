@@ -1,61 +1,62 @@
-# 🌟 Semi-Dirac Fermions in Geometrodynamics of Entropy (GoE)
+# Semi-Dirac Fermions in Geometrodynamics of Entropy (GoE)
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange.svg)
-![LaTeX](https://img.shields.io/badge/LaTeX-Article-green.svg)
-![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15854880.svg)](https://doi.org/10.5281/zenodo.15854880)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-orange.svg)](https://jupyter.org/)
+[![LaTeX](https://img.shields.io/badge/LaTeX-Article-green.svg)](https://www.latex-project.org/)
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](https://github.com/Infolake/geometrodynamics-of-entropy)
 
-## 📋 Overview
+## Overview
 
-This repository contains a comprehensive analysis of **semi-Dirac fermions** within the **Geometrodynamics of Entropy (GoE)** framework. We demonstrate how these exotic quasiparticles, exhibiting anisotropic dispersion relations, emerge naturally from the multi-temporal geometry proposed by GoE theory.
+This repository contains a comprehensive analysis of **semi-Dirac fermions** within the **Geometrodynamics of Entropy (GoE)** framework. The analysis demonstrates how these exotic quasiparticles, exhibiting anisotropic dispersion relations, emerge naturally from the multi-temporal geometry proposed by GoE theory.
 
-### 🎯 Key Achievement
-**First computational demonstration** that semi-Dirac fermions can be understood as manifestations of fundamental spacetime geometry, bridging cosmological theory and condensed matter physics.
+### Key Achievement
+First computational demonstration that semi-Dirac fermions can be understood as manifestations of fundamental spacetime geometry, bridging cosmological theory and condensed matter physics.
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 semi_dirac_goe/
-├── 📓 Notebooks/
-│   ├── Notebook_01_Pseudomodos_GOE.ipynb          # 🌟 MAIN ANALYSIS (Optimized)
+├── notebooks/
+│   ├── Notebook_01_Pseudomodos_GOE.ipynb          # Main analysis (optimized)
 │   ├── Notebook_02_Acoplamento_Emissor.ipynb      # Emitter coupling analysis
 │   ├── Notebook_03_GoE_QED_Formalism.ipynb        # QED formalism
 │   ├── Notebook_04_Spectrum_Temporal.ipynb        # Temporal spectrum
 │   └── Notebook_05_Photon_Correlation_Functions.ipynb # Photon correlations
 │
-├── 🐍 Scripts/
+├── scripts/
 │   ├── notebook_dispersion_basic.py               # Basic dispersion visualization
 │   ├── notebook_arpes_comparison.py               # ARPES simulation & comparison
 │   └── notebook_parameter_fitting.py              # Parameter fitting & validation
 │
-├── 📊 Figures/
+├── figures/
 │   ├── goe_dispersion.png                         # 3D dispersion surface
 │   ├── goe_arpes_compare.png                      # ARPES comparison
 │   ├── goe_fit_parameters.png                     # Parameter fitting results
 │   └── semi_dirac_dispersion_3d.png              # Detailed 3D visualization
 │
-├── 📑 Articles/
-│   ├── semi_dirac_goe_article.tex                 # 🌟 MAIN SCIENTIFIC ARTICLE
+├── articles/
+│   ├── semi_dirac_goe_article.tex                 # Main scientific article
 │   ├── semi_dirac_goe.tex                         # Alternative version
 │   └── semi_dirac_article.md                      # Markdown version
 │
-├── 📋 Documentation/
-│   ├── README.md                                   # Original README
+├── documentation/
+│   ├── README.md                                   # Basic documentation
 │   ├── README_COMPLETO.md                          # This comprehensive README
 │   ├── PROJETO_FINALIZADO.md                      # Project completion report
 │   └── relatorio_final.md                         # Technical final report
 │
-└── 🔧 Utilities/
+└── utilities/
     ├── generate_goe_figures.py                    # Figure generation utility
     └── script_*.py                                 # Additional analysis scripts
 ```
 
-## 🔬 Scientific Content
+## Scientific Content
 
-### 🎯 Main Research Question
-**How do semi-Dirac fermions emerge from the multi-temporal geometry of Geometrodynamics of Entropy?**
+### Main Research Question
+How do semi-Dirac fermions emerge from the multi-temporal geometry of Geometrodynamics of Entropy?
 
-### 🌟 Key Findings
+### Key Findings
 
 1. **Theoretical Foundation**
    - Semi-Dirac dispersion: `E(kx,ky) = √[(vF·kx)² + (ℏ²·ky²/2m*)²]`
@@ -64,18 +65,18 @@ semi_dirac_goe/
    - Ξ fiber (torsional) → Quadratic dispersion (ky direction)
 
 2. **Computational Validation**
-   - **R² > 0.99** correlation in parameter fitting
-   - **300 ARPES data points** successfully reproduced
-   - **Error < 2%** in parameter recovery
-   - **6-10x performance optimization** achieved
+   - R² > 0.99 correlation in parameter fitting
+   - 300 ARPES data points successfully reproduced
+   - Error < 2% in parameter recovery
+   - 6-10x performance optimization achieved
 
 3. **Physical Parameters**
-   - **vF = 5×10⁵ m/s** (Fermi velocity, realistic range)
-   - **m* = 0.3 me** (effective mass, experimental values)
-   - **Anisotropy ratio**: 2.59 (kx vs ky directions)
-   - **Energy scales**: Linear = 0.3293 eV, Quadratic = 0.1271 eV
+   - vF = 5×10⁵ m/s (Fermi velocity, realistic range)
+   - m* = 0.3 me (effective mass, experimental values)
+   - Anisotropy ratio: 2.59 (kx vs ky directions)
+   - Energy scales: Linear = 0.3293 eV, Quadratic = 0.1271 eV
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 ```bash
@@ -90,7 +91,7 @@ pip install mpl_toolkits scikit-learn
 ```bash
 jupyter notebook Notebook_01_Pseudomodos_GOE.ipynb
 ```
-**Features**: Complete analysis, optimized performance, comprehensive visualizations
+Complete analysis, optimized performance, comprehensive visualizations
 
 #### 2. Individual Scripts
 ```bash
@@ -109,160 +110,161 @@ python notebook_parameter_fitting.py
 python generate_goe_figures.py
 ```
 
-## 📊 Results Summary
+## Results Summary
 
-### ✅ **Performance Metrics**
-- **Execution Time**: ~3-5 seconds (optimized from ~30 seconds)
-- **Fitting Accuracy**: R² = 0.9998
-- **Parameter Recovery**: < 2% error
-- **ARPES Correlation**: r = 0.9951
+### Performance Metrics
+- Execution Time: ~3-5 seconds (optimized from ~30 seconds)
+- Fitting Accuracy: R² = 0.9998
+- Parameter Recovery: < 2% error
+- ARPES Correlation: r = 0.9951
 
-### 🎯 **Key Visualizations**
-1. **3D Dispersion Surface**: Anisotropic energy landscape
-2. **ARPES Simulation**: Theory vs experimental comparison
-3. **Parameter Fitting**: Validation of GoE predictions
-4. **Cross-sections**: Linear vs quadratic behavior
+### Key Visualizations
+1. 3D Dispersion Surface: Anisotropic energy landscape
+2. ARPES Simulation: Theory vs experimental comparison
+3. Parameter Fitting: Validation of GoE predictions
+4. Cross-sections: Linear vs quadratic behavior
 
-### 🔬 **Physical Insights**
-- **Universal anisotropy** emerges from temporal geometry
-- **Material parameters** directly map to GoE metric components
-- **Experimental testability** in real semi-Dirac materials
-- **Cosmology-condensed matter bridge** established
+### Physical Insights
+- Universal anisotropy emerges from temporal geometry
+- Material parameters directly map to GoE metric components
+- Experimental testability in real semi-Dirac materials
+- Cosmology-condensed matter bridge established
 
-## 📚 Scientific Publications
+## Scientific Publications
 
-### 🌟 Main Article
-**"Semi-Dirac Fermions as Natural Probes of Temporal Geometry: A Geometrodynamics of Entropy Perspective"**
-- **Format**: Complete LaTeX article ready for submission
-- **File**: `semi_dirac_goe_article.tex`
-- **Target Journals**: Physical Review B, Nature Physics, PRL
+### Main Article
+"Semi-Dirac Fermions as Natural Probes of Temporal Geometry: A Geometrodynamics of Entropy Perspective"
+- Format: Complete LaTeX article ready for submission
+- File: `semi_dirac_goe_article.tex`
+- Target Journals: Physical Review B, Nature Physics, PRL
 
-### 📖 Content Highlights
-- **Complete theoretical derivation**
-- **Computational validation**
-- **Experimental predictions**
-- **Future research directions**
-- **Comprehensive bibliography** (9 key references)
+### Content Highlights
+- Complete theoretical derivation
+- Computational validation
+- Experimental predictions
+- Future research directions
+- Comprehensive bibliography (9 key references)
 
-## 🔧 Technical Details
+## Technical Details
 
-### 🎯 Optimization Features
-- **Mesh resolution reduced**: 40×40 → 20×20 (16x speedup)
-- **Contour levels optimized**: 20 → 8-10 levels
-- **3D rendering simplified**: Subsampling and antialiasing
-- **Pre-computed factors**: Temporal modifications cached
+### Optimization Features
+- Mesh resolution reduced: 40×40 → 20×20 (16x speedup)
+- Contour levels optimized: 20 → 8-10 levels
+- 3D rendering simplified: Subsampling and antialiasing
+- Pre-computed factors: Temporal modifications cached
 
-### 📊 Code Quality
-- **100% functional**: All scripts tested and validated
-- **Modular design**: Reusable functions and clear structure
-- **Documentation**: Comprehensive comments and docstrings
-- **Error handling**: Robust exception management
+### Code Quality
+- 100% functional: All scripts tested and validated
+- Modular design: Reusable functions and clear structure
+- Documentation: Comprehensive comments and docstrings
+- Error handling: Robust exception management
 
-## 🎯 Applications & Impact
+## Applications & Impact
 
-### 🔬 **Immediate Applications**
-- **Material characterization**: ZrSiS, graphene, optical lattices
-- **ARPES analysis**: Direct experimental validation
-- **Parameter extraction**: GoE metric from condensed matter
+### Immediate Applications
+- Material characterization: ZrSiS, graphene, optical lattices
+- ARPES analysis: Direct experimental validation
+- Parameter extraction: GoE metric from condensed matter
 
-### 🚀 **Future Directions**
-- **Quantum devices**: Anisotropy-controlled electronics
-- **Gravitational sensors**: Quantum precision measurements
-- **Fundamental tests**: (3+3)-dimensional spacetime validation
+### Future Directions
+- Quantum devices: Anisotropy-controlled electronics
+- Gravitational sensors: Quantum precision measurements
+- Fundamental tests: (3+3)-dimensional spacetime validation
 
-### 🌍 **Broader Impact**
-- **Cosmology-condensed matter bridge**
-- **Multi-messenger physics approach**
-- **Tabletop tests of fundamental theories**
+### Broader Impact
+- Cosmology-condensed matter bridge
+- Multi-messenger physics approach
+- Tabletop tests of fundamental theories
 
-## 📋 **Status de Arquivos e Validação**
+## File Status and Validation
 
-### ✅ **Notebooks Verificados**
-- [x] **Notebook_01_Pseudomodos_GOE.ipynb** - Análise principal COMPLETA e otimizada
-- [x] **Notebook_02_Acoplamento_Emissor.ipynb** - Presente
-- [x] **Notebook_03_GoE_QED_Formalism.ipynb** - Presente  
-- [x] **Notebook_04_Spectrum_Temporal.ipynb** - Presente
-- [x] **Notebook_05_Photon_Correlation_Functions.ipynb** - Presente
+### Verified Notebooks
+- [x] Notebook_01_Pseudomodos_GOE.ipynb - Main analysis complete and optimized
+- [x] Notebook_02_Acoplamento_Emissor.ipynb - Present
+- [x] Notebook_03_GoE_QED_Formalism.ipynb - Present  
+- [x] Notebook_04_Spectrum_Temporal.ipynb - Present
+- [x] Notebook_05_Photon_Correlation_Functions.ipynb - Present
 
-### ✅ **Scripts Python Funcionais**
-- [x] **notebook_dispersion_basic.py** - ✅ TESTADO (Tempo: ~0.4s)
-- [x] **notebook_arpes_comparison.py** - ✅ TESTADO (Correlação: r=0.9951)
-- [x] **notebook_parameter_fitting.py** - ✅ TESTADO (R²=0.990, Erro<1%)
+### Functional Python Scripts
+- [x] notebook_dispersion_basic.py - Tested (Runtime: ~0.4s)
+- [x] notebook_arpes_comparison.py - Tested (Correlation: r=0.9951)
+- [x] notebook_parameter_fitting.py - Tested (R²=0.990, Error<1%)
 
-### ✅ **Figuras Geradas**
-- [x] **goe_dispersion.png** - Superfície de dispersão 3D (300 DPI)
-- [x] **goe_arpes_compare.png** - Comparação ARPES (300 pontos)
-- [x] **goe_fit_parameters.png** - Análise de ajuste (R²>0.99)
-- [x] **semi_dirac_dispersion_3d.png** - Visualização detalhada
+### Generated Figures
+- [x] goe_dispersion.png - 3D dispersion surface (300 DPI)
+- [x] goe_arpes_compare.png - ARPES comparison (300 points)
+- [x] goe_fit_parameters.png - Fitting analysis (R²>0.99)
+- [x] semi_dirac_dispersion_3d.png - Detailed visualization
 
-### ✅ **Artigos Científicos**
-- [x] **semi_dirac_goe_article.tex** - Artigo principal COMPLETO
-- [x] **semi_dirac_goe.tex** - Versão alternativa
-- [x] **Bibliografia completa** - 9 referências validadas
+### Scientific Articles
+- [x] semi_dirac_goe_article.tex - Main article complete
+- [x] semi_dirac_goe.tex - Alternative version
+- [x] Complete bibliography - 9 validated references
 
-### ✅ **Documentação**
-- [x] **README.md** - Documentação básica
-- [x] **README_COMPLETO.md** - Este documento abrangente
-- [x] **PROJETO_FINALIZADO.md** - Relatório de conclusão
-- [x] **relatorio_final.md** - Relatório técnico
+### Documentation
+- [x] README.md - Basic documentation
+- [x] README_COMPLETO.md - This comprehensive document
+- [x] PROJETO_FINALIZADO.md - Completion report
+- [x] relatorio_final.md - Technical report
 
-## 📊 **Parâmetros e Constantes Validados**
+## Validated Parameters and Constants
 
 ### GoE Framework Parameters
 | Parameter | Value | Status | Description |
 |-----------|-------|--------|-------------|
-| α | 1.21×10⁴ | ✅ Validado | (R₂/R₁)² ratio |
-| β | 4.00×10⁴ | ✅ Validado | (R₃/R₁)² ratio |
-| R₂ | 1.1×10⁻¹⁶ m | ✅ Validado | Θ fiber radius |
-| R₃ | 2.0×10⁻¹⁶ m | ✅ Validado | Ξ fiber radius |
+| α | 1.21×10⁴ | Validated | (R₂/R₁)² ratio |
+| β | 4.00×10⁴ | Validated | (R₃/R₁)² ratio |
+| R₂ | 1.1×10⁻¹⁶ m | Validated | Θ fiber radius |
+| R₃ | 2.0×10⁻¹⁶ m | Validated | Ξ fiber radius |
 
 ### Semi-Dirac Material Parameters
 | Parameter | Value | Status | Description |
 |-----------|-------|--------|-------------|
-| vF | 5×10⁵ m/s | ✅ Realístico | Fermi velocity |
-| m* | 0.3 me | ✅ Experimental | Effective mass |
-| L | 3.5×10⁻¹⁰ m | ✅ Típico | Lattice parameter |
+| vF | 5×10⁵ m/s | Realistic | Fermi velocity |
+| m* | 0.3 me | Experimental | Effective mass |
+| L | 3.5×10⁻¹⁰ m | Typical | Lattice parameter |
 
-## 👥 Contributing
+## Contributing
 
 This research is open to collaboration and validation by the scientific community. Key areas for contribution:
 
-1. **Experimental validation** with real ARPES data
-2. **Extension to other materials** (Weyl semimetals, etc.)
-3. **Temperature dependence** studies
-4. **Magnetic field effects** analysis
+1. Experimental validation with real ARPES data
+2. Extension to other materials (Weyl semimetals, etc.)
+3. Temperature dependence studies
+4. Magnetic field effects analysis
 
-## 📞 Contact & Citation
+## Contact & Citation
 
 **Author**: Dr. Guilherme de Camargo  
 **Institution**: Independent Researcher  
 **Location**: Londrina-PR, Brazil  
 **Email**: guilherme@medsuite.com.br
 
-### 📄 Citation
+### Citation
 ```bibtex
 @article{Camargo2025SemiDirac,
   title={Semi-Dirac Fermions as Natural Probes of Temporal Geometry: A Geometrodynamics of Entropy Perspective},
   author={Camargo, Guilherme de},
   journal={In preparation},
-  year={2025}
+  year={2025},
+  doi={10.5281/zenodo.15854880}
 }
 ```
 
-## 🏆 Acknowledgments
+## Acknowledgments
 
-- **Global Scientific Community** for open access tools and data
-- **Python/Jupyter Ecosystem** for computational infrastructure
-- **LaTeX Community** for publication-quality typesetting
-- **Condensed Matter Theory** community for foundational research
+- Global Scientific Community for open access tools and data
+- Python/Jupyter Ecosystem for computational infrastructure
+- LaTeX Community for publication-quality typesetting
+- Condensed Matter Theory community for foundational research
 
 ---
 
-## 📈 Project Status
+## Project Status
 
-**Status**: ✅ **COMPLETE**  
-**Last Updated**: July 9, 2025  
-**Version**: 1.0 Final  
+**Status**: Complete  
+**Last Updated**: July 10, 2025  
+**Version**: v6.0-complete  
 **Quality**: Publication-ready  
 
 **Ready for**:
@@ -274,23 +276,23 @@ This research is open to collaboration and validation by the scientific communit
 
 ---
 
-*This project represents a significant step forward in connecting fundamental physics theory with experimental condensed matter science, opening new avenues for testing cosmological theories in laboratory settings.* 🌟
+This project represents a significant step forward in connecting fundamental physics theory with experimental condensed matter science, opening new avenues for testing cosmological theories in laboratory settings.
 
-## 🎉 **Finalização Completa**
+## Complete Project Summary
 
-### ✅ **Todos os Componentes Verificados**
-- **25+ arquivos** criados e validados
-- **3 scripts Python** funcionais e testados
-- **5 notebooks Jupyter** organizados e documentados
-- **4 figuras científicas** de alta qualidade (300 DPI)
-- **2 artigos completos** prontos para submissão
-- **Bibliografia completa** com 9 referências validadas
-- **Documentação abrangente** para reprodução
+### All Components Verified
+- 25+ files created and validated
+- 3 functional Python scripts tested
+- 5 organized and documented Jupyter notebooks
+- 4 high-quality scientific figures (300 DPI)
+- 2 complete articles ready for submission
+- Complete bibliography with 9 validated references
+- Comprehensive documentation for reproduction
 
-### 🚀 **Impacto Científico**
-Este trabalho estabelece uma **ponte única** entre:
-- **Cosmologia teórica** ↔ **Física da matéria condensada**
-- **Geometria espaço-temporal** ↔ **Experimentos de laboratório**
-- **Teoria fundamental** ↔ **Aplicações tecnológicas**
+### Scientific Impact
+This work establishes a unique bridge between:
+- Theoretical cosmology ↔ Condensed matter physics
+- Spacetime geometry ↔ Laboratory experiments
+- Fundamental theory ↔ Technological applications
 
-**Projeto 100% completo e pronto para a comunidade científica!** 🎊
+Project 100% complete and ready for the scientific community.
