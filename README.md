@@ -1,6 +1,6 @@
 # Geometrodynamics of Entropy - Core Repository v6.0 (Definitive Edition)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15765711.svg)](https://doi.org/10.5281/zenodo.15765711)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15854760.svg)](https://doi.org/10.5281/zenodo.15854760)
 [![arXiv](https://img.shields.io/badge/arXiv-PENDING-b31b1b.svg)](https://arxiv.org/abs/PENDING)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -207,7 +207,7 @@ jupyter notebook notebooks/technical_review_goe_v6.ipynb
   year={2025},
   note={v6.0 Definitive Edition - Complete and Validated},
   url={https://github.com/infolake/geometrodynamics-of-entropy},
-  doi={10.5281/zenodo.15765711}
+  doi={10.5281/zenodo.15854760}
 }
 ```
 
@@ -445,7 +445,7 @@ If you use this work in your research, please cite:
   year={2025},
   note={Core Implementation v6.0 Definitive Edition},
   url={https://github.com/infolake/geometrodynamics-of-entropy},
-  doi={10.5281/zenodo.15765711}
+  doi={10.5281/zenodo.15854760}
 }
 ```
 
