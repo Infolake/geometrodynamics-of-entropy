@@ -23,33 +23,31 @@ This repository contains the **complete implementation** of the **Geometrodynami
 ## 📁 Repository Structure
 
 ```
-goe-v5.0-core/
+geometrodynamics-of-entropy/
 ├── README.md                                          # This overview
 ├── Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md  # Complete 2190-line reference
-├── assets/
-│   ├── figures/                                       # Scientific visualizations  
-│   │   └── README.md                                 # Figure documentation
+├── assets/                                           # Publication assets
+│   ├── figures/                                      # Scientific visualizations  
 │   └── latex/                                        # Publication templates
-│       └── goe_monograph_template.tex                # Complete LaTeX template
 ├── notebooks/                                        # Computational validation
 │   ├── jwst_pbh_analysis.ipynb                       # Phase 1: JWST/PBH
 │   ├── sgwb_spectrum.ipynb                          # Phase 2: Gravitational waves
 │   ├── cmb_goe_analysis.ipynb                       # Phase 3: CMB perturbations
 │   ├── ghost_spectrum_check.ipynb                   # Phase 3.5: Stability
 │   └── technical_review_goe_v6.ipynb                # Technical review & Phase 4
-├── semi_dirac_goe/                                   # Semi-Dirac analysis package
-├── goe/                                              # Core GoE library
+├── goe/                                             # Core GoE library
 │   ├── __init__.py
-│   ├── metric.py                                     # Camargo metric (6D)
-│   ├── fibres.py                                     # Fibre quantization
-│   └── bounce.py                                     # Friedmann-Cartan integrator
-├── scripts/
-│   └── show_dataset.py                               # Dataset visualization
-├── data/
+│   ├── metric.py                                    # Camargo metric (6D)
+│   ├── fibres.py                                    # Fibre quantization
+│   └── bounce.py                                    # Friedmann-Cartan integrator
+├── scripts/                                         # Analysis scripts
+│   └── show_dataset.py                              # Dataset visualization
+├── data/                                            # Scientific datasets
 │   ├── goe_consolidated_dataset.json
 │   └── goe_parametros_consolidados.csv
-├── environment.yml                                   # Dependencies
-└── DEPLOYMENT_STATUS_FINAL.md                       # Final deployment report
+├── environment.yml                                  # Dependencies
+├── LICENSE                                          # MIT License
+└── DEPLOYMENT_STATUS_FINAL.md                      # Final deployment report
 ```
 
 ## 🧮 The Camargo Metric Foundation
@@ -303,6 +301,7 @@ jupyter notebook notebooks/
 ```
 geometrodynamics-of-entropy/
 ├── README.md                    # This file
+├── Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md  # Complete 2190-line reference
 ├── environment.yml              # Conda environment
 ├── goe/                        # Core GoE library
 │   ├── __init__.py
@@ -313,12 +312,15 @@ geometrodynamics-of-entropy/
 │   ├── jwst_pbh_analysis.ipynb # Phase 1: JWST/PBH
 │   ├── sgwb_spectrum.ipynb     # Phase 2: Gravitational waves
 │   ├── cmb_goe_analysis.ipynb  # Phase 3: CMB perturbations
-│   └── ghost_spectrum_check.ipynb # Phase 3.5: Stability
+│   ├── ghost_spectrum_check.ipynb # Phase 3.5: Stability
+│   └── technical_review_goe_v6.ipynb # Technical review & Phase 4
 ├── scripts/
 │   └── show_dataset.py         # Dataset visualization
-└── data/
-    ├── goe_consolidated_dataset.json
-    └── goe_parametros_consolidados.csv
+├── data/
+│   ├── goe_consolidated_dataset.json
+│   └── goe_parametros_consolidados.csv
+├── assets/                     # Publication assets
+└── LICENSE                     # MIT License
 ```
 
 ## 🚀 Scientific Notebooks
