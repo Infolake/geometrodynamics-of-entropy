@@ -21,8 +21,8 @@ Executive Summary
 7. The Forge of the Cosmos – The Cosmological Bounce
 8. The Black-Light Paradox – Black Holes, Hawking Radiation & Auroras
 9. Confrontation with Reality – A Data-Driven Gauntlet
-10. Echoes of Time in the Crystal – Semi-Dirac Fermions as Probes of GoE
-11. The Theorist's Toolkit – From Theory to Application
+10. The Theorist's Toolkit – From Theory to Application
+11. Echoes of Time in the Crystal – Semi-Dirac Fermions as Probes of GoE
 12. The Next Frontier – The Geometrodynamics of Quantum Computing
 Epilogue: The Crystals of Time
 Appendices
@@ -347,14 +347,6 @@ Across all tested domains—from the quantum wobble of a single particle to the 
 
 *"The truth is that which survives the test of experience."* \- Albert Einstein
 
-
-* **Capítulo 9** apresenta a vitória nos grandes testes (g-2, JWST).  
-* **Capítulo 10** capitaliza essa vitória, abrindo a "caixa preta" e convidando a comunidade a verificar os resultados com as ferramentas fornecidas. Isso cria um momento de transparência e confiança.  
-* **Capítulo 11** então introduz uma nova e surpreendente linha de evidência (matéria condensada), demonstrando a vasta aplicabilidade e o poder preditivo da teoria para além dos problemas que ela se propôs a resolver inicialmente.
-
-A sequência é: **Prova \-\> Ferramentas \-\> Nova Descoberta**. É uma progressão lógica e poderosa.
-
-Abaixo estão os Capítulos 10 e 11 reescritos e renumerados, seguindo esta nova estrutura.
 
 ---
 
