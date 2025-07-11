@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "title": "GoE Fermion Mass Reconstruction Analysis",
+    "version": "6.0-complete",
+    "phase": "3.5",
+    "date": "2025-07-11T01:26:31.378709",
+    "author": "Dr. Guilherme de Camargo",
+    "doi": "10.5281/zenodo.15854880",
+    "description": "Complete fermion mass reconstruction using Geometrodynamics of Entropy two-fiber temporal geometry"
+  },
+  "goe_parameters": {
+    "R1": 1e-18,
+    "R2": 1.1e-16,
+    "R3": 2e-16,
+    "alpha": 12100.0,
+    "beta": 40000.0,
+    "kappa": 1.0,
+    "Lambda_tau2": 1.79,
+    "Lambda_tau3": 0.99
+  },
+  "fermion_data": {
+    "names": [
+      "electron",
+      "up",
+      "down",
+      "strange",
+      "muon",
+      "charm",
+      "tau",
+      "bottom",
+      "top"
+    ],
+    "symbols": [
+      "e⁻",
+      "u",
+      "d",
+      "s",
+      "μ⁻",
+      "c",
+      "τ⁻",
+      "b",
+      "t"
+    ],
+    "observed_masses_MeV": [
+      0.511,
+      2.16,
+      4.67,
+      93.0,
+      105.66,
+      1270.0,
+      1777.0,
+      4180.0,
+      172690.0
+    ],
+    "fundamental_energies_MeV": [
+      0.511,
+      1.649,
+      2.51,
+      88.33,
+      12.66,
+      1164.34,
+      507.0,
+      2403.0,
+      168510.0
+    ],
+    "energy_ratios": [
+      3.227,
+      1.522,
+      35.191,
+      0.143,
+      91.97,
+      0.435,
+      4.74,
+      70.125
+    ],
+    "observed_display": [
+      "0.511",
+      "2.160",
+      "4.670",
+      "93.0",
+      "105.7",
+      "1.3k",
+      "1.8k",
+      "4.2k",
+      "173k"
+    ],
+    "fundamental_display": [
+      "0.511",
+      "1.649",
+      "2.510",
+      "88.3",
+      "12.7",
+      "1.2k",
+      "507.0",
+      "2.4k",
+      "169k"
+    ]
+  },
+  "statistical_analysis": {
+    "r_squared": 0.9991515408977568,
+    "mean_absolute_error": 825.889,
+    "rms_error": 1572.784818623076,
+    "mean_relative_error": 31.963410845296128,
+    "max_relative_error": 88.01817149346962
+  },
+  "advanced_metrics": {
+    "log_log_r_squared": 0.9488844548104102,
+    "residuals_MeV": [
+      0.0,
+      -0.5110000000000001,
+      -2.16,
+      -4.670000000000002,
+      -93.0,
+      -105.66000000000008,
+      -1270.0,
+      -1777.0,
+      -4180.0
+    ],
+    "relative_residuals_percent": [
+      0.0,
+      -23.657407407407412,
+      -46.252676659528916,
+      -5.021505376344088,
+      -88.01817149346962,
+      -8.319685039370086,
+      -71.4687675858188,
+      -42.51196172248804,
+      -2.4205223232381723
+    ],
+    "bootstrap_confidence_interval_95": [
+      0.33994850057781556,
+      0.9993374728911923
+    ],
+    "shapiro_wilk_test": {
+      "statistic": 0.6743839330619501,
+      "p_value": 0.0007122466750895583
+    }
+  },
+  "output_files": {
+    "interactive_html": "goe_mass_reconstruction_interactive.html",
+    "publication_plot": "goe_mass_reconstruction_phase35_publication.png",
+    "residuals_analysis": "goe_residuals_comprehensive_analysis.png",
+    "dataset_json": "goe_mass_reconstruction_complete_dataset.json"
+  }
+}
