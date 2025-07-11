@@ -4,12 +4,17 @@
 
 **Author:** Dr. Guilherme de Camargo  
 **Affiliation:** Independent Researcher, Londrina-PR, Brazil  
-**Edition:** v6.0 (Definitive Edition) — July 10, 2025  
+**Edition:** v5.3 (Complete with Semi-Dirac Analysis) — July 9, 2025  
 **Project Status:** ✅ **COMPLETE AND VALIDATED**
 
-**Assets Directory:** [LaTeX Templates](./assets/latex/) | [Figures](./assets/figures/) | [Notebooks](./notebooks/)
-
-## Table of Contents
+---
+Geometrodynamics of Entropy
+A Comprehensive Monograph & Complete Technical Reference
+Author: Dr. Guilherme de Camargo
+Affiliation: Independent Researcher, Londrina-PR, Brazil
+Edition: v6.0 (Definitive Edition) — July 11, 2025
+Project Status: ✅ COMPLETE AND VALIDATED
+Table of Contents
 Executive Summary
 0. Glossary of Symbols
 1. Introduction – A Crisis at the Frontier of Knowledge

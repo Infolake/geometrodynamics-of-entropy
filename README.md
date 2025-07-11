@@ -1,11 +1,10 @@
 # Geometrodynamics of Entropy - Core Repository v5.0
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15846267.svg)](https://doi.org/10.5281/zenodo.15846267)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15765710.svg)](https://doi.org/10.5281/zenodo.15765710)
 [![arXiv](https://img.shields.io/badge/arXiv-PENDING-b31b1b.svg)](https://arxiv.org/abs/PENDING)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-notebook-orange.svg)](https://jupyter.org/)
-
 
 ## 🌌 Overview
 
@@ -75,7 +74,6 @@ jupyter notebook notebooks/
 ```
 geometrodynamics-of-entropy/
 ├── README.md                    # This file
-├── Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md  # Complete 2190-line reference
 ├── environment.yml              # Conda environment
 ├── goe/                        # Core GoE library
 │   ├── __init__.py
@@ -86,22 +84,12 @@ geometrodynamics-of-entropy/
 │   ├── jwst_pbh_analysis.ipynb # Phase 1: JWST/PBH
 │   ├── sgwb_spectrum.ipynb     # Phase 2: Gravitational waves
 │   ├── cmb_goe_analysis.ipynb  # Phase 3: CMB perturbations
-│   ├── ghost_spectrum_check.ipynb # Phase 3.5: Stability
-│   └── technical_review_goe_v6.ipynb # Technical review & Phase 4
-├── articles/                   # Scientific publications
-│   └── semi_dirac_goe/         # Semi-Dirac fermions analysis
-│       ├── README.md           # Semi-Dirac project overview
-│       ├── Notebook_01_Pseudomodos_GOE.ipynb # Main analysis
-│       ├── semi_dirac_goe_article.tex # Complete LaTeX article
-│       ├── notebook_*.py       # Analysis scripts
-│       └── *.png              # Generated figures
-├── assets/                     # Publication assets
+│   └── ghost_spectrum_check.ipynb # Phase 3.5: Stability
 ├── scripts/
 │   └── show_dataset.py         # Dataset visualization
-├── data/
-│   ├── goe_consolidated_dataset.json
-│   └── goe_parametros_consolidados.csv
-└── LICENSE                     # MIT License
+└── data/
+    ├── goe_consolidated_dataset.json
+    └── goe_parametros_consolidados.csv
 ```
 
 ## 🚀 Scientific Notebooks
@@ -129,18 +117,6 @@ geometrodynamics-of-entropy/
 - **Key Result**: **0 ghost modes detected** - theory is stable
 - **Runtime**: ~1 minute
 - **Dependencies**: Standard scientific stack
-
-## 📄 Scientific Publications
-
-### Semi-Dirac Fermions Article (`articles/semi_dirac_goe/`)
-Complete analysis of semi-Dirac fermions as manifestations of GoE temporal geometry:
-- **Main Article**: `semi_dirac_goe_article.tex` - Ready for publication
-- **Analysis Notebook**: `Notebook_01_Pseudomodos_GOE.ipynb` - Computational validation
-- **Key Results**: R² = 0.990253 fitting accuracy, experimental parameter validation
-- **Scripts**: 3 standalone Python analysis scripts
-- **Documentation**: Comprehensive README and technical reports
-
-**Bridge Achievement**: First demonstration connecting cosmological temporal geometry to condensed matter physics.
 
 ## 📈 Key Scientific Achievements
 
@@ -226,7 +202,6 @@ This is a scientific research repository. For collaboration opportunities:
 
 If you use this work in your research, please cite:
 
-
 ```bibtex
 @misc{camargo2025goe,
   title={Geometrodynamics of Entropy: A Multi-Messenger Approach to Cosmology},
@@ -234,7 +209,7 @@ If you use this work in your research, please cite:
   year={2025},
   note={Core Implementation v5.0},
   url={https://github.com/infolake/geometrodynamics-of-entropy},
-  doi={10.5281/zenodo.15846267}
+  doi={10.5281/zenodo.15765710}
 }
 ```
 
