@@ -4,7 +4,7 @@
 
 **Author:** Dr. Guilherme de Camargo  
 **Affiliation:** Independent Researcher, Londrina-PR, Brazil  
-**Edition:** v5.3 (Complete with Semi-Dirac Analysis) — July 9, 2025  
+**Edition:** v6.0 (Definitive Edition) — July 11, 2025  
 **Project Status:** ✅ **COMPLETE AND VALIDATED**
 
 ---
@@ -871,9 +871,15 @@ The Geometrodynamics of Entropy provides a fundamental, geometric origin for the
 
 
 
-### **Table of Contents**
+**J.5 Conclusion**
 
-*   [**Executive Summary**](#executive-summary)
+The Geometrodynamics of Entropy provides a fundamental, geometric origin for the otherwise puzzling anisotropic dispersion of semi-Dirac fermions. The theory makes a powerful, testable prediction: the ratio of the effective parameters, $v_F$ and $m^*$, should be related to the fundamental geometric constants of the temporal fibres. This derivation stands as a key bridge between the cosmological foundations of GoE and tabletop, condensed-matter experiments.
+
+---
+
+### **Appendices**
+
+#### **Appendix A: Glossary of Fundamental Terms**
 *   [**0. Glossary of Symbols**](#0--glossary-of-symbols)
 *   [**1. Introduction – A Crisis at the Frontier of Knowledge**](#chapter-1-introduction--the-silent-crisis-at-the-edge-of-knowledge)
 *   [**2. The Two Towers – Where Relativity & Quantum Collide**](#chapter-2-the-two-towers--where-relativity--quantum-collide)
