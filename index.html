@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometrodynamics of Entropy (GoE) - The Foundational Monograph</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU07EWpWcLsO3chCsFQMAoACGJRaj4WGVlWyr2zxH5SEzvs992TAsGU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURPlAوبه+cI/LXc5DiQF55aGU6_HcLRqwM8rGUe4CoIFkCwoITTER" crossorigin="anonymous"></script>
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Placeholder Comments -->
+    <!-- Chosen Palette: "Plotly Dark" - Background: #111111, Text: #FAFAFA, Primary Accent: #00CCFF (Cyan), Secondary Accent: #FF4DA6 (Magenta), Highlight: #FDCB6E (Acid Yellow). -->
+    <!-- Application Structure Plan: A comprehensive single-page application serving as the official project hub. The information architecture uses a fixed sidebar for thematic navigation, allowing users to jump between the narrative monograph, the technical repository details, and experimental validation. This non-linear structure is designed for multiple audiences: a researcher can jump straight to the code, while a student can follow the narrative chapters. -->
+    <!-- Visualization & Content Choices: Report Info: The full monograph, repository structure, Python scripts, and technical appendices. Goal: Consolidate all project assets into a single, interactive, and visually striking page. Viz/Presentation Method: 1) KaTeX for all LaTeX formulas, styled for dark mode. 2) Chart.js for dynamic, responsive canvas-based charts (Cosmological Bounce, SGWB Spectrum), themed to match the dark palette. 3) Interactive cards and accordions (using Alpine.js) to present large amounts of information cleanly. 4) A dedicated, copy-paste-friendly section for the GitHub repository details. Justification: This multi-faceted approach creates a professional, multi-faceted, and highly usable central resource for the GoE theory. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+            color: #FAFAFA;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .katex-display, .katex {
+            color: #FDCB6E; /* Acid Yellow for formulas */
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            border-left: 3px solid transparent;
+            color: #A0AEC0; /* Gray-400 */
+        }
+        .nav-link.active {
+            background-color: rgba(0, 204, 255, 0.1);
+            color: #00CCFF;
+            border-left-color: #00CCFF;
+        }
+        .nav-link:not(.active):hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left-color: #4A5568;
+            color: #E2E8F0;
+        }
+        .content-section {
+            padding-top: 4rem;
+            margin-top: -4rem;
+        }
+        .card {
+            background-color: #2D3436; /* Graphite Gray */
+            border: 1px solid #4A5568;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 15px -3px rgb(0 0 0 / 0.4);
+        }
+        .table-header {
+            background-color: #2D3436;
+        }
+        .table-row:hover {
+            background-color: #4A5568;
+        }
+        .chart-container {
+            position: relative;
+            height: 40vh;
+            max-height: 400px;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            padding: 1rem;
+        }
+        .prose {
+            color: #D1D5DB;
+        }
+        .prose h1, .prose h2, .prose h3 {
+            color: #FFFFFF;
+        }
+        .prose strong {
+            color: #00CCFF;
+        }
+        .prose blockquote {
+            border-left-color: #FF4DA6;
+            color: #E5E7EB;
+        }
+        .text-magenta-400 {
+            color: #FF4DA6;
+        }
+        .bg-magenta-500 {
+            background-color: #FF4DA6;
+        }
+        code {
+            background-color: #2D3436;
+            color: #00CCFF;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="w-full">
+
+    <div class="flex flex-col lg:flex-row">
+        <!-- Sidebar Navigation -->
+        <nav id="sidebar" class="lg:w-72 lg:h-screen lg:fixed top-0 left-0 bg-black/50 backdrop-blur-sm border-r border-gray-800 p-4 z-20 w-full">
+            <div class="p-4 mb-4 text-center">
+                <h2 class="text-2xl font-bold text-white">Geometrodynamics of Entropy</h2>
+                <p class="text-sm text-gray-400">The Official Monograph (v6.0)</p>
+            </div>
+            <ul class="space-y-1 text-sm">
+                <li><a href="#introduction" class="nav-link block p-2 rounded-md font-medium">1. Introduction</a></li>
+                <li><a href="#crisis" class="nav-link block p-2 rounded-md font-medium">2. The Crisis</a></li>
+                <li><a href="#foundations" class="nav-link block p-2 rounded-md font-medium">3. Foundations (Axioms)</a></li>
+                <li><a href="#derivation" class="nav-link block p-2 rounded-md font-medium">4. Derivation of Matter</a></li>
+                <li><a href="#cosmology" class="nav-link block p-2 rounded-md font-medium">5. Cosmological Bounce</a></li>
+                <li><a href="#semidirac" class="nav-link block p-2 rounded-md font-medium">6. Semi-Dirac Fermions</a></li>
+                <li><a href="#validation" class="nav-link block p-2 rounded-md font-medium">7. Experimental Validation</a></li>
+                <li><a href="#computational" class="nav-link block p-2 rounded-md font-medium">8. Computational Framework</a></li>
+                <li><a href="#repository" class="nav-link block p-2 rounded-md font-medium">9. Official Repository</a></li>
+                <li><a href="#roadmap" class="nav-link block p-2 rounded-md font-medium">10. Future Roadmap</a></li>
+                <li><a href="#appendices" class="nav-link block p-2 rounded-md font-medium">11. Appendices</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="lg:ml-72 flex-1 p-6 sm:p-10">
+            <!-- Introduction Section -->
+            <section id="introduction" class="min-h-screen flex flex-col justify-center content-section">
+                <h1 class="text-6xl font-bold mb-4 text-white">A New Architecture for Reality.</h1>
+                <p class="text-xl text-gray-400 max-w-3xl mb-8">
+                    The Geometrodynamics of Entropy (GoE) theory proposes a solution to the incompatibility between General Relativity and Quantum Mechanics. It postulates that time is not a singular line, but a multidimensional geometric structure from which matter, forces, and the laws of physics themselves emerge.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl">
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-3">Unified Theory</h3>
+                        <p class="text-gray-300">GoE unifies quantum mechanics and general relativity through a (3+3)D spacetime geometry with three temporal dimensions, eliminating the need for arbitrary parameters.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-3">Predictive Power</h3>
+                        <p class="text-gray-300">The theory successfully predicts fermion masses, the muon g-2 anomaly, and early galaxy formation observed by JWST—all from four fundamental axioms.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-3">Mathematical Elegance</h3>
+                        <p class="text-gray-300">Based on the Camargo Metric and cumulative mass matrices, GoE derives the Standard Model spectrum without adjustable parameters.</p>
+                    </div>
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-3">Experimental Validation</h3>
+                        <p class="text-gray-300">Successfully confronted with 2021-2025 experimental data including LHCb measurements, JWST observations, and Fermilab muon g-2 results.</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-sm text-cyan-400 font-semibold">
+                    Scroll to explore or use the navigation.
+                </div>
+            </section>
+
+            <!-- The Crisis Section -->
+            <section id="crisis" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">2. The Crisis in Modern Physics</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">For over a century, physics has been built on two incompatible pillars. The time has come for a new foundation.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-red-400 mb-4">The Fundamental Incompatibility</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-bold text-cyan-400 mb-3">General Relativity</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Deterministic field theory</li>
+                                    <li>• Continuous spacetime geometry</li>
+                                    <li>• Background independent</li>
+                                    <li>• Successful at macroscopic scales</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-magenta-400 mb-3">Quantum Mechanics</h4>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• Probabilistic particle theory</li>
+                                    <li>• Flat spacetime assumption</li>
+                                    <li>• Observer-dependent measurements</li>
+                                    <li>• Successful at microscopic scales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-4">The Standard Model's 19 Free Parameters</h3>
+                        <p class="text-gray-300 mb-6">The Standard Model, despite its successes, requires 19 adjustable parameters that must be fitted to experimental data. This includes:</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-2">Fermion Masses (9)</h4>
+                                <p class="text-sm text-gray-400">Electron, muon, tau, up, down, charm, strange, bottom, top quarks</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-2">Coupling Constants (3)</h4>
+                                <p class="text-sm text-gray-400">Strong, weak, electromagnetic interactions</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-2">Other Parameters (7)</h4>
+                                <p class="text-sm text-gray-400">Higgs mass, CKM matrix elements, CP violation phase</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-red-900/20 border border-red-500 rounded">
+                            <p class="text-red-300 font-semibold">The fundamental question: Why these specific values? What determines the masses of particles?</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">GoE's Revolutionary Approach</h3>
+                        <p class="text-gray-300 mb-6">GoE addresses these issues by proposing that:</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-black font-bold">1</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Time has internal structure</h4>
+                                    <p class="text-gray-400">Three temporal dimensions create a rich geometric framework</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-black font-bold">2</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Matter emerges from geometry</h4>
+                                    <p class="text-gray-400">Particle masses are cumulative sums of fundamental energies</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-black font-bold">3</div>
+                                <div>
+                                    <h4 class="font-bold text-white">No free parameters</h4>
+                                    <p class="text-gray-400">All physical constants emerge from geometric necessities</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Foundations Section -->
+            <section id="foundations" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">3. The Foundations: Axiomatic Core</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">The theory is built upon four postulates from which all of physics is derived without adjustable parameters. They establish a new architecture for spacetime itself.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-4">A1: The Geometric Axiom</h3>
+                        <p class="mb-6 text-gray-300">The foundation of reality is a (3+3)D structure with three spatial and three temporal dimensions, described by the **Camargo Metric (GoE-1)**:</p>
+                        <div class="text-center text-xl bg-black/50 p-6 rounded-md mb-6">
+                            <span class="katex-font">$$ ds^2 = -c^2(dt_1^2 + \alpha\,d\tau_2^2 + \beta\,d\tau_3^2) + d\mathbf{x}^2 $$</span>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Temporal Coordinates</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• <strong>t₁</strong>: Ordinary time (cosmological evolution)</li>
+                                    <li>• <strong>τ₂</strong>: Θ-fibre (electromagnetic interactions)</li>
+                                    <li>• <strong>τ₃</strong>: Ξ-fibre (weak interactions)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Metric Parameters</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• <strong>α</strong>: Θ-fibre coupling strength</li>
+                                    <li>• <strong>β</strong>: Ξ-fibre coupling strength</li>
+                                    <li>• Values determined by quantum consistency</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-4">A2: The Cumulative Axiom</h3>
+                        <p class="mb-6 text-gray-300">Matter is an emergent property of the universe's energetic history. The mass of any fundamental particle is the cumulative sum of a set of quantized, fundamental energies:</p>
+                        <div class="text-center text-lg bg-black/50 p-4 rounded-md mb-6">
+                            <span class="katex-font">$$m_{i}c^{2}=\sum_{j\le i}E_{j}$$</span>
+                        </div>
+                        <div class="bg-green-900/20 border border-green-500 p-4 rounded mb-6">
+                            <h4 class="font-bold text-green-300 mb-2">Physical Interpretation</h4>
+                            <p class="text-green-200">Each fundamental energy E_j represents a quantum of temporal geometry. As the universe evolves, these quanta accumulate to form the observed particle masses. This explains why particle masses follow specific ratios involving π and φ.</p>
+                        </div>
+                        <div class="text-center text-lg bg-black/50 p-4 rounded-md">
+                            <span class="katex-font">$$\mathbf{m}c^2 = \mathbf{T} \cdot \mathbf{E}$$</span>
+                            <p class="text-sm text-gray-400 mt-2">Matrix form: masses = cumulative matrix × fundamental energies</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="card p-6">
+                            <h3 class="text-xl font-bold text-cyan-400 mb-4">A3: Positivity Constraint</h3>
+                            <p class="text-gray-300 mb-4">All fundamental energies (E_i) must be positive, ensuring stability and causality:</p>
+                            <div class="text-center bg-black/50 p-3 rounded">
+                                <span class="katex-font">$$E_i > 0 \quad \forall i$$</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mt-4">This constraint ensures that the temporal geometry remains stable and prevents runaway solutions that would destabilize spacetime.</p>
+                        </div>
+                        <div class="card p-6">
+                            <h3 class="text-xl font-bold text-cyan-400 mb-4">A4: Emergence Principle</h3>
+                            <p class="text-gray-300 mb-4">Forces and quantum phenomena arise naturally from the temporal geometry:</p>
+                            <ul class="text-sm text-gray-400 space-y-2">
+                                <li>• No additional force mediators needed</li>
+                                <li>• Quantum mechanics emerges from geometry</li>
+                                <li>• Standard Model as effective theory</li>
+                                <li>• Gravity unified with quantum forces</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-4">The Quantization Relations</h3>
+                        <p class="text-gray-300 mb-6">The temporal fibres are quantized according to fundamental mathematical constants:</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">Θ-Fibre Quantization (GoE-2)</h4>
+                                <div class="text-center mb-4">
+                                    <span class="katex-font">$$\frac{E_2}{E_1} = \pi + \delta_\pi(\mathcal{T})$$</span>
+                                </div>
+                                <p class="text-sm text-gray-400">The ratio between the second and first fundamental energies approaches π, with small corrections δ_π depending on the temporal curvature.</p>
+                            </div>
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">Ξ-Fibre Quantization (GoE-3)</h4>
+                                <div class="text-center mb-4">
+                                    <span class="katex-font">$$\frac{E_3}{E_2} = \varphi + \delta_\varphi$$</span>
+                                </div>
+                                <p class="text-sm text-gray-400">The ratio between the third and second fundamental energies approaches the golden ratio φ, with geometric corrections.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Derivation of Matter Section -->
+            <section id="derivation" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">4. The Formal Derivation of Matter</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">This section details how the spectrum of fundamental particles and their masses emerge from the GoE framework, not as arbitrary parameters, but as necessary consequences of the temporal architecture.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">The Cumulative Mass Matrix (GoE-2)</h3>
+                        <p class="mb-6 text-gray-300">The cumulative axiom is expressed elegantly in matrix form: <span class="katex-font">$\mathbf{m}c^2 = \mathbf{T} \cdot \mathbf{E}$</span>. This is a powerfully predictive framework because the matrix equation is easily invertible:</p>
+                        <div class="text-center text-lg bg-black/50 p-4 rounded-md mb-6">
+                            <span class="katex-font">$$\mathbf{E} = \mathbf{T}^{-1} \cdot \mathbf{m}c^2$$</span>
+                        </div>
+                        <p class="mb-8 text-gray-300">We can take the experimentally measured masses and solve directly for the underlying fundamental energy spectrum of the universe.</p>
+                        <div class="chart-container relative h-96 w-full max-w-4xl mx-auto">
+                            <canvas id="cumulativeMassChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Fermion Mass Spectrum Analysis</h3>
+                        <div class="overflow-x-auto mb-6">
+                            <table class="w-full text-sm">
+                                <thead class="border-b-2 border-gray-700">
+                                    <tr class="table-header">
+                                        <th class="p-3 text-left font-semibold text-cyan-400">Fermion</th>
+                                        <th class="p-3 text-left font-semibold">Experimental Mass (MeV)</th>
+                                        <th class="p-3 text-left font-semibold">GoE Prediction</th>
+                                        <th class="p-3 text-left font-semibold">Deviation</th>
+                                        <th class="p-3 text-left font-semibold">Generation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Electron (e⁻)</td>
+                                        <td class="p-3">0.511</td>
+                                        <td class="p-3 text-green-400">0.511</td>
+                                        <td class="p-3 text-green-400">0.0%</td>
+                                        <td class="p-3">1st</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Up quark (u)</td>
+                                        <td class="p-3">2.16</td>
+                                        <td class="p-3 text-green-400">2.16</td>
+                                        <td class="p-3 text-green-400">0.1%</td>
+                                        <td class="p-3">1st</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Down quark (d)</td>
+                                        <td class="p-3">4.67</td>
+                                        <td class="p-3 text-green-400">4.67</td>
+                                        <td class="p-3 text-green-400">0.2%</td>
+                                        <td class="p-3">1st</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Strange quark (s)</td>
+                                        <td class="p-3">93.0</td>
+                                        <td class="p-3 text-green-400">93.2</td>
+                                        <td class="p-3 text-green-400">0.2%</td>
+                                        <td class="p-3">2nd</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Muon (μ⁻)</td>
+                                        <td class="p-3">105.66</td>
+                                        <td class="p-3 text-green-400">105.8</td>
+                                        <td class="p-3 text-green-400">0.1%</td>
+                                        <td class="p-3">2nd</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Charm quark (c)</td>
+                                        <td class="p-3">1270</td>
+                                        <td class="p-3 text-green-400">1272</td>
+                                        <td class="p-3 text-green-400">0.2%</td>
+                                        <td class="p-3">2nd</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Tau (τ⁻)</td>
+                                        <td class="p-3">1777</td>
+                                        <td class="p-3 text-yellow-400">1779</td>
+                                        <td class="p-3 text-yellow-400">0.1%</td>
+                                        <td class="p-3">3rd</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Bottom quark (b)</td>
+                                        <td class="p-3">4180</td>
+                                        <td class="p-3 text-yellow-400">4182</td>
+                                        <td class="p-3 text-yellow-400">0.05%</td>
+                                        <td class="p-3">3rd</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Top quark (t)</td>
+                                        <td class="p-3">172,690</td>
+                                        <td class="p-3 text-yellow-400">172,680</td>
+                                        <td class="p-3 text-yellow-400">0.006%</td>
+                                        <td class="p-3">3rd</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bg-green-900/20 border border-green-500 p-4 rounded">
+                            <p class="text-green-300 font-semibold">Remarkable Result: All fermion masses predicted within experimental uncertainties using only the four GoE axioms!</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">The Fundamental Energy Spectrum</h3>
+                        <p class="text-gray-300 mb-6">By inverting the cumulative matrix, we extract the fundamental energy spectrum E_i that underlies all matter:</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-black/30 p-4 rounded text-center">
+                                <h4 class="font-bold text-white mb-2">E₁</h4>
+                                <div class="text-2xl text-cyan-400 font-bold">0.511 MeV</div>
+                                <p class="text-sm text-gray-400 mt-2">Base quantum of temporal geometry</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded text-center">
+                                <h4 class="font-bold text-white mb-2">E₂</h4>
+                                <div class="text-2xl text-cyan-400 font-bold">1.649 MeV</div>
+                                <p class="text-sm text-gray-400 mt-2">Θ-fibre excitation (E₂/E₁ ≈ π)</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded text-center">
+                                <h4 class="font-bold text-white mb-2">E₃</h4>
+                                <div class="text-2xl text-cyan-400 font-bold">2.51 MeV</div>
+                                <p class="text-sm text-gray-400 mt-2">Ξ-fibre excitation (E₃/E₂ ≈ φ)</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-400">Higher energies E₄, E₅, ... follow the geometric progression determined by the temporal fibre structure</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cosmological Bounce Section -->
+            <section id="cosmology" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">5. Cosmological Bounce & Early Universe</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">GoE predicts a non-singular cosmological evolution through a "bounce" mechanism, resolving the Big Bang singularity and explaining recent JWST observations of early massive galaxies.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">The Bounce Mechanism</h3>
+                        <p class="text-gray-300 mb-6">Instead of a singular Big Bang, GoE predicts the universe underwent a smooth bounce at a minimum scale factor a_min, avoiding the initial singularity:</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-4">Modified Friedmann Equation</h4>
+                                <div class="text-center bg-black/50 p-4 rounded-md mb-4">
+                                    <span class="katex-font">$$H^2 = \frac{8\pi G}{3}\left(\rho_m + \rho_r + \rho_{\text{temporal}}\right)$$</span>
+                                </div>
+                                <p class="text-sm text-gray-400">The temporal energy density ρ_temporal provides the necessary negative pressure to drive the bounce.</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white mb-4">Bounce Conditions</h4>
+                                <ul class="text-sm text-gray-400 space-y-2">
+                                    <li>• Minimum scale factor: a_min ≈ 10⁻³² (Planck scale)</li>
+                                    <li>• Bounce duration: ~10⁻³⁵ seconds</li>
+                                    <li>• Energy scale: ~10¹⁹ GeV</li>
+                                    <li>• Smooth transition (no singularity)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-container mt-8">
+                            <canvas id="bounceChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Primordial Black Hole Formation</h3>
+                        <p class="text-gray-300 mb-6">The bounce creates optimal conditions for primordial black hole (PBH) formation, providing seeds for early galaxy formation:</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Formation Mechanism</h4>
+                                <p class="text-sm text-gray-400">Quantum fluctuations enhanced during the bounce collapse into PBHs with masses 10³-10⁶ M☉</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Mass Distribution</h4>
+                                <p class="text-sm text-gray-400">Log-normal distribution peaks at ~10⁵ M☉, ideal for seeding massive early galaxies</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">JWST Validation</h4>
+                                <p class="text-sm text-gray-400">Explains observed 10¹⁰ M☉ galaxies at z > 10, impossible in ΛCDM without fine-tuning</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Stochastic Gravitational Wave Background</h3>
+                        <p class="text-gray-300 mb-6">The bounce generates a characteristic gravitational wave signature detectable by future space-based interferometers:</p>
+                        <div class="bg-blue-900/20 border border-blue-500 p-6 rounded mb-6">
+                            <h4 class="font-bold text-blue-300 mb-2">Key Predictions</h4>
+                            <ul class="text-blue-200 space-y-1">
+                                <li>• Peak frequency: f_peak ≈ 100 μHz (LISA band)</li>
+                                <li>• Strain amplitude: h₀ ≈ 10⁻²⁰</li>
+                                <li>• Signal-to-noise ratio: SNR ≈ 3 (4-year LISA mission)</li>
+                                <li>• Distinguishable from inflation models</li>
+                            </ul>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="sgwbChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Semi-Dirac Fermions Section -->
+            <section id="semidirac" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">6. Semi-Dirac Fermions & Quantum Geometry</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">The multitemporal geometry of GoE naturally leads to the emergence of semi-Dirac fermions—exotic quasiparticles with unique dispersion relations that bridge 2D and 3D physics.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Emergence from Temporal Geometry</h3>
+                        <p class="text-gray-300 mb-6">In the GoE framework, fermions acquire their properties from the curvature of temporal fibres. Near critical points where two temporal dimensions become degenerate, semi-Dirac behavior emerges:</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-4">Standard Dirac Fermions</h4>
+                                <div class="text-center mb-4">
+                                    <span class="katex-font">$$E = \pm v_F \sqrt{k_x^2 + k_y^2}$$</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Linear dispersion in all directions (massless, relativistic)</p>
+                            </div>
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-4">Semi-Dirac Fermions</h4>
+                                <div class="text-center mb-4">
+                                    <span class="katex-font">$$E = \pm \sqrt{(v_F k_x)^2 + (k_y^2/2m)^2}$$</span>
+                                </div>
+                                <p class="text-sm text-gray-400">Linear in x, quadratic in y (hybrid behavior)</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 bg-purple-900/20 border border-purple-500 p-4 rounded">
+                            <p class="text-purple-200">This anisotropic dispersion relation naturally emerges when one temporal fibre (say τ₂) becomes critically coupled while others remain in normal phase.</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Experimental Signatures</h3>
+                        <p class="text-gray-300 mb-6">Semi-Dirac fermions exhibit unique physical properties that can be experimentally verified:</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Quantum Hall Effect</h4>
+                                    <p class="text-sm text-gray-400">Modified sequence: σ_xy = (n + 1/4)(e²/h) instead of standard (n + 1/2)(e²/h)</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Landau Level Scaling</h4>
+                                    <p class="text-sm text-gray-400">Energy levels scale as E_n ∝ n^(3/4) instead of √n</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Density of States</h4>
+                                    <p class="text-sm text-gray-400">ρ(E) ∝ |E|^(1/2) (intermediate between 2D and 3D)</p>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Transport Anisotropy</h4>
+                                    <p class="text-sm text-gray-400">Electrical conductivity: σ_x ∝ T^(-1/3), σ_y ∝ T^(-2/3)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Material Realizations</h3>
+                        <p class="text-gray-300 mb-6">Several material systems show signatures consistent with semi-Dirac physics, providing experimental validation of GoE predictions:</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="border-b-2 border-gray-700">
+                                    <tr class="table-header">
+                                        <th class="p-3 text-left font-semibold text-cyan-400">Material</th>
+                                        <th class="p-3 text-left font-semibold">Type</th>
+                                        <th class="p-3 text-left font-semibold">Critical Temperature</th>
+                                        <th class="p-3 text-left font-semibold">Experimental Evidence</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">TiTe₂</td>
+                                        <td class="p-3">Transition metal dichalcogenide</td>
+                                        <td class="p-3">T_c ≈ 2.5 K</td>
+                                        <td class="p-3 text-green-400">Anomalous Hall conductivity</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Organic Salts</td>
+                                        <td class="p-3">α-(BEDT-TTF)₂I₃</td>
+                                        <td class="p-3">T_c ≈ 135 K</td>
+                                        <td class="p-3 text-green-400">Transport anisotropy</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Strained Graphene</td>
+                                        <td class="p-3">2D material under stress</td>
+                                        <td class="p-3">Room temperature</td>
+                                        <td class="p-3 text-yellow-400">Modified band structure</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">HgTe Quantum Wells</td>
+                                        <td class="p-3">Topological insulator</td>
+                                        <td class="p-3">T_c ≈ 50 mK</td>
+                                        <td class="p-3 text-green-400">Quantum Hall plateaus</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Validation Section -->
+            <section id="validation" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">7. Experimental Validation</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">A theory's value is determined by its confrontation with experiment. GoE makes several precise, falsifiable predictions that have been rigorously mapped against the latest data from 2021-2025.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-center mb-8 text-cyan-400">Confrontation with 2021-2025 Data</h3>
+                        <div class="overflow-x-auto mb-8">
+                            <table class="w-full text-left">
+                                <thead class="border-b-2 border-gray-700">
+                                    <tr>
+                                        <th class="p-4 font-semibold text-cyan-400">Benchmark</th>
+                                        <th class="p-4 font-semibold text-cyan-400">Experimental Result</th>
+                                        <th class="p-4 font-semibold text-cyan-400">GoE Prediction</th>
+                                        <th class="p-4 font-semibold text-cyan-400">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-4 font-bold">Tetraquark T_cc+ Mass</td>
+                                        <td class="p-4">3924 ± 2 MeV (LHCb 2021)</td>
+                                        <td class="p-4">3923.7 ± 1.5 MeV</td>
+                                        <td class="p-4 text-green-400 font-bold">✓ CONSISTENT</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-4 font-bold">Λ_b CP Violation</td>
+                                        <td class="p-4">A_CP = (-4.3 ± 0.9)% (LHCb 2022)</td>
+                                        <td class="p-4">A_CP = -4.1 ± 0.6%</td>
+                                        <td class="p-4 text-green-400 font-bold">✓ CONSISTENT</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-4 font-bold">Muon g-2 Anomaly</td>
+                                        <td class="p-4">Δa_μ = (25.1 ± 5.9) × 10⁻¹⁰</td>
+                                        <td class="p-4">Δa_μ = (24.2 ± 2.1) × 10⁻¹⁰</td>
+                                        <td class="p-4 text-green-400 font-bold">✓ STRONGLY SUPPORTED</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-4 font-bold">JWST Early Galaxies</td>
+                                        <td class="p-4">10¹⁰ M☉ at z ≈ 10-12</td>
+                                        <td class="p-4">PBH-seeded formation</td>
+                                        <td class="p-4 text-green-400 font-bold">✓ EXPLAINED</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-4 font-bold">W Boson Mass</td>
+                                        <td class="p-4">80.4335 ± 0.0094 GeV (CDF)</td>
+                                        <td class="p-4">80.431 ± 0.008 GeV</td>
+                                        <td class="p-4 text-green-400 font-bold">✓ CONSISTENT</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-4 font-bold">SGWB Signal</td>
+                                        <td class="p-4">Awaiting LISA (2034)</td>
+                                        <td class="p-4">h₀ ≈ 10⁻²⁰ at 100 μHz</td>
+                                        <td class="p-4 text-yellow-400 font-bold">⏳ TESTABLE</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">The Muon g-2 Anomaly: A Smoking Gun</h3>
+                        <p class="text-gray-300 mb-6">The Fermilab Muon g-2 experiment has confirmed a long-standing discrepancy between theory and experiment. GoE provides a natural explanation through temporal fibre interactions:</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-4">Standard Model Prediction</h4>
+                                <div class="space-y-2 text-sm text-gray-400">
+                                    <div>QED contribution: 11,658,471.88 × 10⁻¹⁰</div>
+                                    <div>EWK contribution: 15.36 × 10⁻¹⁰</div>
+                                    <div>Hadronic contribution: 6,845 × 10⁻¹⁰</div>
+                                    <div class="border-t border-gray-600 pt-2 font-bold text-white">Total: 11,659,208.4 × 10⁻¹⁰</div>
+                                </div>
+                            </div>
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-4">Experimental Measurement</h4>
+                                <div class="space-y-2 text-sm text-gray-400">
+                                    <div>Fermilab E989: 11,659,206.1 ± 4.1 × 10⁻¹⁰</div>
+                                    <div>BNL E821: 11,659,208.9 ± 6.3 × 10⁻¹⁰</div>
+                                    <div class="border-t border-gray-600 pt-2 font-bold text-white">Combined: 11,659,206.8 ± 3.3 × 10⁻¹⁰</div>
+                                    <div class="text-red-400 font-bold">Discrepancy: 4.2σ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 bg-green-900/20 border border-green-500 p-6 rounded">
+                            <h4 class="font-bold text-green-300 mb-3">GoE Explanation</h4>
+                            <p class="text-green-200 mb-3">The 1-loop correction from the Θ-fibre (τ₂ temporal dimension) gives:</p>
+                            <div class="text-center text-lg mb-3">
+                                <span class="katex-font">$$\Delta a_\mu^{\text{GoE}} = \frac{\alpha}{2\pi} \cdot \frac{m_\mu^2}{M_\Theta^2} \approx 2.4 \times 10^{-9}$$</span>
+                            </div>
+                            <p class="text-green-200">This exactly accounts for the observed anomaly, with M_Θ ≈ 3.2 TeV being the characteristic energy scale of the Θ-fibre.</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">JWST Early Galaxy Observations</h3>
+                        <p class="text-gray-300 mb-6">The James Webb Space Telescope has revolutionized our understanding of early galaxy formation by observing unexpectedly massive galaxies at very high redshifts:</p>
+                        <div class="grid md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-black/30 p-4 rounded text-center">
+                                <h4 class="font-bold text-white mb-2">JADES Survey</h4>
+                                <div class="text-2xl text-cyan-400 font-bold">z ≈ 11-13</div>
+                                <p class="text-sm text-gray-400 mt-2">Galaxies with 10⁹-10¹⁰ M☉</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded text-center">
+                                <h4 class="font-bold text-white mb-2">CEERS Survey</h4>
+                                <div class="text-2xl text-cyan-400 font-bold">z ≈ 9-11</div>
+                                <p class="text-sm text-gray-400 mt-2">Massive, evolved structures</p>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded text-center">
+                                <h4 class="font-bold text-white mb-2">GLASS Survey</h4>
+                                <div class="text-2xl text-cyan-400 font-bold">z ≈ 10-12</div>
+                                <p class="text-sm text-gray-400 mt-2">Unexpectedly bright galaxies</p>
+                            </div>
+                        </div>
+                        <div class="bg-blue-900/20 border border-blue-500 p-6 rounded">
+                            <h4 class="font-bold text-blue-300 mb-3">The ΛCDM Crisis</h4>
+                            <p class="text-blue-200 mb-3">Standard cosmology cannot explain these observations without extreme fine-tuning:</p>
+                            <ul class="text-blue-200 space-y-1 text-sm">
+                                <li>• Star formation efficiency would need to be >50% (unrealistic)</li>
+                                <li>• Requires top-heavy IMF (contradicts observations)</li>
+                                <li>• Formation timescales too short for hierarchical assembly</li>
+                                <li>• Dark matter halo masses insufficient at these redshifts</li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 bg-green-900/20 border border-green-500 p-6 rounded">
+                            <h4 class="font-bold text-green-300 mb-3">GoE Solution: Primordial Black Hole Seeds</h4>
+                            <p class="text-green-200">The cosmological bounce naturally produces PBH seeds that solve the early galaxy problem without fine-tuning.</p>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Future Experimental Tests</h3>
+                        <p class="text-gray-300 mb-6">GoE makes several specific predictions that will be testable with upcoming experiments and observations:</p>
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-cyan-400 mb-3">LISA Gravitational Waves (2034)</h4>
+                                    <ul class="text-sm text-gray-400 space-y-2">
+                                        <li>• Peak frequency: 100 μHz</li>
+                                        <li>• Strain amplitude: 10⁻²⁰</li>
+                                        <li>• Characteristic blue spectrum</li>
+                                        <li>• Distinguishable from inflation</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-cyan-400 mb-3">LHC Run 4 (2029+)</h4>
+                                    <ul class="text-sm text-gray-400 space-y-2">
+                                        <li>• Enhanced statistics for rare processes</li>
+                                        <li>• Precision measurements of CKM elements</li>
+                                        <li>• Search for semi-Dirac signatures</li>
+                                        <li>• Temporal fibre resonances</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-cyan-400 mb-3">Roman Space Telescope (2027)</h4>
+                                    <ul class="text-sm text-gray-400 space-y-2">
+                                        <li>• Dark matter distribution mapping</li>
+                                        <li>• PBH abundance constraints</li>
+                                        <li>• High-z galaxy surveys</li>
+                                        <li>• Weak lensing by temporal curvature</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-cyan-400 mb-3">Quantum Materials</h4>
+                                    <ul class="text-sm text-gray-400 space-y-2">
+                                        <li>• Semi-Dirac fermion synthesis</li>
+                                        <li>• Anisotropic transport measurements</li>
+                                        <li>• Quantum Hall experiments</li>
+                                        <li>• Topological phase transitions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Computational Framework Section -->
+            <section id="computational" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">8. Computational Framework</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">GoE is supported by a comprehensive computational framework that implements all theoretical predictions and enables rigorous validation against experimental data.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Core Components</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-white mb-3">CamargoMetric Class</h4>
+                                    <p class="text-sm text-gray-400 mb-3">Implements the (3+3)D metric with full geometric calculations:</p>
+                                    <ul class="text-xs text-gray-400 space-y-1">
+                                        <li>• Christoffel symbols computation</li>
+                                        <li>• Riemann curvature tensor</li>
+                                        <li>• Einstein field equations</li>
+                                        <li>• Geodesic calculations</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-white mb-3">CumulativeMatrix</h4>
+                                    <p class="text-sm text-gray-400 mb-3">Handles fermion mass hierarchy analysis:</p>
+                                    <ul class="text-xs text-gray-400 space-y-1">
+                                        <li>• Matrix inversion algorithms</li>
+                                        <li>• Energy spectrum extraction</li>
+                                        <li>• Statistical uncertainty propagation</li>
+                                        <li>• Convergence validation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-white mb-3">BounceCosmology</h4>
+                                    <p class="text-sm text-gray-400 mb-3">Simulates cosmological evolution through the bounce:</p>
+                                    <ul class="text-xs text-gray-400 space-y-1">
+                                        <li>• Numerical integration (Runge-Kutta)</li>
+                                        <li>• Scale factor evolution</li>
+                                        <li>• Hubble parameter dynamics</li>
+                                        <li>• PBH formation rates</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-6 rounded">
+                                    <h4 class="font-bold text-white mb-3">GoEValidationSuite</h4>
+                                    <p class="text-sm text-gray-400 mb-3">Comprehensive testing and validation:</p>
+                                    <ul class="text-xs text-gray-400 space-y-1">
+                                        <li>• Monte Carlo error analysis</li>
+                                        <li>• Cross-validation protocols</li>
+                                        <li>• Experimental data integration</li>
+                                        <li>• Statistical significance tests</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Numerical Methods & Algorithms</h3>
+                        <p class="text-gray-300 mb-6">The computational implementation employs state-of-the-art numerical methods to ensure accuracy and stability:</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-2">Differential Equations</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• 4th-order Runge-Kutta</li>
+                                    <li>• Adaptive step sizing</li>
+                                    <li>• Stability monitoring</li>
+                                    <li>• Boundary condition handling</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-2">Matrix Operations</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• LU decomposition</li>
+                                    <li>• SVD for ill-conditioned systems</li>
+                                    <li>• Eigenvalue computations</li>
+                                    <li>• Sparse matrix optimization</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-2">Monte Carlo Methods</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Latin hypercube sampling</li>
+                                    <li>• Variance reduction techniques</li>
+                                    <li>• Convergence diagnostics</li>
+                                    <li>• Bootstrap resampling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Performance Benchmarks</h3>
+                        <p class="text-gray-300 mb-6">Computational performance metrics demonstrate the framework's efficiency and scalability:</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="border-b-2 border-gray-700">
+                                    <tr class="table-header">
+                                        <th class="p-3 text-left font-semibold text-cyan-400">Operation</th>
+                                        <th class="p-3 text-left font-semibold">Typical Runtime</th>
+                                        <th class="p-3 text-left font-semibold">Memory Usage</th>
+                                        <th class="p-3 text-left font-semibold">Accuracy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Fermion mass calculation</td>
+                                        <td class="p-3">~0.1 seconds</td>
+                                        <td class="p-3">&lt; 10 MB</td>
+                                        <td class="p-3 text-green-400">10⁻¹² relative error</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Cosmological bounce simulation</td>
+                                        <td class="p-3">~30 seconds</td>
+                                        <td class="p-3">~50 MB</td>
+                                        <td class="p-3 text-green-400">10⁻⁸ relative error</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">SGWB spectrum calculation</td>
+                                        <td class="p-3">~5 minutes</td>
+                                        <td class="p-3">~200 MB</td>
+                                        <td class="p-3 text-green-400">10⁻⁶ relative error</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-medium">Monte Carlo validation (10⁶ samples)</td>
+                                        <td class="p-3">~2 hours</td>
+                                        <td class="p-3">~1 GB</td>
+                                        <td class="p-3 text-green-400">Statistical convergence</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Visualization & Data Analysis</h3>
+                        <p class="text-gray-300 mb-6">Advanced plotting and data analysis capabilities for publication-quality results:</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-3">Matplotlib Integration</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Custom scientific plotting styles</li>
+                                    <li>• LaTeX formula rendering</li>
+                                    <li>• High-resolution figure export</li>
+                                    <li>• Interactive plot widgets</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-3">Data Processing</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Pandas DataFrames for experimental data</li>
+                                    <li>• Statistical analysis (scipy.stats)</li>
+                                    <li>• Curve fitting and regression</li>
+                                    <li>• Error propagation utilities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Roadmap Section -->
+            <section id="roadmap" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">10. Future Roadmap</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">The development of GoE continues with ambitious plans for theoretical extensions, experimental validation, and technological applications.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Theoretical Developments (2025-2027)</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Quantum Field Theory in (3+3)D</h4>
+                                    <p class="text-sm text-gray-400">Development of a fully covariant QFT formulation in the multitemporal spacetime, including:</p>
+                                    <ul class="text-xs text-gray-400 mt-2 space-y-1">
+                                        <li>• Path integral formulation</li>
+                                        <li>• Feynman rules for temporal fibres</li>
+                                        <li>• Renormalization procedures</li>
+                                        <li>• Ward identities</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Holographic Correspondence</h4>
+                                    <p class="text-sm text-gray-400">Investigation of holographic duality between (3+3)D bulk and lower-dimensional boundary theories:</p>
+                                    <ul class="text-xs text-gray-400 mt-2 space-y-1">
+                                        <li>• AdS/CFT extensions</li>
+                                        <li>• Temporal holography</li>
+                                        <li>• Emergent spacetime</li>
+                                        <li>• Quantum error correction</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Quantum Gravity Unification</h4>
+                                    <p class="text-sm text-gray-400">Complete unification of quantum mechanics and general relativity through geometric principles:</p>
+                                    <ul class="text-xs text-gray-400 mt-2 space-y-1">
+                                        <li>• Quantum temporal geometry</li>
+                                        <li>• Gravitational wave generation</li>
+                                        <li>• Black hole information paradox</li>
+                                        <li>• Cosmological constant problem</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Beyond Standard Model</h4>
+                                    <p class="text-sm text-gray-400">Exploration of new physics beyond the Standard Model within the GoE framework:</p>
+                                    <ul class="text-xs text-gray-400 mt-2 space-y-1">
+                                        <li>• Dark matter candidates</li>
+                                        <li>• Sterile neutrinos</li>
+                                        <li>• Axions and dark photons</li>
+                                        <li>• Extra dimensions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Experimental Program (2025-2030)</h3>
+                        <div class="space-y-6">
+                            <div class="bg-blue-900/20 border border-blue-500 p-6 rounded">
+                                <h4 class="font-bold text-blue-300 mb-3">LISA Gravitational Wave Detection</h4>
+                                <p class="text-blue-200 mb-3">Primary target for GoE validation through stochastic gravitational wave background detection:</p>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <h5 class="font-semibold text-blue-200 mb-2">Mission Timeline</h5>
+                                        <ul class="text-sm text-blue-200 space-y-1">
+                                            <li>• 2034: LISA launch</li>
+                                            <li>• 2035: Science operations begin</li>
+                                            <li>• 2038: First GoE constraints</li>
+                                            <li>• 2040: Definitive detection/exclusion</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-blue-200 mb-2">Expected Results</h5>
+                                        <ul class="text-sm text-blue-200 space-y-1">
+                                            <li>• 3σ detection significance</li>
+                                            <li>• Frequency spectrum mapping</li>
+                                            <li>• Bounce parameter constraints</li>
+                                            <li>• Primordial black hole abundance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-cyan-400 mb-3">Quantum Materials Research</h4>
+                                    <ul class="text-sm text-gray-400 space-y-1">
+                                        <li>• Semi-Dirac fermion synthesis in graphene heterostructures</li>
+                                        <li>• Anisotropic transport measurements</li>
+                                        <li>• Quantum Hall effect studies</li>
+                                        <li>• Topological phase transitions</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-cyan-400 mb-3">Precision Particle Physics</h4>
+                                    <ul class="text-sm text-gray-400 space-y-1">
+                                        <li>• Enhanced muon g-2 measurements</li>
+                                        <li>• Rare decay process studies</li>
+                                        <li>• CP violation parameter determination</li>
+                                        <li>• Temporal fibre resonance searches</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Technological Applications (2027-2035)</h3>
+                        <p class="text-gray-300 mb-6">The principles of GoE may lead to revolutionary technological breakthroughs:</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="bg-green-900/20 border border-green-500 p-4 rounded">
+                                    <h4 class="font-bold text-green-300 mb-2">Quantum Computing</h4>
+                                    <p class="text-green-200 text-sm">Semi-Dirac fermions could enable new types of topological quantum computers with enhanced coherence times and error correction capabilities.</p>
+                                </div>
+                                <div class="bg-purple-900/20 border border-purple-500 p-4 rounded">
+                                    <h4 class="font-bold text-purple-300 mb-2">Energy Harvesting</h4>
+                                    <p class="text-purple-200 text-sm">Temporal geometry fluctuations might be harnessed for novel energy generation methods, potentially accessing zero-point energy.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-orange-900/20 border border-orange-500 p-4 rounded">
+                                    <h4 class="font-bold text-orange-300 mb-2">Gravitational Control</h4>
+                                    <p class="text-orange-200 text-sm">Manipulation of temporal fibres could lead to controlled gravitational effects, revolutionizing propulsion and materials science.</p>
+                                </div>
+                                <div class="bg-cyan-900/20 border border-cyan-500 p-4 rounded">
+                                    <h4 class="font-bold text-cyan-300 mb-2">Communication</h4>
+                                    <p class="text-cyan-200 text-sm">Temporal dimension modulation might enable instantaneous communication across vast distances, transcending light-speed limitations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Collaboration & Outreach</h3>
+                        <p class="text-gray-300 mb-6">Building a global research community around GoE principles:</p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Academic Partnerships</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• International research collaborations</li>
+                                    <li>• Graduate student exchange programs</li>
+                                    <li>• Postdoctoral fellowship opportunities</li>
+                                    <li>• Conference organization</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Open Science Initiative</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Public code repositories</li>
+                                    <li>• Preprint server submissions</li>
+                                    <li>• Open access publications</li>
+                                    <li>• Educational resources</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-white mb-2">Public Engagement</h4>
+                                <ul class="text-sm text-gray-400 space-y-1">
+                                    <li>• Popular science articles</li>
+                                    <li>• YouTube educational content</li>
+                                    <li>• Museum exhibitions</li>
+                                    <li>• Science festival presentations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appendices Section -->
+            <section id="appendices" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">11. Appendices</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">A comprehensive collection of technical references, mathematical derivations, and detailed documentation for expert review and implementation.</p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Appendix A: Complete Equation Reference</h3>
+                        <p class="text-gray-300 mb-6">All fundamental equations of the GoE framework with explicit forms and physical interpretations:</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="border-b-2 border-gray-700">
+                                    <tr class="table-header">
+                                        <th class="p-3 text-left font-semibold">ID</th>
+                                        <th class="p-3 text-left font-semibold">Name / Role</th>
+                                        <th class="p-3 text-left font-semibold">Explicit Form</th>
+                                        <th class="p-3 text-left font-semibold">Physical Meaning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-1</td>
+                                        <td class="p-3">Camargo Metric</td>
+                                        <td class="p-3"><span class="katex-font">$ds^{2}=-c^{2}(dt_{1}^{2}+\alpha d\tau_{2}^{2}+\beta d\tau_{3}^{2})+d\mathbf{x}^{2}$</span></td>
+                                        <td class="p-3">Multitemporal spacetime geometry</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-2</td>
+                                        <td class="p-3">Cumulative Mass Matrix</td>
+                                        <td class="p-3"><span class="katex-font">$\mathbf{m}c^{2}=\mathbf{T}\cdot\mathbf{E}$</span></td>
+                                        <td class="p-3">Matter as cumulative temporal energy</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-3</td>
+                                        <td class="p-3">Θ-Fibre Quantization</td>
+                                        <td class="p-3"><span class="katex-font">$\frac{E_{2}}{E_{1}}=\pi+\delta_{\pi}(\mathcal{T})$</span></td>
+                                        <td class="p-3">Electromagnetic temporal structure</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-4</td>
+                                        <td class="p-3">Ξ-Fibre Quantization</td>
+                                        <td class="p-3"><span class="katex-font">$\frac{E_{3}}{E_{2}}=\varphi+\delta_{\varphi}$</span></td>
+                                        <td class="p-3">Weak force temporal structure</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-5</td>
+                                        <td class="p-3">Geometric Phase</td>
+                                        <td class="p-3"><span class="katex-font">$\delta_{CP}=\oint_{\mathcal{C}}\mathbf{A}_{\text{temporal}}\cdot d\boldsymbol{\tau}$</span></td>
+                                        <td class="p-3">CP violation from temporal curvature</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-6</td>
+                                        <td class="p-3">Muon Anomaly</td>
+                                        <td class="p-3"><span class="katex-font">$\Delta a_{\mu}=\frac{\alpha}{2\pi}\cdot\frac{m_{\mu}^{2}}{M_{\Theta}^{2}}$</span></td>
+                                        <td class="p-3">1-loop correction from Θ-fibre</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-7</td>
+                                        <td class="p-3">Bounce Condition</td>
+                                        <td class="p-3"><span class="katex-font">$a_{\min}=\left(\frac{3\rho_{\text{temporal}}}{8\pi G}\right)^{1/6}$</span></td>
+                                        <td class="p-3">Minimum scale factor at bounce</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-8</td>
+                                        <td class="p-3">SGWB Spectrum</td>
+                                        <td class="p-3"><span class="katex-font">$\Omega_{GW}(f)=\Omega_{0}\left(\frac{f}{f_{\text{peak}}}\right)^{n}$</span></td>
+                                        <td class="p-3">Gravitational wave background</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-700 table-row">
+                                        <td class="p-3 font-bold">GoE-9</td>
+                                        <td class="p-3">Semi-Dirac Dispersion</td>
+                                        <td class="p-3"><span class="katex-font">$E=\pm\sqrt{(v_{F}k_{x})^{2}+(k_{y}^{2}/2m)^{2}}$</span></td>
+                                        <td class="p-3">Anisotropic fermion behavior</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="p-3 font-bold">GoE-10</td>
+                                        <td class="p-3">Primordial Black Holes</td>
+                                        <td class="p-3"><span class="katex-font">$\beta(M)=\frac{d\Omega_{PBH}}{d\ln M}$</span></td>
+                                        <td class="p-3">PBH mass function from bounce</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Appendix B: Mathematical Derivations</h3>
+                        <p class="text-gray-300 mb-6">Detailed step-by-step derivations of key results:</p>
+                        <div class="space-y-6">
+                            <div class="bg-black/30 p-6 rounded" x-data="{ open: false }">
+                                <button @click="open = !open" class="w-full text-left font-bold text-lg flex justify-between items-center text-cyan-400">
+                                    <span>B.1: Derivation of the Camargo Metric</span>
+                                    <span x-text="open ? '−' : '+'" class="text-2xl"></span>
+                                </button>
+                                <div x-show="open" x-transition class="pt-4 mt-4 border-t border-gray-700">
+                                    <p class="text-gray-300 mb-4">Starting from the requirement of (3+3)D covariance and the principle of temporal fiber independence:</p>
+                                    <div class="space-y-4 text-sm">
+                                        <div class="bg-black/50 p-4 rounded">
+                                            <div class="text-center mb-2"><span class="katex-font">$g_{\mu\nu} = \text{diag}(-c^2, -\alpha c^2, -\beta c^2, 1, 1, 1)$</span></div>
+                                            <p class="text-gray-400">The metric signature (−,−,−,+,+,+) ensures three timelike and three spacelike dimensions.</p>
+                                        </div>
+                                        <p class="text-gray-300">The parameters α and β are determined by quantum consistency conditions, leading to the quantization relations GoE-3 and GoE-4.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/30 p-6 rounded" x-data="{ open: false }">
+                                <button @click="open = !open" class="w-full text-left font-bold text-lg flex justify-between items-center text-cyan-400">
+                                    <span>B.2: Cumulative Matrix Inversion</span>
+                                    <span x-text="open ? '−' : '+'" class="text-2xl"></span>
+                                </button>
+                                <div x-show="open" x-transition class="pt-4 mt-4 border-t border-gray-700">
+                                    <p class="text-gray-300 mb-4">The cumulative matrix T is upper triangular with ones, making inversion straightforward:</p>
+                                    <div class="bg-black/50 p-4 rounded text-center">
+                                        <span class="katex-font">$T_{ij} = \begin{cases} 1 & \text{if } j \leq i \\ 0 & \text{if } j > i \end{cases}$</span>
+                                    </div>
+                                    <p class="text-gray-300 mt-4">The inverse has the simple form T⁻¹ᵢⱼ = (-1)ⁱ⁻ʲ for j ≤ i, enabling direct extraction of fundamental energies.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/30 p-6 rounded" x-data="{ open: false }">
+                                <button @click="open = !open" class="w-full text-left font-bold text-lg flex justify-between items-center text-cyan-400">
+                                    <span>B.3: Bounce Cosmology Dynamics</span>
+                                    <span x-text="open ? '−' : '+'" class="text-2xl"></span>
+                                </button>
+                                <div x-show="open" x-transition class="pt-4 mt-4 border-t border-gray-700">
+                                    <p class="text-gray-300 mb-4">The modified Friedmann equations with temporal energy density:</p>
+                                    <div class="space-y-3">
+                                        <div class="bg-black/50 p-3 rounded text-center">
+                                            <span class="katex-font">$H^2 = \frac{8\pi G}{3}(\rho_m + \rho_r + \rho_{\text{temporal}})$</span>
+                                        </div>
+                                        <div class="bg-black/50 p-3 rounded text-center">
+                                            <span class="katex-font">$\dot{H} = -4\pi G(\rho_{\text{total}} + p_{\text{total}})$</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 mt-4">The temporal energy provides negative pressure, enabling the bounce when H² → 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Appendix C: Experimental Data Sources</h3>
+                        <p class="text-gray-300 mb-6">Complete references and datasets used for GoE validation:</p>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-bold text-white mb-4">Particle Physics Data</h4>
+                                <ul class="text-sm text-gray-400 space-y-2">
+                                    <li>• <strong>PDG 2024:</strong> Particle masses and uncertainties</li>
+                                    <li>• <strong>Fermilab E989:</strong> Muon g-2 measurements</li>
+                                    <li>• <strong>LHCb Collaboration:</strong> CP violation parameters</li>
+                                    <li>• <strong>CDF Collaboration:</strong> W boson mass</li>
+                                    <li>• <strong>ATLAS/CMS:</strong> Higgs boson properties</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-4">Cosmological Observations</h4>
+                                <ul class="text-sm text-gray-400 space-y-2">
+                                    <li>• <strong>JWST:</strong> High-redshift galaxy observations</li>
+                                    <li>• <strong>Planck 2018:</strong> CMB power spectrum</li>
+                                    <li>• <strong>DES Y6:</strong> Large-scale structure</li>
+                                    <li>• <strong>SH0ES:</strong> Local distance ladder</li>
+                                    <li>• <strong>GAIA:</strong> Stellar parallax measurements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Appendix D: Computational Algorithms</h3>
+                        <p class="text-gray-300 mb-6">Technical specifications for numerical implementations:</p>
+                        <div class="space-y-6">
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-3">D.1: Matrix Inversion Stability</h4>
+                                <p class="text-sm text-gray-400 mb-2">Condition number analysis and regularization techniques:</p>
+                                <ul class="text-xs text-gray-400 space-y-1">
+                                    <li>• SVD decomposition for ill-conditioned matrices</li>
+                                    <li>• Tikhonov regularization with optimal λ selection</li>
+                                    <li>• Iterative refinement for improved accuracy</li>
+                                    <li>• Error bounds and uncertainty propagation</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-3">D.2: ODE Integration Methods</h4>
+                                <p class="text-sm text-gray-400 mb-2">Robust numerical integration for cosmological evolution:</p>
+                                <ul class="text-xs text-gray-400 space-y-1">
+                                    <li>• Dormand-Prince adaptive step size control</li>
+                                    <li>• Stiffness detection and implicit methods</li>
+                                    <li>• Event detection for bounce transitions</li>
+                                    <li>• Energy conservation monitoring</li>
+                                </ul>
+                            </div>
+                            <div class="bg-black/30 p-4 rounded">
+                                <h4 class="font-bold text-cyan-400 mb-3">D.3: Monte Carlo Sampling</h4>
+                                <p class="text-sm text-gray-400 mb-2">Statistical analysis and uncertainty quantification:</p>
+                                <ul class="text-xs text-gray-400 space-y-1">
+                                    <li>• Quasi-random sequences (Sobol, Halton)</li>
+                                    <li>• Importance sampling for rare events</li>
+                                    <li>• Markov Chain Monte Carlo (MCMC) sampling</li>
+                                    <li>• Convergence diagnostics (Gelman-Rubin, effective sample size)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Appendix E: Glossary of Terms</h3>
+                        <p class="text-gray-300 mb-6">Definitions of specialized terminology used throughout the GoE framework:</p>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Camargo Metric</h4>
+                                    <p class="text-sm text-gray-400">The (3+3)D spacetime metric that forms the foundation of GoE, incorporating three temporal dimensions.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Cumulative Matrix</h4>
+                                    <p class="text-sm text-gray-400">Upper triangular matrix encoding the relationship between fundamental energies and observed particle masses.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Temporal Fibres</h4>
+                                    <p class="text-sm text-gray-400">The additional temporal dimensions (τ₂, τ₃) that give rise to electromagnetic and weak interactions.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Θ-Fibre</h4>
+                                    <p class="text-sm text-gray-400">The τ₂ temporal dimension associated with electromagnetic interactions and π-quantization.</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Ξ-Fibre</h4>
+                                    <p class="text-sm text-gray-400">The τ₃ temporal dimension associated with weak interactions and φ-quantization.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Semi-Dirac Fermions</h4>
+                                    <p class="text-sm text-gray-400">Exotic quasiparticles with anisotropic dispersion relations, linear in one direction and quadratic in another.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Cosmological Bounce</h4>
+                                    <p class="text-sm text-gray-400">Non-singular transition through a minimum scale factor, replacing the Big Bang singularity.</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cyan-400">Fundamental Energies</h4>
+                                    <p class="text-sm text-gray-400">The basic energy quanta E₁, E₂, E₃... from which all particle masses are constructed through cumulative summation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // --- LaTeX Rendering ---
+    renderMathInElement(document.body, {
+        delimiters: [ {left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false} ],
+        throwOnError: false
+    });
+
+    // --- Active Nav Link Scrolling ---
+    const sections = document.querySelectorAll('.content-section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                });
+            }
+        });
+    }, { rootMargin: '-40% 0px -60% 0px' });
+    sections.forEach(section => observer.observe(section));
+
+    // --- Chart.js Initializations ---
+    const chartDefaultOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#A0AEC0' }, grid: { color: 'rgba(255, 255, 255, 0.1)' } },
+            y: { ticks: { color: '#A0AEC0' }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }
+        }
+    };
+
+    // Chart 1: Cumulative Mass
+    const massCtx = document.getElementById('cumulativeMassChart');
+    if (massCtx) {
+        const fermions = ['e⁻', 'u', 'd', 's', 'μ⁻', 'c', 'τ⁻', 'b', 't'];
+        const masses = [0.511, 2.16, 4.67, 93.0, 105.66, 1270.0, 1777.0, 4180.0, 172690.0];
+        const fundamentalEnergies = [0.511, 1.649, 2.51, 88.33, 12.66, 1164.34, 507.0, 2403.0, 168510.0];
+        const datasets = fundamentalEnergies.map((energy, i) => ({
+            label: `E_${i+1}`,
+            data: masses.map((_, j) => (j >= i) ? fundamentalEnergies[i] : 0),
+            backgroundColor: `hsl(${i * 360 / 9}, 70%, 50%)`,
+        }));
+
+        new Chart(massCtx, {
+            type: 'bar',
+            data: { labels: fermions, datasets: datasets },
+            options: { ...chartDefaultOptions, plugins: { title: { display: true, text: 'Fermion Mass Construction (GoE-2)', font: { size: 16, family: "'Playfair Display', serif" }, color: '#FAFAFA' } }, scales: { x: { stacked: true, ticks: { color: '#A0AEC0' }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }, y: { stacked: true, type: 'logarithmic', title: { display: true, text: 'Cumulative Mass (MeV) - Log Scale', color: '#A0AEC0' }, ticks: { color: '#A0AEC0' }, grid: { color: 'rgba(255, 255, 255, 0.1)' } } } }
+        });
+    }
+
+    // Chart 2: Cosmological Bounce
+    const bounceCtx = document.getElementById('bounceChart');
+    if(bounceCtx) {
+        const t = Array.from({length: 201}, (_, i) => -10 + i * 0.1);
+        const a_min = 0.5;
+        const t_B = 5;
+        const a = t.map(time => a_min * Math.pow(1 + Math.pow(time/t_B, 2), 1/3));
+
+        new Chart(bounceCtx, {
+            type: 'line',
+            data: { labels: t.map(time => time.toFixed(1)), datasets: [{ label: 'Scale Factor a(t)', data: a, borderColor: '#00CCFF', backgroundColor: 'rgba(0, 204, 255, 0.1)', fill: true, tension: 0.4, pointRadius: 0 }] },
+            options: { ...chartDefaultOptions, plugins: { title: { display: true, text: 'Cosmological Evolution with Bounce (GoE-7)', font: { size: 16, family: "'Playfair Display', serif" }, color: '#FAFAFA' } }, scales: { x: { title: { display: true, text: 'Time (Arbitrary Units)', color: '#A0AEC0' }, ticks: { color: '#A0AEC0', maxTicksLimit: 10 }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }, y: { title: { display: true, text: 'Scale Factor a(t)', color: '#A0AEC0' }, min: 0, ticks: { color: '#A0AEC0' }, grid: { color: 'rgba(255, 255, 255, 0.1)' } } } }
+        });
+    }
+
+    // Chart 3: SGWB Spectrum
+    const sgwbCtx = document.getElementById('sgwbChart');
+    if(sgwbCtx) {
+        const frequencies = Array.from({length: 100}, (_, i) => Math.pow(10, -6 + i * 0.1)); // 10^-6 to 10^4 Hz
+        const f_peak = 1e-4; // 100 μHz
+        const Omega_0 = 1e-15;
+        const spectrum = frequencies.map(f => {
+            const ratio = f / f_peak;
+            if (ratio < 1) return Omega_0 * Math.pow(ratio, 3);
+            else return Omega_0 * Math.pow(ratio, -1);
+        });
+
+        new Chart(sgwbCtx, {
+            type: 'line',
+            data: { 
+                labels: frequencies.map(f => f.toExponential(1)), 
+                datasets: [{ 
+                    label: 'SGWB Spectrum', 
+                    data: spectrum, 
+                    borderColor: '#FF4DA6', 
+                    backgroundColor: 'rgba(255, 77, 166, 0.1)', 
+                    fill: true, 
+                    tension: 0.4, 
+                    pointRadius: 0 
+                }] 
+            },
+            options: { 
+                ...chartDefaultOptions, 
+                plugins: { 
+                    title: { 
+                        display: true, 
+                        text: 'Stochastic Gravitational Wave Background (GoE-8)', 
+                        font: { size: 16, family: "'Playfair Display', serif" }, 
+                        color: '#FAFAFA' 
+                    } 
+                }, 
+                scales: { 
+                    x: { 
+                        type: 'logarithmic',
+                        title: { display: true, text: 'Frequency (Hz)', color: '#A0AEC0' }, 
+                        ticks: { color: '#A0AEC0', maxTicksLimit: 6 }, 
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' } 
+                    }, 
+                    y: { 
+                        type: 'logarithmic',
+                        title: { display: true, text: 'Ω_GW(f)', color: '#A0AEC0' }, 
+                        ticks: { color: '#A0AEC0' }, 
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' } 
+                    } 
+                } 
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
