@@ -1,7 +1,7 @@
 # Geometrodynamics of Entropy (GoE)
 ### A Unified Theory of Physics with Statistical Validation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15765710.svg)](https://doi.org/10.5281/zenodo.15765710)
+[![DOI](https://zenodo.org/badge/1008931517.svg)](https://doi.org/10.5281/zenodo.15765709)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?&style=flat&logo=Jupyter&logoColor=white)](https://jupyter.org/)
