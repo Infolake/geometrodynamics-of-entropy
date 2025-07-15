@@ -15,6 +15,9 @@ $$\boxed{ K = (1.826 \pm 0.868) \times 10^{-9} }$$
 
 This connects the **muon's anomalous magnetic moment** and **CP violation in neutrinos** through the unified framework of Geometrodynamics of Entropy.
 
+
+<center><img src="figures/goe_unification_analysis_2.png" alt="goe_unification_analysis_2" width="70%"/></center>
+
 ## 📖 About
 
 The Geometrodynamics of Entropy (GoE) is a unified theory of physics based on the foundational principle that **time itself possesses a dynamic, multi-dimensional geometric structure**. By postulating a (3+3)-dimensional spacetime, GoE resolves the fundamental incompatibilities between General Relativity and Quantum Mechanics.
@@ -117,6 +120,11 @@ $$\Delta a_\mu = K \cdot [1 - \cos(\delta_{CP})]$$
 - [Cosmological Bounce](notebooks/cosmology/) - Singularity-free cosmology
 - [Mass Hierarchy](notebooks/foundations/) - Fermion mass derivation
 - [Validation Suite](notebooks/consistency/) - Framework testing
+<img src="figures/Fig_4_0_1_sofia_teorem.png" alt="Fig_4_0_1_sofia_teorem" width="450"/>
+
+<img src="figures/fig_4.2_mass_reconstruction_table.png" alt="fig_4.2_mass_reconstruction_table" width="450"/>
+
+<img src="figures/fig_H3_jwst_tension_resolution.png" alt="fig_H3_jwst_tension_resolution" width="450"/>
 
 ## 🎯 Usage Examples
 
@@ -197,6 +205,7 @@ Special thanks to the global physics community for providing the experimental da
 - **JWST Team** for early galaxy observations that validate GoE cosmology
 
 ---
+
 
 **"The fundamental particle is not a particle. It is a note in the music of time, a pattern in the architecture of the cosmos, a perfect and eternal crystal. The time crystal."**
 
