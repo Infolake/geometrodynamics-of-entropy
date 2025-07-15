@@ -67,6 +67,12 @@ python scripts/unification/run_correlation_analysis.py
 
 # Simulate cosmological bounce
 jupyter lab notebooks/cosmology/01_Bounce_Simulation.ipynb
+
+# Explore all 7 key derivations interactively
+jupyter lab notebooks/derivations/goe_derivations_complete.ipynb
+
+# Validate theoretical consistency
+python scripts/derivations/validate_all_derivations.py
 ```
 
 ## 🔬 Key Features
@@ -77,11 +83,25 @@ jupyter lab notebooks/cosmology/01_Bounce_Simulation.ipynb
 - **Mass hierarchy**: Cumulative axiom explains fermion masses
 - **Singularity-free cosmology**: Bounce mechanism replaces Big Bang
 
+### 7 Key Derivations
+The theory provides unified explanations for:
+1. **[Muon g-2 Anomaly](docs/derivations/muon_g2_derivation.md)** - Temporal fiber curvature correction
+2. **[CP Violation in Neutrinos](docs/derivations/cp_violation_derivation.md)** - Geometric phases in temporal dimensions
+3. **[JWST Tension Resolution](docs/derivations/jwst_tension_resolution.md)** - Early galaxy formation via bounce cosmology
+4. **[Gravitational Wave Background](docs/derivations/gwb_spectrum_derivation.md)** - Bounce signature detectable by LISA
+5. **[Perihelion Precession](docs/derivations/perihelion_correction.md)** - Additional orbital corrections from temporal dimensions
+6. **[Semi-Dirac Quasiparticles](docs/derivations/semi_dirac_derivation.md)** - Anisotropic dispersion from dimensional projection
+7. **[Inverse Coupling Flow](docs/derivations/inverse_coupling_flow.md)** - Power-law unification at ~8.7 TeV
+
+📖 **[Complete Derivations Guide](docs/goe_derivations_guide.md)** - Comprehensive reference for all 7 phenomena
+
 ### Computational Capabilities
 - **Monte Carlo analysis**: Million-sample statistical validation
 - **RG flow computation**: Modified β-functions in higher dimensions
 - **Cosmological simulation**: Bounce dynamics and structure formation
 - **Publication-quality plots**: Professional visualization suite
+- **Interactive notebooks**: [Complete derivations with calculations](notebooks/derivations/goe_derivations_complete.ipynb)
+- **Validation suite**: [Automated consistency checking](scripts/derivations/validate_all_derivations.py)
 
 ### Experimental Predictions
 - **Geometric constant**: K = (1.826 ± 0.868) × 10⁻⁹
@@ -120,6 +140,7 @@ $$\Delta a_\mu = K \cdot [1 - \cos(\delta_{CP})]$$
 - [Cosmological Bounce](notebooks/cosmology/) - Singularity-free cosmology
 - [Mass Hierarchy](notebooks/foundations/) - Fermion mass derivation
 - [Validation Suite](notebooks/consistency/) - Framework testing
+- [**Complete Derivations**](notebooks/derivations/goe_derivations_complete.ipynb) - All 7 key phenomena interactive calculations
 <img src="figures/Fig_4_0_1_sofia_teorem.png" alt="Fig_4_0_1_sofia_teorem" width="450"/>
 
 <img src="figures/fig_4.2_mass_reconstruction_table.png" alt="fig_4.2_mass_reconstruction_table" width="450"/>
