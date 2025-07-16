@@ -1,343 +1,345 @@
-# Derivação Detalhada: Precessão do Periélio
 
-**Autor:** Dr. Guilherme de Camargo  
-**Derivação:** 5/7 da série GoE  
-**Capítulo relacionado:** [Monografia Cap. 4.5](../../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md)
+# Detailed Derivation: Perihelion Precession
 
----
-
-## Introdução
-
-A precessão do periélio representa um dos testes clássicos da Relatividade Geral. A GoE prediz correções adicionais devido às **dimensões temporais extras**, oferecendo uma nova janela observacional para testar a estrutura (3+3)D do espaço-tempo.
-
-### Precessão Observada vs Teórica
-
-Para Mercúrio, a precessão total observada:
-$$\Delta\phi_{\text{obs}} = 5600.73 \pm 0.41 \text{ arcsec/século}$$
-
-Contribuições conhecidas:
-- **Relatividade Geral:** $\Delta\phi_{\text{GR}} = 42.98$ arcsec/século
-- **Perturbações planetárias:** $\Delta\phi_{\text{Newton}} = 5557.62$ arcsec/século
-- **Outras correções:** $\Delta\phi_{\text{other}} = 0.13$ arcsec/século
-
-**Resíduo experimental:** $\Delta\phi_{\text{resíduo}} = 0.00 \pm 0.41$ arcsec/século
-
-A GoE prediz uma contribuição adicional dentro desta precisão experimental.
+**Author:** Dr. Guilherme de Camargo  
+**Derivation:** 5/7 of the GoE series  
+**Related chapter:** [Monograph Ch. 4.5](../../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md)
 
 ---
 
-## Métrica GoE no Sistema Solar
+## Introduction
 
-### Métrica Completa (3+3)D
+The perihelion precession is one of the classic tests of General Relativity. GoE predicts additional corrections due to **extra temporal dimensions**, providing a new observational window to test the (3+3)D structure of space-time.
 
-A métrica GoE em coordenadas esféricas:
+### Observed vs. Theoretical Precession
+
+For Mercury, the total observed precession:
+$$\Delta\phi_{\text{obs}} = 5600.73 \pm 0.41 \text{ arcsec/century}$$
+
+Known contributions:
+- **General Relativity:** $\Delta\phi_{\text{GR}} = 42.98$ arcsec/century
+- **Planetary perturbations:** $\Delta\phi_{\text{Newton}} = 5557.62$ arcsec/century
+- **Other corrections:** $\Delta\phi_{\text{other}} = 0.13$ arcsec/century
+
+**Experimental residual:** $\Delta\phi_{\text{residual}} = 0.00 \pm 0.41$ arcsec/century
+
+GoE predicts an additional contribution within this experimental precision.
+
+---
+
+## GoE Metric in the Solar System
+
+### Full (3+3)D Metric
+
+The GoE metric in spherical coordinates:
 
 $$ds^2 = -\left(1-\frac{2GM}{rc^2}+\alpha_{\text{GoE}}\frac{R_3^2}{R_2^2}\frac{GM}{rc^2}\right)c^2dt^2 + \left(1+\frac{2GM}{rc^2}\right)dr^2 + r^2d\theta^2 + r^2\sin^2\theta\,d\phi^2 + g_{\Theta\Theta}d\Theta^2$$
 
-onde $\alpha_{\text{GoE}}$ é um parâmetro de acoplamento dimensional.
+where $\alpha_{\text{GoE}}$ is a dimensional coupling parameter.
 
-### Correção Temporal
+### Temporal Correction
 
-O termo de correção emerge das dimensões temporais:
+The correction term emerges from the temporal dimensions:
 
 $$g_{\Theta\Theta} = \begin{pmatrix} 
 R_2^2(1+\epsilon_2) & \delta_{23} \\
 \delta_{23} & R_3^2(1+\epsilon_3)
 \end{pmatrix}$$
 
-onde $\epsilon_{2,3}$ são pequenas perturbações gravitacionais.
+where $\epsilon_{2,3}$ are small gravitational perturbations.
 
 ---
 
-## Derivação da Correção Orbital
+## Derivation of the Orbital Correction
 
-### Passo 1: Lagrangiano Efetivo
+### Step 1: Effective Lagrangian
 
-O lagrangiano para uma partícula teste na métrica GoE:
+The Lagrangian for a test particle in the GoE metric:
 
 $$\mathcal{L} = -mc^2\sqrt{-g_{\mu\nu}\frac{dx^\mu}{d\tau}\frac{dx^\nu}{d\tau}} - \frac{1}{2}m_{\text{eff}}\left(\frac{d\theta}{d\tau}\right)^2 - \frac{1}{2}m_{\text{eff}}\left(\frac{d\xi}{d\tau}\right)^2$$
 
-onde $m_{\text{eff}}$ é a massa efetiva acoplada às dimensões temporais.
+where $m_{\text{eff}}$ is the effective mass coupled to the temporal dimensions.
 
-### Passo 2: Equações de Movimento
+### Step 2: Equations of Motion
 
-As equações geodésicas modificadas:
+The modified geodesic equations:
 
 $$\frac{d^2x^\mu}{d\tau^2} + \Gamma^\mu_{\nu\rho}\frac{dx^\nu}{d\tau}\frac{dx^\rho}{d\tau} = F^\mu_{\text{GoE}}$$
 
-onde $F^\mu_{\text{GoE}}$ é a força efetiva das dimensões temporais:
+where $F^\mu_{\text{GoE}}$ is the effective force from temporal dimensions:
 
 $$F^r_{\text{GoE}} = -\alpha_{\text{GoE}}\frac{R_3^2}{R_2^2}\frac{GM}{r^3c^2}\frac{dr}{dt}$$
 
-### Passo 3: Conservação do Momento Angular
+### Step 3: Conservation of Angular Momentum
 
-O momento angular modificado:
+The modified angular momentum:
 
 $$L_{\text{eff}} = mr^2\frac{d\phi}{dt}\left(1 + \beta_{\text{GoE}}\frac{R_3^2}{R_2^2}\frac{GM}{rc^2}\right)$$
 
-onde $\beta_{\text{GoE}} \sim \alpha_{\text{GoE}}/2$.
+where $\beta_{\text{GoE}} \sim \alpha_{\text{GoE}}/2$.
 
-### Passo 4: Equação da Órbita
+### Step 4: Orbit Equation
 
-A equação da órbita na aproximação pós-Newtoniana:
+The orbit equation in the post-Newtonian approximation:
 
 $$\frac{d^2u}{d\phi^2} + u = \frac{GM}{L^2}\left(1 + 3u + \gamma_{\text{GoE}}\frac{R_3^2}{R_2^2}u^2\right)$$
 
-onde $u = 1/r$ e $\gamma_{\text{GoE}}$ combina os efeitos dimensionais.
+where $u = 1/r$ and $\gamma_{\text{GoE}}$ combines the dimensional effects.
 
 ---
 
-## Cálculo da Precessão
+## Precession Calculation
 
-### Solução Perturbativa
+### Perturbative Solution
 
-Expandindo em potências do parâmetro pós-Newtoniano $\epsilon = GM/(ac^2)$:
+Expanding in powers of the post-Newtonian parameter $\epsilon = GM/(ac^2)$:
 
 $$u(\phi) = u_0(1+e\cos\phi) + \delta u_{\text{GR}}(\phi) + \delta u_{\text{GoE}}(\phi)$$
 
-onde:
-- $u_0 = a(1-e^2)/(GM)$: solução Newtoniana
-- $\delta u_{\text{GR}}$: correção da Relatividade Geral
-- $\delta u_{\text{GoE}}$: correção da GoE
+where:
+- $u_0 = a(1-e^2)/(GM)$: Newtonian solution
+- $\delta u_{\text{GR}}$: General Relativity correction
+- $\delta u_{\text{GoE}}$: GoE correction
 
-### Correção GoE
+### GoE Correction
 
-A correção específica da GoE:
+The GoE-specific correction:
 
 $$\delta u_{\text{GoE}}(\phi) = \gamma_{\text{GoE}}\frac{R_3^2}{R_2^2}\frac{GM^2}{L^2}e\sin\phi$$
 
-### Precessão por Órbita
+### Precession per Orbit
 
-A precessão adicional por órbita:
+The additional precession per orbit:
 
 $$\Delta\phi_{\text{GoE}} = K_{\text{orb}}\left(\frac{R_3}{R_2}\right)^{2}\frac{GM}{c^{2}a(1-e^{2})}$$
 
-onde $K_{\text{orb}}$ é a constante orbital que depende da geometria temporal.
+where $K_{\text{orb}}$ is the orbital constant depending on the temporal geometry.
 
 ---
 
-## Resultado Final
+## Final Result
 
-### Fórmula Fechada
+### Closed Formula
 
 $$\boxed{\Delta\phi_{\text{GoE}} = K_{\text{orb}}\Bigl(\tfrac{R_3}{R_2}\bigr)^{2}\frac{GM}{c^{2}a(1-e^{2})}}$$
 
-### Determinação de Parâmetros
+### Parameter Determination
 
-Para Mercúrio ($a = 0.387$ AU, $e = 0.206$):
+For Mercury ($a = 0.387$ AU, $e = 0.206$):
 
-$$\Delta\phi_{\text{GoE}}^{\text{Mercúrio}} = K_{\text{orb}}\left(\frac{R_3}{R_2}\right)^{2} \times 1.23 \times 10^{-8} \text{ rad/órbita}$$
+$$\Delta\phi_{\text{GoE}}^{\text{Mercury}} = K_{\text{orb}}\left(\frac{R_3}{R_2}\right)^{2} \times 1.23 \times 10^{-8} \text{ rad/orbit}$$
 
-### Conversão para arcsec/século
+### Conversion to arcsec/century
 
-Para $N = 415$ órbitas/século:
+For $N = 415$ orbits/century:
 
-$$\Delta\phi_{\text{GoE}}^{\text{século}} = K_{\text{orb}}\left(\frac{R_3}{R_2}\right)^{2} \times 1.04 \text{ arcsec/século}$$
+$$\Delta\phi_{\text{GoE}}^{\text{century}} = K_{\text{orb}}\left(\frac{R_3}{R_2}\right)^{2} \times 1.04 \text{ arcsec/century}$$
 
 ---
 
-## Estimativa dos Parâmetros GoE
+## GoE Parameter Estimation
 
-### Razão Dimensional
+### Dimensional Ratio
 
-Para $R_2 \sim 1.8 \times 10^{-18}$ m e $R_3 \sim 2.2 \times 10^{-18}$ m:
+For $R_2 \sim 1.8 \times 10^{-18}$ m and $R_3 \sim 2.2 \times 10^{-18}$ m:
 
 $$\frac{R_3}{R_2} \approx 1.22$$
 
-### Constante Orbital
+### Orbital Constant
 
-Para manter compatibilidade com observações ($|\Delta\phi_{\text{GoE}}| < 0.41$ arcsec/século):
+To remain compatible with observations ($|\Delta\phi_{\text{GoE}}| < 0.41$ arcsec/century):
 
 $$K_{\text{orb}} < \frac{0.41}{1.22^2 \times 1.04} \approx 0.26$$
 
-### Valor Teórico
+### Theoretical Value
 
-Cálculos da GoE sugerem:
+GoE calculations suggest:
 
 $$K_{\text{orb}} = \frac{\alpha_{\text{GoE}}}{3} \approx 0.15 \pm 0.05$$
 
-**Conclusão:** Compatível com limites observacionais!
+**Conclusion:** Compatible with observational limits!
 
 ---
 
-## Testes com BepiColombo
+## Tests with BepiColombo
 
-### Precisão Esperada
+### Expected Precision
 
-A missão BepiColombo (ESA/JAXA) oferece:
-- **Precisão orbital:** $\sim 10^{-9}$ arcsec/século
-- **Tempo base:** 7 anos de operação
-- **Cobertura:** Múltiplas órbitas de Mercúrio
+The BepiColombo mission (ESA/JAXA) offers:
+- **Orbital precision:** $\sim 10^{-9}$ arcsec/century
+- **Time baseline:** 7 years of operation
+- **Coverage:** Multiple Mercury orbits
 
-### Detectabilidade GoE
+### GoE Detectability
 
-Com $\Delta\phi_{\text{GoE}} \sim 0.2$ arcsec/século:
+With $\Delta\phi_{\text{GoE}} \sim 0.2$ arcsec/century:
 
-$$\text{SNR} = \frac{0.2 \text{ arcsec/século}}{10^{-9} \text{ arcsec/século}} \sim 2 \times 10^8$$
+$$\text{SNR} = \frac{0.2 \text{ arcsec/century}}{10^{-9} \text{ arcsec/century}} \sim 2 \times 10^8$$
 
-**Detecção garantida** se a correção existe!
+**Detection guaranteed** if the correction exists!
 
-### Outros Planetas
+### Other Planets
 
-| Planeta | $\Delta\phi_{\text{GoE}}$ (arcsec/século) | Precisão Atual | Detectável |
-|---------|------------------------------------------|---------------|-----------|
-| Mercúrio | $0.20 \pm 0.06$ | $\pm 0.41$ | BepiColombo ✓ |
-| Vênus | $0.08 \pm 0.02$ | $\pm 0.15$ | Marginal |
-| Terra | $0.04 \pm 0.01$ | $\pm 0.05$ | Possível |
-| Marte | $0.02 \pm 0.01$ | $\pm 0.03$ | Difícil |
+| Planet   | $\Delta\phi_{\text{GoE}}$ (arcsec/century) | Current Precision | Detectable     |
+|----------|--------------------------------------------|------------------|---------------|
+| Mercury  | $0.20 \pm 0.06$                            | $\pm 0.41$       | BepiColombo ✓ |
+| Venus    | $0.08 \pm 0.02$                            | $\pm 0.15$       | Marginal      |
+| Earth    | $0.04 \pm 0.01$                            | $\pm 0.05$       | Possible      |
+| Mars     | $0.02 \pm 0.01$                            | $\pm 0.03$       | Difficult     |
 
 ---
 
-## Código de Validação
+## Validation Code
 
 ```python
 import numpy as np
 
 def perihelion_precession_goe(M_central, a_orbit, e_ecc, R3_R2_ratio, K_orb=0.15):
     """
-    Calcula a precessão do periélio da GoE
+    Calculates the GoE perihelion precession
     
-    Parâmetros:
+    Parameters:
     -----------
     M_central : float
-        Massa central em kg
+        Central mass in kg
     a_orbit : float  
-        Semi-eixo maior em metros
+        Semi-major axis in meters
     e_ecc : float
-        Excentricidade orbital
+        Orbital eccentricity
     R3_R2_ratio : float
-        Razão das dimensões temporais
+        Ratio of temporal dimensions
     K_orb : float
-        Constante orbital
+        Orbital constant
         
-    Retorna:
+    Returns:
     --------
     precession : float
-        Precessão em arcsec/século
+        Precession in arcsec/century
     """
-    # Constantes
+    # Constants
     G = 6.67430e-11  # m³/kg/s²
     c = 299792458    # m/s
     
-    # Precessão por órbita (radianos)
+    # Precession per orbit (radians)
     GM_over_c2 = G * M_central / c**2
     precession_per_orbit = K_orb * (R3_R2_ratio)**2 * GM_over_c2 / (a_orbit * (1 - e_ecc**2))
     
-    # Período orbital (anos)
-    T_orbit_years = np.sqrt((a_orbit / 1.496e11)**3)  # Lei de Kepler
+    # Orbital period (years)
+    T_orbit_years = np.sqrt((a_orbit / 1.496e11)**3)  # Kepler's law
     
-    # Órbitas por século
+    # Orbits per century
     orbits_per_century = 100 / T_orbit_years
     
-    # Precessão por século
+    # Precession per century
     precession_per_century_rad = precession_per_orbit * orbits_per_century
     
-    # Conversão para arcsec
+    # Convert to arcsec
     rad_to_arcsec = 206265
     precession_arcsec = precession_per_century_rad * rad_to_arcsec
     
     return precession_arcsec
 
-# Dados de Mercúrio
+# Mercury data
 M_sun = 1.989e30      # kg
-a_mercury = 5.79e10   # metros (0.387 AU)
+a_mercury = 5.79e10   # meters (0.387 AU)
 e_mercury = 0.206
 R3_R2 = 1.22
 
-# Cálculo da precessão GoE
+# GoE precession calculation
 precession_goe = perihelion_precession_goe(M_sun, a_mercury, e_mercury, R3_R2)
 
-print(f"=== PRECESSÃO DO PERIÉLIO - GoE ===")
-print(f"Planeta: Mercúrio")
-print(f"Precessão GoE: {precession_goe:.3f} arcsec/século")
-print(f"Precessão GR: {42.98:.2f} arcsec/século")
-print(f"Precisão atual: ±0.41 arcsec/século")
-print(f"Detectável: {'✅ SIM' if precession_goe > 0.41 else '🔍 BepiColombo'}")
+print(f"=== PERIHELION PRECESSION - GoE ===")
+print(f"Planet: Mercury")
+print(f"GoE precession: {precession_goe:.3f} arcsec/century")
+print(f"GR precession: {42.98:.2f} arcsec/century")
+print(f"Current precision: ±0.41 arcsec/century")
+print(f"Detectable: {'✅ YES' if precession_goe > 0.41 else '🔍 BepiColombo'}")
 
-# Comparação com outros planetas
+# Comparison with other planets
 planets = {
-    'Vênus': (M_sun, 1.08e11, 0.007),
-    'Terra': (M_sun, 1.50e11, 0.017), 
-    'Marte': (M_sun, 2.28e11, 0.093)
+    'Venus': (M_sun, 1.08e11, 0.007),
+    'Earth': (M_sun, 1.50e11, 0.017), 
+    'Mars': (M_sun, 2.28e11, 0.093)
 }
 
-print(f"\n=== COMPARAÇÃO PLANETÁRIA ===")
+print(f"\n=== PLANETARY COMPARISON ===")
 for planet, (M, a, e) in planets.items():
     prec = perihelion_precession_goe(M, a, e, R3_R2)
-    print(f"{planet:8s}: {prec:.3f} arcsec/século")
+    print(f"{planet:8s}: {prec:.3f} arcsec/century")
 
-# Sensibilidade aos parâmetros
-print(f"\n=== SENSIBILIDADE PARAMÉTRICA ===")
+# Parameter sensitivity
+print(f"\n=== PARAMETER SENSITIVITY ===")
 for K in [0.10, 0.15, 0.20]:
     prec = perihelion_precession_goe(M_sun, a_mercury, e_mercury, R3_R2, K)
-    print(f"K_orb = {K:.2f}: {prec:.3f} arcsec/século")
+    print(f"K_orb = {K:.2f}: {prec:.3f} arcsec/century")
 
 for ratio in [1.0, 1.22, 1.5]:
     prec = perihelion_precession_goe(M_sun, a_mercury, e_mercury, ratio)
-    print(f"R₃/R₂ = {ratio:.2f}: {prec:.3f} arcsec/século")
+    print(f"R₃/R₂ = {ratio:.2f}: {prec:.3f} arcsec/century")
 ```
 
 ---
 
-## Extensões e Considerações
+## Extensions and Considerations
 
-### Efeitos de Segunda Ordem
+### Second-Order Effects
 
-Correções de ordem superior incluem:
+Higher-order corrections include:
 
-1. **Acoplamento spin-órbita:** Rotação do Sol
-2. **Quadrupolo solar:** Deformação gravitacional  
-3. **Maré temporal:** Variações de $R_2, R_3$
+1. **Spin-orbit coupling:** Solar rotation
+2. **Solar quadrupole:** Gravitational deformation  
+3. **Temporal tide:** Variations of $R_2, R_3$
 
-### Sistemas Binários
+### Binary Systems
 
-Para pulsares binários:
+For binary pulsars:
 
 $$\Delta\dot{\omega} = K_{\text{bin}}\left(\frac{R_3}{R_2}\right)^{2}\frac{GM_{\text{total}}}{c^{2}a^3(1-e^{2})^{3/2}}$$
 
-### Limitações Atuais
+### Current Limitations
 
-1. **Aproximação pós-Newtoniana:** Válida para $v \ll c$
-2. **Campo fraco:** $GM/(rc^2) \ll 1$
-3. **Dimensões estáticas:** $R_2, R_3$ constantes
+1. **Post-Newtonian approximation:** Valid for $v \ll c$
+2. **Weak field:** $GM/(rc^2) \ll 1$
+3. **Static dimensions:** $R_2, R_3$ constant
 
 ---
 
-## Implicações Cosmológicas
+## Cosmological Implications
 
-### Conexão com Outras Anomalias
+### Connection with Other Anomalies
 
-A constante $K_{\text{orb}}$ relaciona-se com:
+The constant $K_{\text{orb}}$ relates to:
 
 $$K_{\text{orb}} = \frac{K_{\text{muon}}}{3} \times f_{\text{geometric}}$$
 
-onde $f_{\text{geometric}} \sim 0.5$ é um fator geométrico.
+where $f_{\text{geometric}} \sim 0.5$ is a geometric factor.
 
-### Teste da Estrutura Temporal
+### Test of Temporal Structure
 
-Medidas precisas de $\Delta\phi_{\text{GoE}}$ testam:
+Precise measurements of $\Delta\phi_{\text{GoE}}$ test:
 
-1. **Número de dimensões temporais**
-2. **Topologia das fibras $\Theta, \Xi$**
-3. **Acoplamento gravitacional dimensional**
+1. **Number of temporal dimensions**
+2. **Topology of the fibers $\Theta, \Xi$**
+3. **Dimensional gravitational coupling**
 
 ---
 
-## Referências
+## References
 
-1. **Observacionais:**
+1. **Observational:**
    - BepiColombo Team, *Space Sci. Rev.* **217**, 90 (2021)
    - Fienga *et al.*, *Astron. Astrophys.* **640**, A6 (2020)
 
-2. **Teóricas:**
-   - Monografia GoE, Capítulo 4.5
-   - [Derivação Semi-Dirac](semi_dirac_derivation.md)
-   - [Notebook orbital](../../notebooks/derivations/goe_derivations_complete.ipynb)
+2. **Theoretical:**
+   - GoE Monograph, Chapter 4.5
+   - [Semi-Dirac Derivation](semi_dirac_derivation.md)
+   - [Orbital notebook](../../notebooks/derivations/goe_derivations_complete.ipynb)
 
-3. **Revisões:**
+3. **Reviews:**
    - Will, *Theory and Experiment in Gravitational Physics* (2018)
    - Clifford, *Class. Quantum Grav.* **38**, 045009 (2021)
 
 ---
 
-*Derivação validada em: Julho 2025 • Precisão BepiColombo: ✓ • Compatibilidade observacional: ✓*
+*Derivation validated on: July 2025 • BepiColombo precision: ✓ • Observational compatibility: ✓*
+
