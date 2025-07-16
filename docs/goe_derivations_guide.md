@@ -1,304 +1,348 @@
-# Guia Completo das 7 Derivações-Chave da GoE
-
-**Geometrodynamics of Entropy (GoE) - Derivations Reference Guide**
+Here is your "Guia Completo das 7 Derivações-Chave da GoE" translated to advanced, technical English, with all mathematical formulas retained in LaTeX for clarity:
 
 ---
 
-**Autor:** Dr. Guilherme de Camargo  
-**Versão:** v8.0 (Unification Edition)  
-**Data:** 15 de Julho de 2025  
-**Status:** Documento de Referência Oficial  
-**Licença:** Creative Commons Attribution 4.0  
+# Complete Guide to the 7 Key GoE Derivations
+
+**Geometrodynamics of Entropy (GoE) – Derivations Reference Guide**
 
 ---
 
-## Introdução
-
-Este documento compila e sistematiza as **7 derivações fundamentais** da teoria Geometrodynamics of Entropy (GoE), servindo como guia de referência rápida e complemento à [monografia principal](../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md). Cada derivação conecta fenômenos observacionais específicos com as predições teóricas da GoE, demonstrando a capacidade unificadora da teoria.
-
-A GoE postula uma estrutura espaço-temporal (3+3)-dimensional onde o tempo possui uma geometria dinâmica multi-dimensional. Esta extensão geométrica resolve incompatibilidades fundamentais entre Relatividade Geral e Mecânica Quântica, oferecendo predições testáveis para fenômenos em escalas que vão desde partículas elementares até cosmologia.
-
-## Visão Geral das 7 Derivações
-
-| Derivação | Fenômeno | Escala | Status Experimental |
-|-----------|----------|--------|-------------------|
-| [1](#1-anomalia-do-múon-g-2) | Anomalia do Múon g-2 | Partículas | ✅ Confirmado (Fermilab E989) |
-| [2](#2-violação-cp-em-neutrinos) | Violação CP em Neutrinos | Partículas | ✅ Medido (NOvA, T2K) |
-| [3](#3-tensão-jwst---galáxias-precoces) | Tensão JWST - Galáxias Precoces | Cosmologia | 🔄 Em análise |
-| [4](#4-fundo-estocástico-de-ondas-gravitacionais) | Fundo de Ondas Gravitacionais | Cosmologia | 🔮 Predição (LISA) |
-| [5](#5-precessão-do-periélio) | Precessão do Periélio | Sistema Solar | 🔄 Teste (BepiColombo) |
-| [6](#6-quasipartículas-semi-dirac) | Quasipartículas Semi-Dirac | Matéria Condensada | 🔬 Laboratório |
-| [7](#7-corrida-inversa-dos-acoplamentos) | Corrida Inversa dos Acoplamentos | Altas Energias | 🔮 Predição (FCC) |
+**Author:** Dr. Guilherme de Camargo  
+**Version:** v8.0 (Unification Edition)  
+**Date:** July 15, 2025  
+**Status:** Official Reference Document  
+**License:** Creative Commons Attribution 4.0  
 
 ---
 
-## 1. Anomalia do Múon g-2
+## Introduction
 
-### 1.1 Resultado Principal
+This document compiles and systematizes the **7 fundamental derivations** of the Geometrodynamics of Entropy (GoE) theory, serving as a rapid reference guide and a supplement to the [main monograph](../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md). Each derivation connects specific observational phenomena with GoE's theoretical predictions, demonstrating the unifying power of the theory.
 
-A correção GoE ao momento magnético anômalo do múon é dada por:
+GoE postulates a (3+3)-dimensional spacetime structure where time possesses a dynamic, multi-dimensional geometry. This geometric extension resolves fundamental incompatibilities between General Relativity and Quantum Mechanics, providing testable predictions for phenomena ranging from elementary particles to cosmology.
 
-$$\boxed{\Delta a_\mu = \frac{q^2}{8\pi^2}\,\kappa_\tau\,\log\!\bigl(\tfrac{\Lambda_\Theta^2}{m_\mu^2}\bigr)}$$
+## Overview of the 7 Derivations
 
-onde:
-- $\kappa_\tau$: curvatura da fibra temporal Θ
-- $\Lambda_\Theta$: escala de corte da dimensão temporal
-- $q$: carga elétrica fundamental
-
-### 1.2 Derivação Física
-
-A derivação emerge da **integração sobre a fibra temporal Θ** no termo de Pauli do lagrangiano GoE:
-
-$$\mathcal{L}_{\text{Pauli}} = \frac{i}{2}\bar{\psi}\sigma^{\mu\nu}F_{\mu\nu}\psi \int_\Theta \sqrt{g_\Theta} \, d\theta$$
-
-O loop de correção radiativa na geometria (3+3)D produz um termo logarítmico adicional que explica precisamente a discrepância experimental.
-
-### 1.3 Conexão Experimental
-
-- **Valor experimental:** $\Delta a_\mu^{\text{exp}} = (2.30 \pm 0.69) \times 10^{-9}$
-- **Predição GoE:** $\Delta a_\mu^{\text{GoE}} = (1.826 \pm 0.868) \times 10^{-9}$
-- **Acordo:** Dentro de 1σ de confiança
-
-**Referência detalhada:** [Derivação completa](derivations/muon_g2_derivation.md)
+| Derivation | Phenomenon | Scale | Experimental Status |
+|------------|------------|-------|---------------------|
+| [1](#1-muon-g-2-anomaly) | Muon g-2 Anomaly | Particle | ✅ Confirmed (Fermilab E989) |
+| [2](#2-cp-violation-in-neutrinos) | CP Violation in Neutrinos | Particle | ✅ Measured (NOvA, T2K) |
+| [3](#3-jwst-tension---early-galaxies) | JWST Tension – Early Galaxies | Cosmology | 🔄 Under Analysis |
+| [4](#4-stochastic-gravitational-wave-background) | Stochastic GW Background | Cosmology | 🔮 Prediction (LISA) |
+| [5](#5-perihelion-precession) | Perihelion Precession | Solar System | 🔄 Test (BepiColombo) |
+| [6](#6-semi-dirac-quasiparticles) | Semi-Dirac Quasiparticles | Condensed Matter | 🔬 Lab |
+| [7](#7-inverse-running-of-couplings) | Inverse Running of Couplings | High Energy | 🔮 Prediction (FCC) |
 
 ---
 
-## 2. Violação CP em Neutrinos
+## 1. Muon g-2 Anomaly
 
-### 2.1 Resultado Principal
+### 1.1 Main Result
 
-A fase de violação CP na matriz PMNS emerge da geometria temporal:
+The GoE correction to the anomalous magnetic moment of the muon is given by:
 
-$$\boxed{\delta_{CP} = (\phi_{g,1}-\phi_{g,2})+(\phi_{g,2}-\phi_{g,3})+(\phi_{g,3}-\phi_{g,1})}$$
+```latex
+\boxed{
+\Delta a_\mu = \frac{q^2}{8\pi^2}\,\kappa_\tau\,\log\left(\frac{\Lambda_\Theta^2}{m_\mu^2}\right)
+}
+```
 
-onde $\phi_{g,i}$ são as fases Aharonov-Bohm temporais associadas a cada família de neutrinos.
+where:
+- $\kappa_\tau$: curvature of the temporal fiber $\Theta$
+- $\Lambda_\Theta$: cutoff scale of the temporal dimension
+- $q$: elementary electric charge
 
-### 2.2 Derivação Física
+### 1.2 Physical Derivation
 
-A **contorsão da fibra temporal Ξ** gera uma fase geométrica não-trivial durante a evolução dos neutrinos:
+The derivation arises from **integration over the temporal fiber $\Theta$** in the Pauli term of the GoE Lagrangian:
 
-$$\phi_{g,i} = \oint_{\mathcal{C}_i} A_\Theta \cdot d\theta$$
+```latex
+\mathcal{L}_{\text{Pauli}} = \frac{i}{2}\bar{\psi}\sigma^{\mu\nu}F_{\mu\nu}\psi \int_\Theta \sqrt{g_\Theta}\, d\theta
+```
 
-onde $A_\Theta$ é o potencial vetor na dimensão temporal e $\mathcal{C}_i$ são os caminhos na fibra Ξ.
+The radiative correction loop in (3+3)D geometry yields an additional logarithmic term that precisely explains the experimental discrepancy.
 
-### 2.3 Conexão Experimental
+### 1.3 Experimental Connection
 
-- **Valor experimental:** $\delta_{CP} = -1.970 \pm 0.370$ rad
-- **Predição GoE:** Emergência natural da violação CP sem parâmetros livres
-- **Correlação:** Conectada à anomalia do múon via constante geométrica $K$
+- **Experimental value:** $\Delta a_\mu^{\text{exp}} = (2.30 \pm 0.69) \times 10^{-9}$
+- **GoE prediction:** $\Delta a_\mu^{\text{GoE}} = (1.826 \pm 0.868) \times 10^{-9}$
+- **Agreement:** Within 1$\sigma$ confidence
 
-**Referência detalhada:** [Derivação completa](derivations/cp_violation_derivation.md)
-
----
-
-## 3. Tensão JWST - Galáxias Precoces
-
-### 3.1 Resultado Principal
-
-A formação precoce de galáxias é explicada pela **densidade de energia de torção** que cresce no passado:
-
-$$\rho_{\text{tor}}(a) = \rho_{\text{tor},0} \cdot a^{-6}$$
-
-Esta dependência em $a^{-6}$ (mais forte que radiação) permite formação eficiente de buracos negros primordiais (PBHs) via bounce cosmológico.
-
-### 3.2 Derivação Física
-
-O **bounce cosmológico** da GoE evita a singularidade inicial e produz:
-
-1. **Espectro "azul" de perturbações:** $P(k) \propto k^{n_s}$ com $n_s > 1$
-2. **Formação de PBHs:** Massa típica $M_{\text{PBH}} \sim 10^{3-6} M_\odot$
-3. **Sementes galácticas:** Formação acelerada em $z > 10$
-
-### 3.3 Conexão Observacional
-
-- **JWST:** Galáxias massivas em $z \sim 10-13$
-- **GoE:** Predição natural via bounce + PBHs
-- **Teste:** Função de massa dos PBHs observável via lentes gravitacionais
-
-**Referência detalhada:** [Derivação completa](derivations/jwst_tension_resolution.md)
+**Detailed reference:** [Full derivation](derivations/muon_g2_derivation.md)
 
 ---
 
-## 4. Fundo Estocástico de Ondas Gravitacionais
+## 2. CP Violation in Neutrinos
 
-### 4.1 Resultado Principal
+### 2.1 Main Result
 
-O espectro de ondas gravitacionais do bounce cosmológico apresenta um pico característico:
+The CP-violating phase in the PMNS matrix arises from temporal geometry:
 
-$$\boxed{f_{\text{pico}} \simeq 10^{-3}\,\text{Hz}, \quad h^{2}\Omega_{\text{GW}} \propto \bigl(\tfrac{R_2}{R_3}\bigr)^{4}}$$
+```latex
+\boxed{
+\delta_{CP} = (\phi_{g,1}-\phi_{g,2})+(\phi_{g,2}-\phi_{g,3})+(\phi_{g,3}-\phi_{g,1})
+}
+```
 
-onde $R_2$ e $R_3$ são os raios das dimensões temporais extras.
+where $\phi_{g,i}$ are the temporal Aharonov-Bohm phases associated with each neutrino family.
 
-### 4.2 Derivação Física
+### 2.2 Physical Derivation
 
-Durante o bounce, as **flutuações métricas** nas dimensões temporais geram ondas gravitacionais:
+**Torsion of the $\Xi$ temporal fiber** generates a nontrivial geometric phase during neutrino evolution:
 
-$$h_{ij}(t,\mathbf{k}) = \int \frac{d^3k'}{(2\pi)^3} G_{\text{GW}}(k,k',t) \chi(\mathbf{k}',t_{\text{bounce}})$$
+```latex
+\phi_{g,i} = \oint_{\mathcal{C}_i} A_\Theta \cdot d\theta
+```
 
-onde $\chi$ representa as flutuações primordiais e $G_{\text{GW}}$ é a função de Green gravitacional.
+where $A_\Theta$ is the vector potential in the temporal dimension and $\mathcal{C}_i$ paths in the $\Xi$ fiber.
 
-### 4.3 Predições para LISA/Taiji
+### 2.3 Experimental Connection
 
-- **Frequência de pico:** $f \sim 10^{-3}$ Hz (banda LISA)
-- **Amplitude:** $h^2\Omega_{\text{GW}} \sim 10^{-11}$ (detectável)
-- **Assinatura:** Dependência específica em $(R_2/R_3)^4$
+- **Experimental value:** $\delta_{CP} = -1.970 \pm 0.370$ rad
+- **GoE prediction:** Natural emergence of CP violation with no free parameters
+- **Correlation:** Connected to the muon anomaly via the geometric constant $K$
 
-**Referência detalhada:** [Derivação completa](derivations/gwb_spectrum_derivation.md)
-
----
-
-## 5. Precessão do Periélio
-
-### 5.1 Resultado Principal
-
-A correção GoE à precessão orbital inclui contribuições das dimensões temporais:
-
-$$\boxed{\Delta\phi_{\text{GoE}} = K_{\text{orb}}\Bigl(\tfrac{R_3}{R_2}\bigr)^{2}\frac{GM}{c^{2}a(1-e^{2})}}$$
-
-onde $K_{\text{orb}}$ é uma constante orbital que depende da geometria temporal.
-
-### 5.2 Derivação Física
-
-A **métrica GoE** modifica as geodésicas no espaço-tempo (3+3)D:
-
-$$ds^2 = -(1+2\Phi)dt^2 + (1-2\Phi)\delta_{ij}dx^i dx^j + g_{\Theta\Theta}d\theta^2 + g_{\Xi\Xi}d\xi^2$$
-
-As dimensões temporais $\theta$ e $\xi$ contribuem para a curvatura efetiva, gerando correções mensuráveis.
-
-### 5.3 Testes com BepiColombo
-
-- **Mercúrio:** Correção da ordem de $10^{-8}$ arcsec/século
-- **Precisão BepiColombo:** $\sim 10^{-9}$ arcsec/século
-- **Detectabilidade:** Dentro da capacidade observacional
-
-**Referência detalhada:** [Derivação completa](derivations/perihelion_correction.md)
+**Detailed reference:** [Full derivation](derivations/cp_violation_derivation.md)
 
 ---
 
-## 6. Quasipartículas Semi-Dirac
+## 3. JWST Tension – Early Galaxies
 
-### 6.1 Resultado Principal
+### 3.1 Main Result
 
-O hamiltoniano efetivo para quasipartículas semi-Dirac na geometria GoE:
+Early galaxy formation is explained by **torsion energy density** that grows into the past:
 
-$$\boxed{E = \sqrt{(\hbar v_F k_x)^2+\bigl(\tfrac{\hbar^2 k_y^2}{2m^*}\bigr)^2}}$$
+```latex
+\boxed{
+\rho_{\text{tor}}(a) = \rho_{\text{tor},0} \cdot a^{-6}
+}
+```
 
-onde a anisotropia surge da projeção das dimensões temporais no espaço de momentos.
+This $a^{-6}$ dependence (stronger than radiation) allows efficient primordial black hole (PBH) formation via a cosmological bounce.
 
-### 6.2 Derivação Física
+### 3.2 Physical Derivation
 
-A **contração dimensional** das coordenadas temporais sobre o espaço (3+1)D produz um hamiltoniano efetivo anisotrópico:
+The GoE **cosmological bounce** avoids the initial singularity and produces:
 
-$$H_{\text{eff}} = \int d\theta d\xi \, H_{\text{GoE}}(\mathbf{k}, k_\theta, k_\xi)$$
+1. **"Blue" perturbation spectrum:** $P(k) \propto k^{n_s}$ with $n_s > 1$
+2. **PBH formation:** Typical mass $M_{\text{PBH}} \sim 10^{3-6} M_\odot$
+3. **Galactic seeds:** Accelerated formation at $z > 10$
 
-A integração sobre $k_\theta$ e $k_\xi$ gera a dispersão linear em $k_x$ e quadrática em $k_y$.
+### 3.3 Observational Connection
 
-### 6.3 Conexão com Heteroestruturas
+- **JWST:** Massive galaxies at $z \sim 10-13$
+- **GoE:** Natural prediction via bounce + PBHs
+- **Test:** PBH mass function observable via gravitational lensing
 
-- **Sistemas:** TiO₂/VO₂, grafeno em substrato
-- **Parâmetros GoE:** $v_F \sim 10^6$ m/s, $m^* \sim 0.1 m_e$
-- **Teste:** Espectroscopia ARPES
-
-**Referência detalhada:** [Derivação completa](derivations/semi_dirac_derivation.md)
-
----
-
-## 7. Corrida Inversa dos Acoplamentos
-
-### 7.1 Resultado Principal
-
-As constantes de acoplamento seguem uma lei de potência inversa à renormalização:
-
-$$\boxed{g_i^{-2}(\mu) = g_i^{-2}(\Lambda_i) + \frac{C_i}{2\pi^{2}}\mu^{2}}$$
-
-em contraste com o comportamento logarítmico do Modelo Padrão.
-
-### 7.2 Derivação Física
-
-As **dimensões temporais extras** modificam as funções β:
-
-$$\beta_i = \mu \frac{dg_i}{d\mu} = \frac{b_i g_i^3}{1 + a_i g_i^2}$$
-
-onde $a_i$ e $b_i$ incluem contribuições das dimensões $\theta$ e $\xi$.
-
-### 7.3 Unificação em ~10 TeV
-
-- **Escala de unificação:** $\Lambda_{\text{GUT}} \sim 8.7$ TeV
-- **Teste experimental:** Futuro FCC-hh
-- **Assinatura:** Desvio da evolução logarítmica padrão
-
-**Referência detalhada:** [Derivação completa](derivations/inverse_coupling_flow.md)
+**Detailed reference:** [Full derivation](derivations/jwst_tension_resolution.md)
 
 ---
 
-## Recursos Computacionais
+## 4. Stochastic Gravitational Wave Background
 
-### Notebook Interativo
-Explore todas as derivações com cálculos interativos:
+### 4.1 Main Result
+
+The cosmological bounce GW spectrum displays a characteristic peak:
+
+```latex
+\boxed{
+f_{\text{peak}} \simeq 10^{-3}\,\text{Hz}, \quad h^{2}\Omega_{\text{GW}} \propto \left(\frac{R_2}{R_3}\right)^{4}
+}
+```
+
+where $R_2$ and $R_3$ are the radii of the extra temporal dimensions.
+
+### 4.2 Physical Derivation
+
+During the bounce, **metric fluctuations** in the temporal dimensions generate gravitational waves:
+
+```latex
+h_{ij}(t,\mathbf{k}) = \int \frac{d^3k'}{(2\pi)^3} G_{\text{GW}}(k,k',t) \chi(\mathbf{k}',t_{\text{bounce}})
+```
+
+where $\chi$ are primordial fluctuations and $G_{\text{GW}}$ the gravitational Green’s function.
+
+### 4.3 Predictions for LISA/Taiji
+
+- **Peak frequency:** $f \sim 10^{-3}$ Hz (LISA band)
+- **Amplitude:** $h^2\Omega_{\text{GW}} \sim 10^{-11}$ (detectable)
+- **Signature:** Specific dependence on $(R_2/R_3)^4$
+
+**Detailed reference:** [Full derivation](derivations/gwb_spectrum_derivation.md)
+
+---
+
+## 5. Perihelion Precession
+
+### 5.1 Main Result
+
+The GoE correction to orbital precession includes contributions from temporal dimensions:
+
+```latex
+\boxed{
+\Delta\phi_{\text{GoE}} = K_{\text{orb}}\left(\frac{R_3}{R_2}\right)^{2}\frac{GM}{c^{2}a(1-e^{2})}
+}
+```
+
+where $K_{\text{orb}}$ is an orbital constant dependent on temporal geometry.
+
+### 5.2 Physical Derivation
+
+The **GoE metric** modifies geodesics in (3+3)D spacetime:
+
+```latex
+ds^2 = -(1+2\Phi)dt^2 + (1-2\Phi)\delta_{ij}dx^i dx^j + g_{\Theta\Theta}d\theta^2 + g_{\Xi\Xi}d\xi^2
+```
+
+The temporal dimensions $\theta$ and $\xi$ contribute to effective curvature, generating measurable corrections.
+
+### 5.3 BepiColombo Tests
+
+- **Mercury:** Correction of $\sim 10^{-8}$ arcsec/century
+- **BepiColombo precision:** $\sim 10^{-9}$ arcsec/century
+- **Detectability:** Within observational capability
+
+**Detailed reference:** [Full derivation](derivations/perihelion_correction.md)
+
+---
+
+## 6. Semi-Dirac Quasiparticles
+
+### 6.1 Main Result
+
+The effective Hamiltonian for semi-Dirac quasiparticles in GoE geometry:
+
+```latex
+\boxed{
+E = \sqrt{(\hbar v_F k_x)^2+\left(\frac{\hbar^2 k_y^2}{2m^*}\right)^2}
+}
+```
+
+where anisotropy arises from projection of temporal dimensions into momentum space.
+
+### 6.2 Physical Derivation
+
+**Dimensional contraction** of temporal coordinates onto (3+1)D space yields an anisotropic effective Hamiltonian:
+
+```latex
+H_{\text{eff}} = \int d\theta d\xi \; H_{\text{GoE}}(\mathbf{k}, k_\theta, k_\xi)
+```
+
+Integration over $k_\theta$ and $k_\xi$ produces linear dispersion in $k_x$ and quadratic in $k_y$.
+
+### 6.3 Connection to Heterostructures
+
+- **Systems:** TiO₂/VO₂, graphene on substrate
+- **GoE parameters:** $v_F \sim 10^6$ m/s, $m^* \sim 0.1 m_e$
+- **Test:** ARPES spectroscopy
+
+**Detailed reference:** [Full derivation](derivations/semi_dirac_derivation.md)
+
+---
+
+## 7. Inverse Running of Couplings
+
+### 7.1 Main Result
+
+The coupling constants follow an inverse power-law renormalization:
+
+```latex
+\boxed{
+g_i^{-2}(\mu) = g_i^{-2}(\Lambda_i) + \frac{C_i}{2\pi^{2}}\mu^{2}
+}
+```
+
+contrasting with the Standard Model’s logarithmic behavior.
+
+### 7.2 Physical Derivation
+
+**Extra temporal dimensions** modify the $\beta$-functions:
+
+```latex
+\beta_i = \mu \frac{dg_i}{d\mu} = \frac{b_i g_i^3}{1 + a_i g_i^2}
+```
+
+where $a_i$ and $b_i$ include contributions from $\theta$ and $\xi$.
+
+### 7.3 Unification at ~10 TeV
+
+- **Unification scale:** $\Lambda_{\text{GUT}} \sim 8.7$ TeV
+- **Experimental test:** Future FCC-hh
+- **Signature:** Deviation from standard logarithmic evolution
+
+**Detailed reference:** [Full derivation](derivations/inverse_coupling_flow.md)
+
+---
+
+## Computational Resources
+
+### Interactive Notebook
+Explore all derivations with interactive calculations:
 - [**GoE Derivations Complete**](../notebooks/derivations/goe_derivations_complete.ipynb)
 
-### Scripts de Validação
-Verifique a consistência das derivações:
+### Validation Scripts
+Check the consistency of all derivations:
 ```bash
 python scripts/derivations/validate_all_derivations.py
 ```
 
-### Calculadora GoE
-Calcule observáveis para parâmetros dados:
+### GoE Calculator
+Compute observables for given parameters:
 ```python
 from scripts.derivations.goe_calculator import calculate_goe_observables
 
 results = calculate_goe_observables(R2=1e-18, R3=2e-18, rho_c=1e-29)
-print(results['delta_a_mu'])  # Anomalia do múon
-print(results['delta_cp'])    # Fase CP
+print(results['delta_a_mu'])  # Muon anomaly
+print(results['delta_cp'])    # CP phase
 ```
 
 ---
 
-## Integração com Monografia Principal
+## Integration with Main Monograph
 
-Este guia complementa os seguintes capítulos da [monografia principal](../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md):
+This guide complements the following chapters of the [main monograph](../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md):
 
-| Derivação | Capítulo | Seção |
-|-----------|----------|-------|
-| Múon g-2 | Cap. 5 | 5.3 - Correções Radiativas |
-| CP Violação | Cap. 6 | 6.2 - Matriz PMNS Geométrica |
-| JWST Tensão | Cap. 7 | 7.4 - Cosmologia Observacional |
-| Ondas Gravitacionais | Cap. 8 | 8.1 - Bounce Dinâmico |
-| Precessão Periélio | Cap. 4 | 4.5 - Testes Sistema Solar |
-| Semi-Dirac | Cap. 9 | 9.3 - Aplicações Condensada |
-| Acoplamentos | Apêndice M | M.2 - Grupo de Renormalização |
-
----
-
-## Checklist de Consistência
-
-Utilize o validador automático para verificar:
-
-- ✅ **Consistência dimensional:** Todas as equações possuem unidades corretas
-- ✅ **Ranges de parâmetros:** $R_2, R_3 \in [10^{-20}, 10^{-16}]$ m
-- ✅ **Compatibilidade experimental:** Predições dentro dos limites observacionais
-- ✅ **Cross-references:** Links funcionando corretamente
-- ✅ **Renderização LaTeX:** Equações exibidas adequadamente
+| Derivation | Chapter | Section |
+|------------|---------|---------|
+| Muon g-2 | Ch. 5 | 5.3 – Radiative Corrections |
+| CP Violation | Ch. 6 | 6.2 – Geometric PMNS Matrix |
+| JWST Tension | Ch. 7 | 7.4 – Observational Cosmology |
+| Gravitational Waves | Ch. 8 | 8.1 – Dynamic Bounce |
+| Perihelion Precession | Ch. 4 | 4.5 – Solar System Tests |
+| Semi-Dirac | Ch. 9 | 9.3 – Condensed Matter Applications |
+| Couplings | Appendix M | M.2 – Renormalization Group |
 
 ---
 
-## Conclusão
+## Consistency Checklist
 
-As 7 derivações fundamentais da GoE demonstram a capacidade unificadora da teoria em escalas que abrangem desde partículas elementares até cosmologia. A consistência matemática entre as predições e sua concordância com dados experimentais estabelecem a GoE como uma extensão viável do Modelo Padrão e da Relatividade Geral.
+Use the automatic validator to check:
 
-**Próximos passos:**
-1. Validação experimental das predições de ondas gravitacionais com LISA
-2. Testes de precisão da precessão orbital com BepiColombo  
-3. Busca por quasipartículas semi-Dirac em laboratório
-4. Verificação da corrida inversa dos acoplamentos em futuros colisores
+- ✅ **Dimensional consistency:** All equations have correct units
+- ✅ **Parameter ranges:** $R_2, R_3 \in [10^{-20}, 10^{-16}]$ m
+- ✅ **Experimental compatibility:** Predictions within observational limits
+- ✅ **Cross-references:** All links working
+- ✅ **LaTeX rendering:** Equations display correctly
 
 ---
 
-**Para citação deste guia:**
+## Conclusion
+
+The 7 fundamental GoE derivations demonstrate the unifying power of the theory, connecting scales from elementary particles to cosmology. Mathematical consistency and agreement with experimental data establish GoE as a viable extension of the Standard Model and General Relativity.
+
+**Next steps:**
+1. Experimental validation of GW predictions with LISA
+2. Precision perihelion precession tests with BepiColombo  
+3. Search for semi-Dirac quasiparticles in the lab
+4. Check inverse coupling running at future colliders
+
+---
+
+**To cite this guide:**
 ```bibtex
 @misc{camargo2025derivations,
-  title={Guia Completo das 7 Derivações-Chave da GoE},
+  title={Complete Guide to the 7 Key GoE Derivations},
   author={Guilherme de Camargo},
   year={2025},
   url={https://github.com/Infolake/geometrodynamics-of-entropy/blob/main/docs/goe_derivations_guide.md}
@@ -307,4 +351,4 @@ As 7 derivações fundamentais da GoE demonstram a capacidade unificadora da teo
 
 ---
 
-*Documento mantido por [@Infolake](https://github.com/Infolake) • Última atualização: Julho 2025*
+*Maintained by Dr. Guilherme de Camargo  [@Infolake](https://github.com/Infolake) • Last update: July 2025* 
