@@ -33,21 +33,35 @@ The Geometrodynamics of Entropy (GoE) is a unified theory of physics based on th
 
 ```
 geometrodynamics-of-entropy/
-├── 📄 Geometrodynamics_of_Entropy_A_Comprehensive_Monograph_v8.md  # Complete monograph
-├── 📁 notebooks/                    # Interactive analysis notebooks
-│   ├── 🔬 unification/             # Chapter 10 correlation analysis
-│   ├── 🌌 cosmology/               # Bounce simulation suite
-│   ├── ⚛️  foundations/            # Core theory implementations
-│   └── 📊 consistency/             # Validation and testing
-├── 📁 scripts/                     # Production analysis code
-│   ├── 🔗 unification/             # K correlation analysis
-│   ├── 🎨 plotting/                # Visualization tools
-│   └── 📈 analysis/                # Data processing
-├── 📁 data/                        # Experimental datasets
-└── 📁 figures/                     # Generated visualizations
+├── 📄 Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md  # Complete monograph
+├── 📁 docs/                          # 🆕 Complete derivations guide (English)
+│   ├── 📄 goe_derivations_guide.md   # Main derivations document
+│   ├── 📁 derivations/               # Detailed derivation files (7 sections)
+│   └── 📁 figures/                   # Supporting figures and diagrams
+├── 📁 notebooks/                     # Interactive analysis notebooks
+│   ├── 📁 derivations/               # 🆕 Interactive derivations notebook
+│   ├── 🔬 unification/               # Chapter 10 correlation analysis
+│   ├── 🌌 cosmology/                 # Bounce simulation suite
+│   ├── ⚛️  foundations/              # Core theory implementations
+│   └── 📊 consistency/               # Validation and testing
+├── 📁 scripts/                       # Production analysis code
+│   ├── 📁 derivations/               # 🆕 Validation and testing scripts
+│   ├── 🔗 unification/               # K correlation analysis
+│   ├── 🎨 plotting/                  # Visualization tools
+│   └── 📈 analysis/                  # Data processing
+├── 📁 tests/                         # 🆕 Unit tests for derivations
+├── 📁 data/                          # Experimental datasets
+└── 📁 figures/                       # Generated visualizations
 ```
 
 ## 🚀 Quick Start
+
+### 📚 Documentation Structure
+
+1. **Main Monograph**: [Complete GoE Theory](Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md)
+2. **🆕 Derivations Guide**: [Complete Mathematical Derivations](docs/goe_derivations_guide.md)
+3. **Interactive Notebooks**: Hands-on analysis and calculations
+4. **Validation Scripts**: Automated testing and consistency checks
 
 ### Installation
 ```bash
@@ -56,6 +70,16 @@ cd geometrodynamics-of-entropy
 conda env create -f environment.yml
 conda activate goe
 ```
+
+### 📚 Documentation Structure
+
+1. **Main Monograph**: [Complete GoE Theory](Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md)
+2. **🆕 Derivations Guide**: [Complete Mathematical Derivations](docs/goe_derivations_guide.md)
+   - **Seven Key Predictions**: Muon g-2, CP violation, JWST tension, GW background, perihelion precession, semi-Dirac materials, coupling unification
+   - **Interactive Notebook**: [Complete derivations with calculations](notebooks/derivations/goe_derivations_complete.ipynb)
+   - **Validation Scripts**: [Automated consistency checks](scripts/derivations/validate_all_derivations.py)
+3. **Interactive Notebooks**: Hands-on analysis and calculations
+4. **Validation Scripts**: Automated testing and consistency checks
 
 ### Reproduce Key Results
 ```bash
