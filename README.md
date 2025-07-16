@@ -34,15 +34,20 @@ The Geometrodynamics of Entropy (GoE) is a unified theory of physics based on th
 ```
 geometrodynamics-of-entropy/
 ├── 📄 Geometrodynamics_of_Entropy_A_Comprehensive_Monograph_v8.md  # Complete monograph
+├── 📁 docs/                         # Documentation and derivations
+│   ├── 📄 goe_derivations_guide.md  # Complete English derivations guide
+│   └── 📁 derivations/              # Individual derivation files
 ├── 📁 notebooks/                    # Interactive analysis notebooks
 │   ├── 🔬 unification/             # Chapter 10 correlation analysis
 │   ├── 🌌 cosmology/               # Bounce simulation suite
 │   ├── ⚛️  foundations/            # Core theory implementations
-│   └── 📊 consistency/             # Validation and testing
+│   ├── 📊 consistency/             # Validation and testing
+│   └── 📈 derivations/             # Interactive derivations
 ├── 📁 scripts/                     # Production analysis code
 │   ├── 🔗 unification/             # K correlation analysis
 │   ├── 🎨 plotting/                # Visualization tools
-│   └── 📈 analysis/                # Data processing
+│   ├── 📈 analysis/                # Data processing
+│   └── 🧮 derivations/             # Validation suite
 ├── 📁 data/                        # Experimental datasets
 └── 📁 figures/                     # Generated visualizations
 ```
@@ -61,6 +66,12 @@ conda activate goe
 ```bash
 # Run the correlation analysis (Chapter 10)
 jupyter lab notebooks/unification/01_GoE_K_Inference.ipynb
+
+# Complete derivations with interactive calculations
+jupyter lab notebooks/derivations/goe_derivations_complete.ipynb
+
+# Validate all theoretical predictions
+python scripts/derivations/validate_all_derivations.py
 
 # Generate the 6-panel validation figure
 python scripts/unification/run_correlation_analysis.py
@@ -111,9 +122,22 @@ $$\Delta a_\mu = K \cdot [1 - \cos(\delta_{CP})]$$
 
 ### Core Components
 - [**Complete Monograph**](Geometrodynamics_of_Entropy_A_Comprehensive_Monograph_v8.md) - Full theoretical framework
+- [**GoE Derivations Guide**](docs/goe_derivations_guide.md) - Complete English derivations for all 7 predictions
 - [**Chapter 10 Analysis**](notebooks/unification/01_GoE_K_Inference.ipynb) - Statistical validation
 - [**Appendix M**](appendices/M_Inverse_Coupling_Flow.md) - RG flow analysis
 - [**Computational Suite**](scripts/) - Production analysis code
+
+### Derivations Reference
+- [**Interactive Calculations**](notebooks/derivations/goe_derivations_complete.ipynb) - Complete computational framework
+- [**Validation Suite**](scripts/derivations/validate_all_derivations.py) - Automated consistency checking
+- [**Individual Derivations**](docs/derivations/) - Detailed mathematical derivations:
+  - [Muon g-2 Anomaly](docs/derivations/muon_g2_derivation.md)
+  - [CP Violation in Neutrinos](docs/derivations/cp_violation_derivation.md)
+  - [JWST Tension Resolution](docs/derivations/jwst_tension_resolution.md)
+  - [Gravitational Wave Background](docs/derivations/gwb_spectrum_derivation.md)
+  - [Perihelion Precession](docs/derivations/perihelion_correction.md)
+  - [Semi-Dirac Quasiparticles](docs/derivations/semi_dirac_derivation.md)
+  - [Inverse Coupling Running](docs/derivations/inverse_coupling_flow.md)
 
 ### Interactive Notebooks
 - [Correlation Analysis](notebooks/unification/) - Muon g-2 ↔ CP violation

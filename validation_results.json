@@ -1,0 +1,38 @@
+{
+  "dimensional_consistency": {
+    "muon_g2": true,
+    "cp_violation": false,
+    "gw_frequency": true,
+    "perihelion": true,
+    "semi_dirac": true,
+    "coupling_running": true
+  },
+  "parameter_validation": {
+    "R_theta": true,
+    "R_xi": true,
+    "kappa_tau": true,
+    "tau": true,
+    "kappa_cp": true,
+    "K_orb": true,
+    "fiber_ratio": true,
+    "energy_scales": false
+  },
+  "cross_references": {
+    "K_geometric": -26599741.8072717,
+    "unification_scale": 8700,
+    "gw_frequency": 2.0745500843021836e-05,
+    "semi_dirac_scale": 8.60848938826467e+17
+  },
+  "experimental_comparison": {
+    "muon_g2": 499291712581016.0,
+    "cp_violation": 28.34744961813426
+  },
+  "observables": {
+    "delta_a_mu": -0.015417934798062818,
+    "delta_cp": -3.404782656708621e-05,
+    "f_gw_peak": 2.0745500843021836e-05,
+    "delta_phi_mercury": 0.016398129222624524,
+    "mu_gut": 8700,
+    "f_pbh": 0.0009862327044933591
+  }
+}
