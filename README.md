@@ -111,9 +111,26 @@ $$\Delta a_\mu = K \cdot [1 - \cos(\delta_{CP})]$$
 
 ### Core Components
 - [**Complete Monograph**](Geometrodynamics_of_Entropy_A_Comprehensive_Monograph_v8.md) - Full theoretical framework
+- [**GoE Derivations Guide**](docs/goe_derivations_guide.md) - Complete mathematical derivations for all predictions
 - [**Chapter 10 Analysis**](notebooks/unification/01_GoE_K_Inference.ipynb) - Statistical validation
 - [**Appendix M**](appendices/M_Inverse_Coupling_Flow.md) - RG flow analysis
 - [**Computational Suite**](scripts/) - Production analysis code
+
+### Derivations Guide
+The [**GoE Derivations Guide**](docs/goe_derivations_guide.md) provides detailed mathematical derivations for all seven major GoE predictions:
+
+1. **[Muon g-2 Anomaly](docs/derivations/muon_g2_derivation.md)** - Temporal fiber coupling explanation
+2. **[CP Violation in Neutrinos](docs/derivations/cp_violation_derivation.md)** - Geometric phases from Ξ fiber torsion
+3. **[JWST Tension Resolution](docs/derivations/jwst_tension_resolution.md)** - Early galaxy formation via cosmological bounce
+4. **[Gravitational Wave Background](docs/derivations/gwb_spectrum_derivation.md)** - Bounce signature detectable by LISA/Taiji
+5. **[Perihelion Precession](docs/derivations/perihelion_correction.md)** - GoE corrections to General Relativity
+6. **[Semi-Dirac Quasiparticles](docs/derivations/semi_dirac_derivation.md)** - Anisotropic dispersion in condensed matter
+7. **[Inverse Coupling Running](docs/derivations/inverse_coupling_flow.md)** - Power law RG flow and gauge unification
+
+**Interactive Resources:**
+- [**Complete Notebook**](notebooks/derivations/goe_derivations_complete.ipynb) - All calculations in one place
+- [**Validation Suite**](scripts/derivations/validate_all_derivations.py) - Automated consistency checking
+- [**Unit Tests**](tests/test_derivations.py) - Quality assurance framework
 
 ### Interactive Notebooks
 - [Correlation Analysis](notebooks/unification/) - Muon g-2 ↔ CP violation
