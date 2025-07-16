@@ -131,10 +131,11 @@
                 <li><a href="#cosmology" class="nav-link block p-2 rounded-md font-medium">5. Cosmological Bounce</a></li>
                 <li><a href="#semidirac" class="nav-link block p-2 rounded-md font-medium">6. Semi-Dirac Fermions</a></li>
                 <li><a href="#validation" class="nav-link block p-2 rounded-md font-medium">7. Experimental Validation</a></li>
-                <li><a href="#computational" class="nav-link block p-2 rounded-md font-medium">8. Computational Framework</a></li>
-                <li><a href="#repository" class="nav-link block p-2 rounded-md font-medium">9. Official Repository</a></li>
-                <li><a href="#roadmap" class="nav-link block p-2 rounded-md font-medium">10. Future Roadmap</a></li>
-                <li><a href="#appendices" class="nav-link block p-2 rounded-md font-medium">11. Appendices</a></li>
+                <li><a href="#derivations" class="nav-link block p-2 rounded-md font-medium">8. Complete Derivations Guide</a></li>
+                <li><a href="#computational" class="nav-link block p-2 rounded-md font-medium">9. Computational Framework</a></li>
+                <li><a href="#repository" class="nav-link block p-2 rounded-md font-medium">10. Official Repository</a></li>
+                <li><a href="#roadmap" class="nav-link block p-2 rounded-md font-medium">11. Future Roadmap</a></li>
+                <li><a href="#appendices" class="nav-link block p-2 rounded-md font-medium">12. Appendices</a></li>
             </ul>
         </nav>
 
@@ -821,9 +822,149 @@
                 </div>
             </section>
 
+            <!-- Complete Derivations Guide Section -->
+            <section id="derivations" class="py-20 content-section">
+                <h2 class="text-4xl font-bold mb-8 text-white">8. Complete Derivations Guide</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-4xl">
+                    A comprehensive English-language guide providing complete mathematical derivations for all seven major GoE theoretical predictions, with interactive calculations and experimental validation.
+                </p>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Seven Core Derivations</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">1. Muon g-2 Anomaly</h4>
+                                <p class="text-sm text-gray-400 mb-3">One-loop correction from Θ fiber interaction</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$\Delta a_\mu = \frac{\alpha}{2\pi}\kappa_\tau\ln\left(\frac{\Lambda_\Theta^2}{m_\mu^2}\right)$$</div>
+                                <a href="docs/derivations/muon_g2_derivation.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                            
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">2. CP Violation</h4>
+                                <p class="text-sm text-gray-400 mb-3">Temporal Aharonov-Bohm phases in Ξ fiber</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$\delta_{CP} = (\phi_{g,1}-\phi_{g,2})+(\phi_{g,2}-\phi_{g,3})+(\phi_{g,3}-\phi_{g,1})$$</div>
+                                <a href="docs/derivations/cp_violation_derivation.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                            
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">3. JWST Early Galaxies</h4>
+                                <p class="text-sm text-gray-400 mb-3">PBH formation via cosmological bounce</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$\rho_{tor} \propto a^{-6}$$</div>
+                                <a href="docs/derivations/jwst_tension_resolution.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                            
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">4. Gravitational Waves</h4>
+                                <p class="text-sm text-gray-400 mb-3">Stochastic background from bounce signature</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$f_{\text{peak}} \simeq 10^{-3}\,\text{Hz}$$</div>
+                                <a href="docs/derivations/gwb_spectrum_derivation.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                            
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">5. Perihelion Precession</h4>
+                                <p class="text-sm text-gray-400 mb-3">Additional correction beyond General Relativity</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$\Delta\phi_{\text{GoE}} = K_{\text{orb}}\left(\frac{R_\Xi}{R_\Theta}\right)^{2}\frac{GM}{c^{2}a(1-e^{2})}$$</div>
+                                <a href="docs/derivations/perihelion_correction.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                            
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">6. Semi-Dirac Quasiparticles</h4>
+                                <p class="text-sm text-gray-400 mb-3">Anisotropic dispersion from fiber coupling</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$E = \sqrt{(\hbar v_F k_x)^2+\left(\frac{\hbar^2 k_y^2}{2m^*}\right)^2}$$</div>
+                                <a href="docs/derivations/semi_dirac_derivation.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                            
+                            <div class="bg-black/30 p-6 rounded">
+                                <h4 class="font-bold text-white mb-3">7. Inverse Coupling Running</h4>
+                                <p class="text-sm text-gray-400 mb-3">Power-law evolution to TeV unification</p>
+                                <div class="text-xs text-cyan-300 mb-2">$$g_i^{-2}(\mu) = g_i^{-2}(\Lambda_i) + \frac{C_i}{2\pi^{2}}\mu^{2}$$</div>
+                                <a href="docs/derivations/inverse_coupling_flow.md" class="text-cyan-400 hover:text-cyan-300 text-sm">View Derivation →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-6">Interactive Resources</h3>
+                            <div class="space-y-4">
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Complete Jupyter Notebook</h4>
+                                    <p class="text-sm text-gray-400 mb-3">Interactive calculations with real-time parameter exploration</p>
+                                    <a href="notebooks/derivations/goe_derivations_complete.ipynb" class="inline-block bg-cyan-500 text-black px-4 py-2 rounded text-sm font-medium hover:bg-cyan-400">Open Notebook</a>
+                                </div>
+                                
+                                <div class="bg-black/30 p-4 rounded">
+                                    <h4 class="font-bold text-white mb-2">Validation Suite</h4>
+                                    <p class="text-sm text-gray-400 mb-3">Automated consistency checking and dimensional analysis</p>
+                                    <a href="scripts/derivations/validate_all_derivations.py" class="inline-block bg-green-500 text-black px-4 py-2 rounded text-sm font-medium hover:bg-green-400">Run Validation</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card p-8">
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-6">Key Features</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <h4 class="font-medium text-white">Complete Mathematical Derivations</h4>
+                                        <p class="text-sm text-gray-400">From first principles to experimental predictions</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <h4 class="font-medium text-white">Interactive Calculations</h4>
+                                        <p class="text-sm text-gray-400">Real-time parameter exploration and visualization</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <h4 class="font-medium text-white">Experimental Validation</h4>
+                                        <p class="text-sm text-gray-400">Direct comparison with latest experimental data</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    <div>
+                                        <h4 class="font-medium text-white">Automated Testing</h4>
+                                        <p class="text-sm text-gray-400">Dimensional analysis and consistency checking</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-6">Access the Complete Guide</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <a href="docs/goe_derivations_guide.md" class="block bg-gradient-to-r from-cyan-500 to-blue-500 text-black p-6 rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all">
+                                <h4 class="font-bold mb-2">📚 Main Guide</h4>
+                                <p class="text-sm">Complete derivations document with all seven sections</p>
+                            </a>
+                            
+                            <a href="docs/derivations/" class="block bg-gradient-to-r from-green-500 to-emerald-500 text-black p-6 rounded-lg hover:from-green-400 hover:to-emerald-400 transition-all">
+                                <h4 class="font-bold mb-2">📄 Individual Files</h4>
+                                <p class="text-sm">Detailed derivations for each prediction</p>
+                            </a>
+                            
+                            <a href="notebooks/derivations/goe_derivations_complete.ipynb" class="block bg-gradient-to-r from-purple-500 to-pink-500 text-black p-6 rounded-lg hover:from-purple-400 hover:to-pink-400 transition-all">
+                                <h4 class="font-bold mb-2">💻 Interactive Notebook</h4>
+                                <p class="text-sm">Live calculations and parameter exploration</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Computational Framework Section -->
             <section id="computational" class="py-20 content-section">
-                <h2 class="text-4xl font-bold mb-8 text-white">8. Computational Framework</h2>
+                <h2 class="text-4xl font-bold mb-8 text-white">9. Computational Framework</h2>
                 <p class="text-lg text-gray-400 mb-12 max-w-4xl">GoE is supported by a comprehensive computational framework that implements all theoretical predictions and enables rigorous validation against experimental data.</p>
                 
                 <div class="space-y-8">
@@ -983,7 +1124,7 @@
 
             <!-- Future Roadmap Section -->
             <section id="roadmap" class="py-20 content-section">
-                <h2 class="text-4xl font-bold mb-8 text-white">10. Future Roadmap</h2>
+                <h2 class="text-4xl font-bold mb-8 text-white">11. Future Roadmap</h2>
                 <p class="text-lg text-gray-400 mb-12 max-w-4xl">The development of GoE continues with ambitious plans for theoretical extensions, experimental validation, and technological applications.</p>
                 
                 <div class="space-y-8">
@@ -1153,7 +1294,7 @@
 
             <!-- Appendices Section -->
             <section id="appendices" class="py-20 content-section">
-                <h2 class="text-4xl font-bold mb-8 text-white">11. Appendices</h2>
+                <h2 class="text-4xl font-bold mb-8 text-white">12. Appendices</h2>
                 <p class="text-lg text-gray-400 mb-12 max-w-4xl">A comprehensive collection of technical references, mathematical derivations, and detailed documentation for expert review and implementation.</p>
                 
                 <div class="space-y-8">
