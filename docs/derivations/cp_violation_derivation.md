@@ -1,26 +1,26 @@
-# Derivação Detalhada: Violação CP em Neutrinos
+# Detailed Derivation: CP Violation in Neutrinos
 
-**Autor:** Dr. Guilherme de Camargo  
-**Derivação:** 2/7 da série GoE  
-**Capítulo relacionado:** [Monografia Cap. 6.2](../../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md)
+**Author:** Dr. Guilherme de Camargo  
+**Derivation:** 2/7 of the GoE series  
+**Related chapter:** [Monograph Ch. 6.2](../../Geometrodynamics_of_Entropy_A_Comprehensive_Monograph.md)
 
 ---
 
-## Introdução
+## Introduction
 
-A violação CP em neutrinos é um dos pilares para compreender a assimetria bariônica do universo. A fase $\delta_{CP}$ na matriz PMNS (Pontecorvo-Maki-Nakagawa-Sakata) é atualmente medida como:
+CP violation in neutrinos is one of the key pillars for understanding the baryon asymmetry of the universe. The phase $\delta_{CP}$ in the PMNS (Pontecorvo-Maki-Nakagawa-Sakata) matrix is currently measured as
 
 $$\delta_{CP} = -1.970 \pm 0.370 \text{ rad}$$
 
-pelos experimentos NOvA e T2K. A Geometrodynamics of Entropy (GoE) oferece uma derivação geométrica fundamental desta fase através da **contorsão das fibras temporais**.
+by the NOvA and T2K experiments. The Geometrodynamics of Entropy (GoE) provides a fundamental geometric derivation of this phase through the **contorsion of temporal fibers**.
 
 ---
 
-## Fundamentos Geométricos
+## Geometric Foundations
 
-### Matriz PMNS na GoE
+### PMNS Matrix in GoE
 
-Na formulação GoE, a matriz de mistura de neutrinos emerge da geometria temporal:
+In the GoE formulation, the neutrino mixing matrix emerges from temporal geometry:
 
 $$U_{PMNS} = \begin{pmatrix}
 U_{e1} & U_{e2} & U_{e3} \\
@@ -28,43 +28,43 @@ U_{\mu 1} & U_{\mu 2} & U_{\mu 3} \\
 U_{\tau 1} & U_{\tau 2} & U_{\tau 3}
 \end{pmatrix} = P \cdot R(\theta) \cdot D(\delta_{CP}) \cdot Q$$
 
-onde $D(\delta_{CP})$ é a matriz de fase CP que emerge da geometria temporal.
+where $D(\delta_{CP})$ is the CP phase matrix arising from temporal geometry.
 
-### Fibra Temporal Ξ
+### Temporal Fiber $\Xi$
 
-A fibra temporal $\Ξ$ possui topologia não-trivial com contorsão:
+The temporal fiber $\Xi$ has non-trivial topology with contorsion:
 
 $$T^\lambda_{\mu\nu} = \Gamma^\lambda_{\mu\nu} - \Gamma^\lambda_{\nu\mu}$$
 
-Esta contorsão gera **fases Aharonov-Bohm temporais** que se manifestam como violação CP.
+This contorsion generates **temporal Aharonov-Bohm phases** that manifest as CP violation.
 
 ---
 
-## Derivação da Fase CP
+## Derivation of the CP Phase
 
-### Passo 1: Potencial Vetor Temporal
+### Step 1: Temporal Vector Potential
 
-Definimos o potencial vetor na dimensão temporal:
+We define the vector potential in the temporal dimension:
 
 $$A_\Theta(\theta,\xi) = \frac{1}{2}\epsilon_{\mu\nu\rho\sigma} T^{\mu\nu\rho} dx^\sigma$$
 
-onde $T^{\mu\nu\rho}$ é o tensor de contorsão da fibra $\Ξ$.
+where $T^{\mu\nu\rho}$ is the contorsion tensor of the fiber $\Xi$.
 
-### Passo 2: Fases Geométricas por Família
+### Step 2: Geometric Phases by Family
 
-Cada família de neutrinos adquire uma fase geométrica:
+Each neutrino family acquires a geometric phase:
 
 $$\phi_{g,i} = \oint_{\mathcal{C}_i} A_\Theta \cdot d\theta$$
 
-onde $\mathcal{C}_i$ são os caminhos de Berry na fibra temporal para cada família:
+where $\mathcal{C}_i$ are Berry paths in the temporal fiber for each family:
 
-- **Primeira família ($e$):** $\mathcal{C}_1 = \{(\theta,\xi): \xi = \xi_0\}$
-- **Segunda família ($\mu$):** $\mathcal{C}_2 = \{(\theta,\xi): \xi = \xi_0 + 2\pi/3\}$
-- **Terceira família ($\tau$):** $\mathcal{C}_3 = \{(\theta,\xi): \xi = \xi_0 + 4\pi/3\}$
+- **First family ($e$):** $\mathcal{C}_1 = \{(\theta,\xi): \xi = \xi_0\}$
+- **Second family ($\mu$):** $\mathcal{C}_2 = \{(\theta,\xi): \xi = \xi_0 + 2\pi/3\}$
+- **Third family ($\tau$):** $\mathcal{C}_3 = \{(\theta,\xi): \xi = \xi_0 + 4\pi/3\}$
 
-### Passo 3: Cálculo das Integrais de Linha
+### Step 3: Calculating the Line Integrals
 
-Para uma contorsão uniforme $T^{\mu\nu\rho} = T_0 \delta^{\mu 1}\delta^{\nu 2}\delta^{\rho 3}$:
+For uniform contorsion $T^{\mu\nu\rho} = T_0 \delta^{\mu 1}\delta^{\nu 2}\delta^{\rho 3}$:
 
 $$\phi_{g,1} = T_0 \int_0^{2\pi R_2} d\theta = 2\pi R_2 T_0$$
 
@@ -72,212 +72,216 @@ $$\phi_{g,2} = T_0 \int_0^{2\pi R_2} d\theta \cos(2\pi/3) = 2\pi R_2 T_0 \cos(2\
 
 $$\phi_{g,3} = T_0 \int_0^{2\pi R_2} d\theta \cos(4\pi/3) = 2\pi R_2 T_0 \cos(4\pi/3)$$
 
-### Passo 4: Fase CP Resultante
+### Step 4: Resultant CP Phase
 
-A fase de violação CP emerge da soma cíclica:
+The CP violation phase emerges from the cyclic sum:
 
 $$\delta_{CP} = (\phi_{g,1}-\phi_{g,2})+(\phi_{g,2}-\phi_{g,3})+(\phi_{g,3}-\phi_{g,1})$$
 
-Substituindo os valores:
+Substituting the values:
 
 $$\delta_{CP} = 2\pi R_2 T_0 \left[ 1 - \cos(2\pi/3) + \cos(2\pi/3) - \cos(4\pi/3) + \cos(4\pi/3) - 1 \right]$$
 
-$$\delta_{CP} = 2\pi R_2 T_0 \left[ 2 - 2\cos(2\pi/3) \right] = 2\pi R_2 T_0 \left[ 2 + 1 \right] = 6\pi R_2 T_0$$
+$$\delta_{CP} = 2\pi R_2 T_0 [2 - 2\cos(2\pi/3)] = 2\pi R_2 T_0 [2 + 1] = 6\pi R_2 T_0$$
 
 ---
 
-## Resultado Final
+## Final Result
 
-### Fórmula Fechada
+### Closed Formula
 
 $$\boxed{\delta_{CP} = (\phi_{g,1}-\phi_{g,2})+(\phi_{g,2}-\phi_{g,3})+(\phi_{g,3}-\phi_{g,1})}$$
 
-### Parâmetros Físicos
+### Physical Parameters
 
-Para reproduzir $\delta_{CP} = -1.970$ rad:
+To reproduce $\delta_{CP} = -1.970$ rad:
 
-1. **Contorsão temporal:** $T_0 \approx -0.052$ m⁻¹
-2. **Raio da fibra Ξ:** $R_2 \approx 2.0 \times 10^{-18}$ m
-3. **Produto característico:** $R_2 T_0 \approx -1.04 \times 10^{-19}$ m⁻²
+1. **Temporal contorsion:** $T_0 \approx -0.052$ m⁻¹  
+2. **Fiber radius $\Xi$:** $R_2 \approx 2.0 \times 10^{-18}$ m  
+3. **Characteristic product:** $R_2 T_0 \approx -1.04 \times 10^{-19}$ m⁻²  
 
-### Conexão com Múon g-2
+### Connection with Muon g-2
 
-A relação unificadora entre as duas anomalias:
+The unifying relation between the two anomalies:
 
 $$\Delta a_\mu = K \cdot [1 - \cos(\delta_{CP})]$$
 
-onde $K = (1.826 \pm 0.868) \times 10^{-9}$ é a constante geométrica universal.
+where $K = (1.826 \pm 0.868) \times 10^{-9}$ is the universal geometric constant.
 
 ---
 
-## Propriedades Geométricas
+## Geometric Properties
 
-### Invariância de Gauge
+### Gauge Invariance
 
-A fase CP é invariante sob transformações de gauge temporal:
+The CP phase is invariant under temporal gauge transformations:
 
 $$A_\Theta \rightarrow A_\Theta + \nabla_\Theta \Lambda(\theta,\xi)$$
 
-pois $\oint_{\mathcal{C}} \nabla_\Theta \Lambda \cdot d\theta = 0$ para caminhos fechados.
+because $\oint_{\mathcal{C}} \nabla_\Theta \Lambda \cdot d\theta = 0$ for closed paths.
 
-### Quantização Topológica
+### Topological Quantization
 
-A contorsão $T_0$ deve satisfazer:
+Contorsion $T_0$ must satisfy:
 
 $$\int_{\Sigma} T^{\mu\nu\rho} d\Sigma_{\mu\nu\rho} = 2\pi n, \quad n \in \mathbb{Z}$$
 
-para garantir consistência quântica.
+to ensure quantum consistency.
 
-### Transformação sob Paridade
+### Parity Transformation
 
-Sob inversão de paridade $P: \xi \rightarrow -\xi$:
+Under parity inversion $P: \xi \rightarrow -\xi$:
 
 $$\delta_{CP} \rightarrow -\delta_{CP}$$
 
-confirmando que a fase é ímpar sob P, como esperado para violação CP.
+confirming that the phase is odd under P, as expected for CP violation.
 
 ---
 
-## Predições Experimentais
+## Experimental Predictions
 
-### Oscilações $\nu_\mu \rightarrow \nu_e$
+### $\nu_\mu \rightarrow \nu_e$ Oscillations
 
-A probabilidade de transição inclui:
+The transition probability includes:
 
 $$P(\nu_\mu \rightarrow \nu_e) = \sin^2(2\theta_{13}) \sin^2(\theta_{23}) \sin^2\left(\frac{\Delta m_{31}^2 L}{4E}\right) \sin(\delta_{CP})$$
 
-### Oscilações $\bar{\nu}_\mu \rightarrow \bar{\nu}_e$
+### $\bar{\nu}_\mu \rightarrow \bar{\nu}_e$ Oscillations
 
-Para antineutrinos:
+For antineutrinos:
 
 $$P(\bar{\nu}_\mu \rightarrow \bar{\nu}_e) = \sin^2(2\theta_{13}) \sin^2(\theta_{23}) \sin^2\left(\frac{\Delta m_{31}^2 L}{4E}\right) \sin(-\delta_{CP})$$
 
-### Assimetria CP
+### CP Asymmetry
 
 $$\mathcal{A}_{CP} = \frac{P(\nu_\mu \rightarrow \nu_e) - P(\bar{\nu}_\mu \rightarrow \bar{\nu}_e)}{P(\nu_\mu \rightarrow \nu_e) + P(\bar{\nu}_\mu \rightarrow \bar{\nu}_e)} = \sin(\delta_{CP})$$
 
 ---
 
-## Validação Experimental
+## Experimental Validation
 
-### Acordo com NOvA e T2K
+### Agreement with NOvA and T2K
 
-| Experimento | $\delta_{CP}$ (rad) | Significância | Acordo GoE |
-|-------------|-------------------|---------------|------------|
-| NOvA 2021 | $-1.97 \pm 0.37$ | 2.7σ | ✓ |
-| T2K 2020 | $-1.89 \pm 0.58$ | 1.8σ | ✓ |
-| **Combinado** | $-1.970 \pm 0.370$ | 3.1σ | **✓** |
+| Experiment | $\delta_{CP}$ (rad) | Significance | GoE Agreement |
+|------------|---------------------|--------------|--------------|
+| NOvA 2021  | $-1.97 \pm 0.37$    | 2.7σ         | ✓            |
+| T2K 2020   | $-1.89 \pm 0.58$    | 1.8σ         | ✓            |
+| **Combined** | $-1.970 \pm 0.370$ | 3.1σ         | **✓**        |
 
-### Futuros Experimentos
+### Future Experiments
 
-1. **DUNE:** Precisão para $\pm 0.05$ rad
-2. **Hyper-Kamiokande:** Medição independente
-3. **JUNO:** Determinação da hierarquia de massa
+1. **DUNE:** Precision to $\pm 0.05$ rad  
+2. **Hyper-Kamiokande:** Independent measurement  
+3. **JUNO:** Mass hierarchy determination  
 
 ---
 
-## Código de Validação
+## Validation Code
 
 ```python
 import numpy as np
 
 def cp_phase_goe(R2, T0):
     """
-    Calcula a fase CP a partir da geometria temporal
-    
-    Parâmetros:
+    Calculates the CP phase from temporal geometry
+
+    Parameters:
     -----------
     R2 : float
-        Raio da fibra temporal em metros
+        Temporal fiber radius in meters
     T0 : float
-        Contorsão temporal em m^-1
-        
-    Retorna:
+        Temporal contorsion in m^-1
+
+    Returns:
     --------
     delta_cp : float
-        Fase CP em radianos
+        CP phase in radians
     """
-    # Cálculo das fases geométricas por família
+    # Calculation of geometric phases by family
     phi_g1 = 2 * np.pi * R2 * T0
     phi_g2 = 2 * np.pi * R2 * T0 * np.cos(2*np.pi/3)
     phi_g3 = 2 * np.pi * R2 * T0 * np.cos(4*np.pi/3)
     
-    # Fase CP como soma cíclica
+    # CP phase as cyclic sum
     delta_cp = (phi_g1 - phi_g2) + (phi_g2 - phi_g3) + (phi_g3 - phi_g1)
     
     return delta_cp
 
 def muon_g2_from_cp(delta_cp, K=1.826e-9):
     """
-    Calcula anomalia do múon a partir da fase CP
+    Calculates muon anomaly from CP phase
     """
     return K * (1 - np.cos(delta_cp))
 
-# Exemplo de uso
-R2 = 2.0e-18  # metros
+# Example usage
+R2 = 2.0e-18  # meters
 T0 = -0.052   # m^-1
 
 delta_cp = cp_phase_goe(R2, T0)
 delta_a_mu = muon_g2_from_cp(delta_cp)
 
-print(f"Fase CP GoE: {delta_cp:.3f} rad")
+print(f"GoE CP phase: {delta_cp:.3f} rad")
 print(f"Experimental: {-1.970:.3f} rad")
-print(f"Diferença: {abs(delta_cp + 1.970):.3f} rad")
-print(f"\nAnomalia múon derivada: {delta_a_mu:.2e}")
+print(f"Difference: {abs(delta_cp + 1.970):.3f} rad")
+print(f"\nDerived muon anomaly: {delta_a_mu:.2e}")
 print(f"Experimental: {2.30e-9:.2e}")
 ```
 
 ---
 
-## Implicações Cosmológicas
+## Cosmological Implications
 
-### Bariogênese via Leptogênese
+### Baryogenesis via Leptogenesis
 
-A fase CP fundamental permite leptogênese através de:
+The fundamental CP phase enables leptogenesis through:
 
 $$\epsilon_{CP} = \frac{\Im[(\mathbf{Y}_\nu \mathbf{Y}_\nu^\dagger)^2]}{|\mathbf{Y}_\nu \mathbf{Y}_\nu^\dagger|^2} \propto \sin(\delta_{CP})$$
 
-### Assimetria Bariônica
+### Baryonic Asymmetry
 
-A assimetria observada $\eta_B \approx 6 \times 10^{-10}$ conecta-se com:
+The observed asymmetry $\eta_B \approx 6 \times 10^{-10}$ connects with:
 
 $$\eta_B \approx \frac{\epsilon_{CP}}{g_*} \times f_{\text{washout}}$$
 
-onde $g_*$ são os graus de liberdade e $f_{\text{washout}}$ é o fator de supressão.
+where $g_*$ are degrees of freedom and $f_{\text{washout}}$ is the washout suppression factor.
 
 ---
 
-## Extensões e Limitações
+## Extensions and Limitations
 
-### Limitações Atuais
+### Current Limitations
 
-1. **Aproximação de contorsão uniforme:** $T_0 = \text{const}$
-2. **Negligenciar matéria escura:** Acoplamentos com setor escuro
-3. **Modelo específico de fibra:** Topologia S¹ × S¹
+1. **Uniform contorsion approximation:** $T_0 = \text{const}$  
+2. **Neglecting dark matter:** Couplings with the dark sector  
+3. **Specific fiber model:** Topology S¹ × S¹  
 
-### Extensões Futuras
+### Future Extensions
 
-1. **Contorsão não-uniforme:** $T(\theta,\xi)$ com dependência espacial
-2. **Acoplamento com gravitação:** Modificações da métrica temporal
-3. **Setor estéril:** Neutrinos estéreis nas dimensões extras
+1. **Non-uniform contorsion:** $T(\theta,\xi)$ with spatial dependence  
+2. **Coupling with gravitation:** Modifications of the temporal metric  
+3. **Sterile sector:** Sterile neutrinos in extra dimensions  
 
 ---
 
-## Referências
+## References
 
-1. **Experimentais:**
+1. **Experimental:**
    - NOvA Collaboration, *Phys. Rev. Lett.* **127**, 151801 (2021)
    - T2K Collaboration, *Nature* **580**, 339 (2020)
 
-2. **Teóricas:**
-   - Monografia GoE, Capítulo 6.2
-   - [Derivação Múon g-2](muon_g2_derivation.md)
-   - [Notebook interativo](../../notebooks/derivations/goe_derivations_complete.ipynb)
+2. **Theoretical:**
+   - GoE Monograph, Chapter 6.2
+   - [Muon g-2 derivation](muon_g2_derivation.md)
+   - [Interactive notebook](../../notebooks/derivations/goe_derivations_complete.ipynb)
 
-3. **Revisões:**
+3. **Reviews:**
    - Esteban *et al.*, *JHEP* **09**, 178 (2020)
    - Capozzi *et al.*, *Phys. Rev. D* **104**, 083031 (2021)
 
 ---
 
-*Derivação validada em: Julho 2025 • Consistência geométrica: ✓ • Acordo experimental: 3.1σ*
+*Derivation validated on: July 2025 • Geometric consistency: ✓ • Experimental agreement: 3.1σ*
+
+---
+
+Se precisar de ajustes ou de tradução para outros arquivos, é só avisar!
