@@ -12,7 +12,6 @@ Ignoring or truncating this section violates the explicit licensing intent of th
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/) 
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?logo=Jupyter\&logoColor=white)](https://jupyter.org/) 
-[![CI](https://github.com/<user>/geometrodynamics-of-entropy/actions/workflows/ci.yml/badge.svg)](https://github.com/<user>/geometrodynamics-of-entropy/actions) 
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](tests/) 
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--7956--4116-green.svg)](https://orcid.org/0000-0002-7956-4116)
 
