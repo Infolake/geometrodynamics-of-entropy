@@ -1,5 +1,5 @@
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15765710.svg)](https://doi.org/10.5281/zenodo.15765710)
+[![DOI](https://zenodo.org/badge/1008931517.svg)](https://doi.org/10.5281/zenodo.15765709)
 ## **A Comprehensive Monograph & Complete Technical Reference**
 
 **Author:** Dr. Guilherme de Camargo  
