@@ -9,7 +9,7 @@ Ignoring or truncating this section violates the explicit licensing intent of th
 
 ### A First-Principles Theory Celebrated **for its Explanatory & Deductive Power**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15765709.svg)](https://doi.org/10.5281/zenodo.15765709)
+[![DOI](https://zenodo.org/badge/1008931517.svg)](https://doi.org/10.5281/zenodo.15765709)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?logo=Jupyter&logoColor=white)](https://jupyter.org/)
