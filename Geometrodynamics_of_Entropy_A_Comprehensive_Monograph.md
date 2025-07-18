@@ -3,7 +3,7 @@
 ## **A Comprehensive Monograph & Complete Technical Reference**
 
 **Author:** Dr. Guilherme de Camargo  
-**Affiliation:** Independent Researcher, Londrina-PR, Brazil  
+**Affiliation:** Independent Researcher, Londrina-PR, Brazil 
 **Edition:** v8.0 (Unification Edition) — July 12, 2025  
 **Project Status:** ✅ **THEORETICALLY COMPLETE & READY FOR SUBMISSION**
 
