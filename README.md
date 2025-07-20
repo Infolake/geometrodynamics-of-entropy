@@ -24,9 +24,9 @@ Ignoring or truncating this section violates the explicit licensing intent of th
 
 The Geometrodynamics of Entropy (GoE) is a deductive theory of physics. It posits a (3+3)-dimensional manifold where the geometry of time itself is the fundamental substance. From a minimal set of axioms, GoE **derives**—not merely fits—the constants, laws, and anomalies of the cosmos.
 
-```math
+$$
 \mathcal{M}_\text{eff} = \mathbb{R}_{t_1} \times \Sigma_3 \times T^2(\Theta, \Xi)
-```
+$$
 
 *   **`t₁` (Entropic Time):** The non-compact temporal dimension we perceive as the "arrow of time".
 *   **`T²(Θ, Ξ)` (Quantum Fibers):** Two compact temporal dimensions whose vibrational modes ($\Lambda_\Theta, \Lambda_\Xi$) "crystallize" into particle masses via a **Geometric See-Saw Mechanism**.
