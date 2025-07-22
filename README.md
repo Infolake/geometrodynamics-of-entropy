@@ -381,12 +381,149 @@ The GoE is such a theory. It has no margin for error. Judge it not by its ambiti
         ```
 *   **The Conclusion & Implication:** The GoE unifying formula is **derived**, not postulated. It is the necessary consequence of spin dynamics in a torsional time geometry. The constant $K$ is revealed to be a calculable physical quantity representing the coupling strength between matter's spin and time's torsion. The theory makes a concrete, falsifiable prediction that unites two disparate sectors of particle physics.
 
+
+Com certeza, Dr. de Camargo. Entendido. A tarefa agora é consolidar o "Deductive Validation Framework (Protocol-42 v2.0)" em sua forma canônica e final, primeiro em inglês e depois em português.
+
+Este documento será a pedra angular da sua metodologia, pronto para ser incluído como um apêndice principal na monografia ou como o `METHODOLOGY.md` no seu repositório.
+
+Abaixo estão as duas versões, completas e polidas.
+
 ---
 
 This concludes the logical manifesto. Each step is built upon the last, moving from abstract principles to concrete, calculable, and falsifiable physics. The engine is built. The logic is transparent. The theory is ready for scrutiny.
 
 </details>
 
+# **The GoE Deductive Validation Framework (Protocol-42)**
+
+**Version 2.0 · July 22, 2025**  
+*"Measure twice, promote once."*
+
 ---
+
+## **0. Meta-header (for git tagging & DOI)**
+
+| Field | Value |
+| :--- | :--- |
+| **Framework ID** | `GoE-DVF` |
+| **Semantic Version** | `2.0.0` |
+| **Last Commit** | `fe3d9c1` (example) |
+| **Maintainer** | Dr. G. de Camargo (PI) |
+| **License** | CC-BY-NC-ND 4.0 |
+
+> **Change-log:** See `CHANGELOG.md` at the repository root (auto-generated via git-cliff).
+
+---
+
+## **1. Introduction: The Fight Against the Answer "42"**
+
+This document details Protocol-42, the formal and transparent framework for validating claims made by the Geometrodynamics of Entropy (GoE) theory. In an era where numerical precision (the answer "42") has often overshadowed the quest for fundamental understanding, this protocol is designed to enforce a deductive, first-principles approach.
+
+GoE's success or failure depends not on parameter fitting, but on its internal logical coherence and its ability to make risky, testable predictions. To protect against paradigmatic bias, every claim is subjected to the following multi-stage test of logical, probabilistic, and philosophical rigor before being considered robust.
+
+## **2. The Protocol**
+
+The protocol is divided into four sequential stages. Each criterion must be explicitly evaluated, with a verdict of `PASSED`, `FAILED`, `PARTIAL PASS`, or `PROMISING`.
+
+### **Stage 0: The Sofia Representability Test (Logical Foundation)**
+
+This stage tests the claim's logical and mathematical foundation before any comparison with data.
+
+| Criterion | Question | Output Flag |
+| :--- | :--- | :--- |
+| **0.1 Axiomatic Origin** | Does the claim derive *only* from the established GoE Axioms (A1-A4)? | `AXIOMATIC: Y/N` |
+| **0.2 Mathematical Rigor** | Is the mathematical proof chain from axioms to the claim's premise free of gaps? | `RIGOR: PASS/FAIL` |
+| **0.3 Classification** | Based on the above, is the claim a candidate for a **Theorem** (a necessary deduction) or a **Hypothesis** (a plausible deduction)? | `[CLASSIFICATION: ...]`|
+
+---
+
+### **Stage 1: The Empirical Scales (The Test of Rigor)**
+
+This stage assesses the quantitative accuracy and precision of the claim against experimental data.
+
+| Criterion | Metric / Action |
+| :--- | :--- |
+| **1.1 First-Principles Derivation** | Provide a symbolic or step-by-step derivation of the final predictive formula. |
+| **1.2 Numerical Prediction** | State the final predicted value with a calculated uncertainty range. |
+| **1.3 Gold-Standard Data** | Cite the specific dataset (ID, DOI, or publication) used for comparison. |
+| **1.4 Statistical Significance** | Report the agreement in terms of sigma (`σ`) deviation. |
+
+---
+
+### **Stage 2: The Probability Filter (The Sieve of Coincidence)**
+
+This stage, primarily for Hypotheses, tests whether the agreement with data is non-trivial.
+
+| Criterion | Metric / Action |
+| :--- | :--- |
+| **2.1 Space of Simple Alternatives** | Identify other simple mathematical or physical models that could explain the phenomenon. |
+| **2.2 Calculation of Chance Probability** | Estimate the probability of a chance agreement (`P(chance)`) within this alternative space. |
+| **2.3 Non-Triviality Threshold** | A claim is deemed non-trivial if `P(chance) < 20%`. |
+
+---
+
+### **Stage 3: The Tribunal of Unification (The Test of Impact)**
+
+This stage evaluates the claim's "value" and importance within the GoE framework and physics at large.
+
+| Criterion | Metric / Action |
+| :--- | :--- |
+| **3.1 Ockham's Razor (Parsimony)**| Quantify the model's simplicity by calculating the **ΔAIC** against the null hypothesis. A positive value favors GoE. |
+| **3.2 Unifying Power** | Does the claim connect previously independent domains of physics? (e.g., Cosmology ↔ Particle Physics) |
+| **3.3 Predictive Strength** | Does the claim become *more* precise and testable as experimental data improves? |
+| **3.4 Global Consistency** | Does the claim reinforce the other pillars of GoE, or does it create new tensions? |
+
+---
+
+## **3. The Verdict Matrix**
+
+| Stage Outcome | Final Verdict |
+| :--- | :--- |
+| All Stages PASS & Classification = THEOREM-CANDIDATE | **Foundational Theorem** |
+| All Stages PASS & Classification = HYPOTHESIS | **Validated Hypothesis** |
+| Partial PASS or Stage 2 FAIL | **Promising Hypothesis (Under Investigation)** |
+| Stage 0 FAIL | **Speculative Extension** |
+
+---
+
+## **4. JSON Evaluation Template**
+
+All validation reports must be stored as a JSON file following this template to allow for automated processing and CI verification.
+
+```json
+{
+  "claim_id": "CLM-YYYY-NNN",
+  "title": "A brief, descriptive title of the claim.",
+  "stage0": {
+    "axiomatic": true,
+    "rigor": true,
+    "classification": "HYPOTHESIS"
+  },
+  "stage1": {
+    "prediction": "1.82e-9 +/- 0.87e-9",
+    "sigma_deviation": 1.21
+  },
+  "stage2": {
+    "p_chance": 0.167,
+    "is_nontrivial": true
+  },
+  "stage3": {
+    "delta_aic": 15.2,
+    "unifying_power": "Connects electroweak and neutrino sectors.",
+    "impact_tag": "EXTREME"
+  },
+  "final_verdict": "VALIDATED HYPOTHESIS"
+}
+```
+---
+
+
+## **5. Glossary**
+*   **Foundational Theorem:** A necessary deduction from the axioms.
+*   **Validated Hypothesis:** A claim that has passed all filters and is strongly supported by evidence.
+*   **Promising Hypothesis:** A plausible claim that requires further derivation or data.
+*   **Speculative Extension:** An idea that is consistent with GoE but not yet derivable from the core axioms.
+
+
 
 © 2025 Dr. Guilherme de Camargo — *Because explanatory & deductive power sets us free.*
